@@ -85,6 +85,7 @@ print;
 @layer layouts {
   @import "layouts/section";
   @import "layouts/collection";
+  @import "layouts/footer";
 }
 
 @layer components {

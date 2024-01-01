@@ -13,5 +13,10 @@ module.exports = {
   },
   machineReadableDate: function (value) {
     return new Date(value).toISOString()
-  }
+  },
+  year: function (value) {
+    return new Date().getFullYear()
+  },
+  keys: obj => Object.keys(obj),
+  values: obj => Object.values(obj)
 }

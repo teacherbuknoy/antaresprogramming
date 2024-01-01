@@ -334,4 +334,5 @@
 
 :root {
   --border-color: 29 85% 43%;
+  --border: 1px solid hsl(var(--border-color));
 }

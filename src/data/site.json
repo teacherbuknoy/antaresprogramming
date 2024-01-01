@@ -17,46 +17,31 @@
       "url":"tel:+639123456789"
     },
     "email": {
-      "name": "",
-      "identifier": "",
-      "url": ""
-    },
-    "linkedin": {
-      "name": "",
-      "identifier": "",
-      "url": ""
+      "name": "Email",
+      "identifier": "hello@antaresph.dev",
+      "url": "mailto:hello@antaresph.dev"
     },
     "instagram": {
-      "name": "",
-      "identifier": "",
-      "url": ""
-    },
-    "twitter": {
-      "name": "",
-      "identifier": "",
-      "url": ""
-    },
-    "github": {
-      "name": "",
-      "identifier": "",
-      "url": ""
+      "name": "Instagram",
+      "identifier": "@antaresphdev",
+      "url": "https://instagram.com/antaresphdev"
     },
     "mastodon": {
-      "name": "",
-      "identifier": "",
-      "url": ""
+      "name": "Mastodon",
+      "identifier": "@antaresphdev@tambayan.us",
+      "url": "https://tambayan.us/@antaresphdev"
     },
     "youtube": {
-      "name": "",
-      "identifier": "",
-      "url": ""
+      "name": "YouTube",
+      "identifier": "@antaresphdev",
+      "url": "https://youtube.com/@antaresphdev"
     }
   },
   "domains": [
     {
-      "name": "",
-      "domain": "",
-      "isPreferred": false
+      "name": "Cloudflare",
+      "domain": "antaresph.dev",
+      "isPreferred": true
     }
   ],
   "api": {
