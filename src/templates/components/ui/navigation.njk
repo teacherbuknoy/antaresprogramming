@@ -1,0 +1,23 @@
+<nav class="navigation">
+  <div class="navigation__start">
+    <a href="/" class="logo">
+      {{ logo('logo__image') }}
+      <span class="logo__wordmark">Antares Programming</span>
+    </a>
+  </div>
+  <div class="navigation__end">
+    <ul class="navigation__list">
+      {% for item in navigation %}
+        <li class="navigation__list-item">
+          {% if item.icon_label != nil %}
+            <a href="{{ item.url }}" class="navigation__link icon-only">
+              {{ icon(item.icon, item.icon_label) }}
+            </a>
+          {% else %}
+            <a href="{{ item.url }}" class="navigation__link">{{ item.text }}</a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>

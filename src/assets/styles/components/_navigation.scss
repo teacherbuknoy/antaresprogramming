@@ -1,0 +1,49 @@
+.navigation {
+  display         : flex;
+  flex-wrap       : wrap;
+  gap             : var(--space);
+  align-items     : center;
+  padding         : var(--space);
+  border-block-end: 1px solid hsl(var(--border-color));
+
+  &__start,
+  &__end {
+    display  : flex;
+    flex-grow: 1;
+  }
+
+  &__end {
+    justify-content: end;
+  }
+
+  &__list {
+    display    : flex;
+    align-items: center;
+    flex-wrap  : wrap;
+    margin     : 0;
+  }
+
+  &__link {
+    display                : flex;
+    align-items            : center;
+    font-family            : var(--font-ui);
+    text-transform         : uppercase;
+    font-weight            : bold;
+    font-variation-settings: 'wght'600;
+    padding-inline         : 1.5ch;
+    padding-block          : 1ch;
+
+    &:hover {
+      background-color: hsl(var(--primary-700) / 15%)
+    }
+
+    &.icon-only {
+      gap    : 0;
+      padding: 1ch;
+    }
+  }
+
+  .logo__wordmark {
+    color: hsl(var(--primary-700))
+  }
+}

@@ -396,8 +396,7 @@ legend {
 .feather,
 .feather-icon {
   fill: none;
-  flex: 0 0 1em;
-  height: 1em;
+  aspect-ratio: 1/1;
   min-width: 1em;
   stroke-linecap: round;
   stroke-linejoin: round;

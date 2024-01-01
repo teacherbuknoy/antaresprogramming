@@ -1,0 +1,16 @@
+.logo {
+  display    : flex;
+  gap        : 1ch;
+  align-items: center;
+
+  &__image {
+    width: var(--type-size-3);
+    height: var(--type-size-3);
+  }
+
+  &__wordmark {
+    font-family   : var(--font-sans);
+    text-transform: uppercase;
+    color         : hsl(var(--fg-contrast));
+  }
+}
