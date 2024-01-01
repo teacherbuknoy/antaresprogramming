@@ -2,6 +2,7 @@
   display              : grid;
   grid-template-columns: 1fr minmax(min(var(--page-width), 100%), 1fr) 1fr;
   padding              : var(--space);
+  gap                  : var(--space);
 
   &>* {
     grid-column: 2/3;
@@ -19,6 +20,6 @@
   &__header {
     display        : flex;
     justify-content: space-between;
-    align-items: center;
+    align-items    : center;
   }
 }

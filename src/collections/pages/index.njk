@@ -32,7 +32,19 @@ permalink: /
     <h2 id="heading-articles" class="section__heading">Mga Article</h2>
     <a href="/articles/" class="button">Tingnan Lahat</a>
   </div>
-  <ul class="collection collection--grid" data-empty="Wala pang post"></ul>
+  <ul class="collection collection--grid" data-empty="Wala pang post">
+    {% for article in collections.articles | reverse | limit(3) %}
+      <li>
+        <article class="article">
+          <h3 class="article__title"><a href="{{ article.url }}">{{ article.data.title | safe }}</a></h3>
+          <p class="article__summary">{{ article.data.description | safe }}</p>
+          <footer class="article__metadata">
+            <time datetime="{{ article.date | machineReadableDate }}">{{ article.date | humanReadableDate }}</time>
+          </footer>
+        </article>
+      </li>
+    {% endfor %}
+  </ul>
 </section>
 
 <footer class="footer">

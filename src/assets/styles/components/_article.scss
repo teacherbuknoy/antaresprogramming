@@ -1,0 +1,32 @@
+.article {
+  display       : flex;
+  flex-direction: column;
+  gap           : 0;
+  outline       : var(--focus-outline-hidden);
+  transition    : outline-offset 200ms, outline 200ms, outline-color 100ms 100ms;
+
+  &:focus-within {
+    outline       : var(--focus-outline);
+    outline-offset: var(--space);
+    transition    : outline-offset 200ms, outline 200ms, outline-color 200ms;
+  }
+
+  &__title {
+    font-family: var(--font-ui);
+    font-size  : var(--type-size-4);
+    line-height: 1;
+    margin     : 0;
+
+    a {
+      display: block;
+
+      &:focus-visible {
+        outline: none;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

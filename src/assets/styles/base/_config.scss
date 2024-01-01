@@ -333,6 +333,8 @@
 }
 
 :root {
-  --border-color: 29 85% 43%;
-  --border: 1px solid hsl(var(--border-color));
+  --border-color        : 29 85% 43%;
+  --border              : 1px solid hsl(var(--border-color));
+  --focus-outline       : 2px solid hsl(var(--secondary-500));
+  --focus-outline-hidden: 2px solid hsl(var(--secondary-500) / 0);
 }

@@ -18,5 +18,6 @@ module.exports = {
     return new Date().getFullYear()
   },
   keys: obj => Object.keys(obj),
-  values: obj => Object.values(obj)
+  values: obj => Object.values(obj),
+  limit: (array, limit) => array.slice(0, limit) 
 }
