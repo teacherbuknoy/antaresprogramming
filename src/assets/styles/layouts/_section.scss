@@ -1,0 +1,24 @@
+.section {
+  display              : grid;
+  grid-template-columns: 1fr minmax(min(var(--page-width), 100%), 1fr) 1fr;
+  padding              : var(--space);
+
+  &>* {
+    grid-column: 2/3;
+  }
+
+  &__heading {
+    font-family            : var(--font-ui);
+    color                  : hsl(var(--primary-700));
+    text-transform         : uppercase;
+    font-weight            : bold;
+    font-variation-settings: "wght"600;
+    font-size              : var(--type-size);
+  }
+
+  &__header {
+    display        : flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

@@ -2,4 +2,5 @@
 {% from "meta/utils.njk" import icon, logo %}
 {% block content %}
   {% include "ui/navigation.njk" %}
+  {{ content | safe }}
 {% endblock %}

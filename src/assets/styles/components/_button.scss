@@ -1,0 +1,27 @@
+.button {
+  font-family            : var(--font-ui);
+  text-transform         : uppercase;
+  font-weight            : bold;
+  font-variation-settings: 'wght'600;
+  border                 : 1px solid hsl(var(--border-color));
+  display                : flex;
+  align-items            : center;
+  justify-content        : center;
+  gap                    : 1ch;
+  padding-block          : 1ch;
+  padding-inline         : 1.5ch;
+  transition             : outline-offset 200ms, outline 200ms, outline-color 100ms 100ms;
+  outline                : 2px solid hsl(var(--border-color) / 0%);
+
+  &:hover {
+    background-color: hsl(var(--border-color) / 15%);
+  }
+
+  &:focus-visible {
+    transition      : outline-offset 200ms, outline 200ms, outline-color 200ms;
+    outline         : 2px solid hsl(var(--border-color));
+    background-color: hsl(var(--border-color));
+    color           : hsl(var(--primary-100));
+    outline-offset  : 0.5ch;
+  }
+}

@@ -1,0 +1,19 @@
+.collection {
+  margin : 0;
+  padding: 0;
+
+  &:empty {
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+
+    &::before {
+      color         : hsl(var(--fg-subtle));
+      content       : attr(data-empty);
+      font-family   : var(--font-ui);
+      font-size     : var(--type-size-5);
+      mix-blend-mode: multiply;
+      text-align    : center;
+    }
+  }
+}
