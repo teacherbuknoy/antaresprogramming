@@ -1,0 +1,28 @@
+<article class="article">
+  {% set cover = video.data.cover %}
+  {% set folder = cover.folder %}
+  {% set filename = cover.filename %}
+  {% set sizes = cover.sizes %}
+  {% set formats = cover.formats %}
+  {% set width = cover.width %}
+  {% set height = cover.height %}
+  {% set container = "videos" %}
+  <div class="article__thumbnail">
+    {% if videoType === 'short' %}
+    <a href="{{ video.url }}">{% include "ui/picture.njk" %}</a>
+    {% else %}
+      {% include "ui/picture.njk" %}
+    {% endif %}
+  </div>
+  {% if videoType !== 'short' %}
+    <h3 class="article__title">
+      <a href="{{ video.url }}">{{ video.data.title | safe }}</a>
+    </h3>
+  {% endif %}
+  {% if videoType === 'short' %}
+    <p class="article__summary">{{ video.data.description | safe }}</p>
+  {% endif %}
+  <footer class="article__metadata">
+    <time datetime="{{ video.date | machineReadableDate }}">{{ video.date | humanReadableDate }}</time>
+  </footer>
+</article>

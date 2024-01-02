@@ -1,14 +1,26 @@
 .article {
   display       : flex;
   flex-direction: column;
-  gap           : 0;
+  gap           : 0.65ch;
   outline       : var(--focus-outline-hidden);
   transition    : outline-offset 200ms, outline 200ms, outline-color 100ms 100ms;
+
+  >* {
+    margin: 0;
+  }
 
   &:focus-within {
     outline       : var(--focus-outline);
     outline-offset: var(--space);
     transition    : outline-offset 200ms, outline 200ms, outline-color 200ms;
+  }
+
+  &__thumbnail {
+    margin-block-end: var(--space);
+
+    img {
+      border-radius: var(--radius-5);
+    }
   }
 
   &__title {

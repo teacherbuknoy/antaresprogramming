@@ -3,6 +3,9 @@ const path = require('path')
 
 module.exports = {
   prettier: (content, outputPath) => {
+    if (outputPath.includes('/assets/'))
+      return content
+
     const extname = path.extname(outputPath)
     switch (extname) {
       case '.html':

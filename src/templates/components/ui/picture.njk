@@ -1,0 +1,31 @@
+{% set host = site.api.images %}
+{% set sizes = sizes if sizes else 
+  [300, 700, 1000, 1920] %}
+{% set formats = formats if formats else 
+  ['png', 'webp', 'avif'] %}
+
+{% set sizesAttr %}
+{% for size in sizes %}
+  (max-width: {{ size }}px) {{ size }}px{{ ", " if not loop.last }}
+{% endfor %}
+{% endset %}
+
+{% set defaultImage %}
+{{ host }}/{{ container }}/{{ folder }}/{{ filename }}
+{% endset %}
+
+<picture>
+  {% for format in formats | reverse %}
+    {% set srcset %}
+    {% for size in sizes %}
+      {{ host }}/tr:f-{{ format }},w-{{ size }}/{{ container }}/{{ folder }}/{{ filename }}
+      {{ size }}w{{ ',' if not loop.last }}
+    {% endfor %}
+    {% endset %}
+
+    <source srcset="{{ srcset }}" type="image/{{ format }}" sizes="{{ sizesAttr }}", width="{{ width }}" height="{{ height }}">
+  {% endfor %}
+  <img 
+      src="{{ defaultImage | trim }}" 
+      alt="{{ alt }}" width="{{ width }}" height="{{ height }}">
+</picture>

@@ -46,6 +46,7 @@
   ],
   "api": {
     "email": "",
-    "siteData": "/api/v1/site-data.json"
+    "siteData": "/api/v1/site-data.json",
+    "images": "https://ik.imagekit.io/antaresphdev"
   }
 }

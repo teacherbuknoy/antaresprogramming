@@ -20,11 +20,20 @@
 
   &--grid {
     display              : grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(25ch, 100%), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(25ch, 100%), 1fr));
     gap                  : var(--space-xl);
 
     @at-root .section--wide & {
       grid-template-columns: repeat(auto-fit, minmax(min(45ch, 100%), 1fr));
+    }
+  }
+
+  &--scroller {
+    display: flex;
+    gap: var(--space-xl);
+
+    >* {
+      flex: 0 0 25ch;
     }
   }
 }

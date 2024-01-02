@@ -19,5 +19,6 @@ module.exports = {
   },
   keys: obj => Object.keys(obj),
   values: obj => Object.values(obj),
-  limit: (array, limit) => array.slice(0, limit) 
+  limit: (array, limit) => array.slice(0, limit),
+  selectVideoType: (entries, type) => entries.filter(entry => entry.data.type === type)
 }
