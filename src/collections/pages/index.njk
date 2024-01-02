@@ -32,45 +32,6 @@ permalink: /
     <h2 id="heading-articles" class="section__heading">Mga Article</h2>
     <a href="/articles/" class="button">Tingnan Lahat</a>
   </div>
-  <ul class="collection collection--grid" data-empty="Wala pang post">
-    {% for article in collections.articles | reverse | limit(3) %}
-      <li>
-        <article class="article">
-          <h3 class="article__title"><a href="{{ article.url }}">{{ article.data.title | safe }}</a></h3>
-          <p class="article__summary">{{ article.data.description | safe }}</p>
-          <footer class="article__metadata">
-            <time datetime="{{ article.date | machineReadableDate }}">{{ article.date | humanReadableDate }}</time>
-          </footer>
-        </article>
-      </li>
-    {% endfor %}
-  </ul>
+  {% set limit = 3 %}
+  {% include "ui/collections--articles.njk" %}
 </section>
-
-<footer class="footer">
-  <section class="footer__header">
-    <p>ⓒ {{ "" | year }} Antares Programming</p>
-    <p>Powered by <a href="https://11ty.dev/" target="_blank">Eleventy</a> and <a href="https://vercel.com">Vercel</a>.</p>
-  </section>
-  <section class="footer__body">
-    <section>
-      <p href="/" class="logo">
-        {{ logo('logo__image') }}
-        <span class="logo__wordmark">Antares Programming</span>
-        <span class="logo__motto">For Filipino developers</span>
-      </p>
-      <p>Ang Antares Programming ay project ni <a href="https://francisrub.io/" target="_blank">Francis Rubio</a>.</p>
-    </section>
-    <section>
-      <h2 class="section__heading">Contact Us</h2>
-      <nav>
-        <ul class="button-list">
-          {% for key in site.contact | keys %}
-          {% set item = site.contact[key] %}
-            <li><a href="{{ item.url }}" class="button" target="_blank">{{ item.name if item.name.length > 0 else key }}</a></li>
-          {% endfor %}
-        </ul>
-      </nav>
-    </section>
-  </section>
-</footer>

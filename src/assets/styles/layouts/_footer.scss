@@ -3,6 +3,7 @@
   flex-direction    : column;
   border-block-start: var(--border);
   font-family       : var(--font-ui);
+  margin-block-start: var(--space-xxl);
 
   &__header {
     display         : flex;

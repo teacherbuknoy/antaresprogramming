@@ -4,6 +4,19 @@
   padding              : var(--space);
   gap                  : var(--space);
 
+  &--wide {
+    grid-template-columns: 1fr minmax(min(calc(var(--page-width) * 1.5), 100%), 1fr) 1fr;
+
+    .section {
+      &__heading {
+        font-size              : var(--type-size-1);
+        text-transform         : none;
+        font-weight            : normal;
+        font-variation-settings: 'wght' 300;
+      }
+    }
+  }
+
   &>* {
     grid-column: 2/3;
   }

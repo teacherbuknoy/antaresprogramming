@@ -1,0 +1,27 @@
+<footer class="footer">
+  <section class="footer__header">
+    <p>ⓒ {{ "" | year }} Antares Programming</p>
+    <p>Powered by <a href="https://11ty.dev/" target="_blank">Eleventy</a> and <a href="https://vercel.com">Vercel</a>.</p>
+  </section>
+  <section class="footer__body">
+    <section>
+      <p href="/" class="logo">
+        {{ logo('logo__image') }}
+        <span class="logo__wordmark">Antares Programming</span>
+        <span class="logo__motto">For Filipino developers</span>
+      </p>
+      <p>Ang Antares Programming ay project ni <a href="https://francisrub.io/" target="_blank">Francis Rubio</a>.</p>
+    </section>
+    <section>
+      <h2 class="section__heading">Contact Us</h2>
+      <nav>
+        <ul class="button-list">
+          {% for key in site.contact | keys %}
+          {% set item = site.contact[key] %}
+            <li><a href="{{ item.url }}" class="button" target="_blank">{{ item.name if item.name.length > 0 else key }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </section>
+  </section>
+</footer>

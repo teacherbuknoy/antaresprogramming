@@ -1,0 +1,30 @@
+---
+title: 'Articles - Antares Programming'
+permalink: /articles/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html
+eleventyImport: 
+  collections: ['articles']
+pagination:
+  data: collections.articles
+  size: 9
+  reverse: true
+---
+
+<section class="section section--wide">
+  <h1 class="section__heading">Mga Article</h1>
+  {% include "ui/collections--articles.njk" %}
+
+  <nav class="d-flex jc--center">
+    <ul class="button-list">
+      {% if pagination.href.previous %}
+        <li>
+          <a href="{{ pagination.href.previous }}" class="button">Previous</a>
+        </li>
+      {% endif %}
+      {% if pagination.href.next %}
+        <li>
+          <a href="{{ pagination.href.next }}" class="button">Next</a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
+</section>

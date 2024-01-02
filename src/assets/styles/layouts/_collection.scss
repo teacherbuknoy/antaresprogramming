@@ -21,6 +21,10 @@
   &--grid {
     display              : grid;
     grid-template-columns: repeat(auto-fit, minmax(min(25ch, 100%), 1fr));
-    gap                  : var(--space)
+    gap                  : var(--space-xl);
+
+    @at-root .section--wide & {
+      grid-template-columns: repeat(auto-fit, minmax(min(45ch, 100%), 1fr));
+    }
   }
 }

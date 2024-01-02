@@ -97,4 +97,6 @@ print;
 
 @layer utilities {
   @import "utilities/visibility";
+  @import "utilities/alignment";
+  @import "utilities/display";
 }
