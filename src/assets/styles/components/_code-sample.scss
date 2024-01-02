@@ -7,7 +7,7 @@
   margin-block : var(--space-xxl);
   position     : relative;
 
-  pre {
+  &>pre {
     display           : block;
     //background-color: hsl(var(--l-primary-700));
     border            : var(--border);
