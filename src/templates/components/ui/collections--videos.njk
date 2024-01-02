@@ -1,5 +1,31 @@
 <ul class="collection {{ 'collection--scroller' if videoType === 'short' else 'collection--grid' }}" data-empty="Wala pang videos">
-  {% set videos = pagination.items if pagination.items else collections.videos | selectVideoType(videoType) | reverse %}
+  {% set videos = pagination.items if pagination.items else 
+    collections.videos | selectVideoType(videoType) | reverse %}
+  {% for video in videos | limit(limit) %}
+    <li>
+      {% include "ui/entry--video.njk" %}
+    </li>
+  {% endfor %}
+  {% for video in videos | limit(limit) %}
+    <li>
+      {% include "ui/entry--video.njk" %}
+    </li>
+  {% endfor %}
+  {% for video in videos | limit(limit) %}
+    <li>
+      {% include "ui/entry--video.njk" %}
+    </li>
+  {% endfor %}
+  {% for video in videos | limit(limit) %}
+    <li>
+      {% include "ui/entry--video.njk" %}
+    </li>
+  {% endfor %}
+  {% for video in videos | limit(limit) %}
+    <li>
+      {% include "ui/entry--video.njk" %}
+    </li>
+  {% endfor %}
   {% for video in videos | limit(limit) %}
     <li>
       {% include "ui/entry--video.njk" %}
