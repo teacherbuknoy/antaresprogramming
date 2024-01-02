@@ -334,7 +334,8 @@
 
 :root {
   --border-color        : 29 85% 43%;
-  --border              : 1px solid hsl(var(--border-color));
+  --border              : 1px solid hsl(var(--border-color) / 50%);
   --focus-outline       : 2px solid hsl(var(--secondary-500));
   --focus-outline-hidden: 2px solid hsl(var(--secondary-500) / 0);
+  --fraunces-variations : 'wght'700, 'WONK'100, 'SOFT'100;
 }

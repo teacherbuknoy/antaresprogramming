@@ -1,0 +1,82 @@
+.callout {
+  --callout-radius: var(--radius-3);
+  background-color: hsl(var(--bg-contrast) / 50%);
+  border-radius   : 0;
+  display         : flex;
+  flex-wrap       : wrap;
+  gap             : 1ch;
+  grid-column     : 1/-1;
+  justify-content : end;
+  margin-inline   : calc(var(--space) * -1);
+  padding-block   : 3ch;
+  padding-inline  : calc((100vw - var(--content-width)) / 2);
+  width           : 100vw;
+
+  &:has(p.callout__body) {
+    align-items: first baseline;
+  }
+
+  &__body {
+    @extend .stack;
+    @extend .gap--xs;
+
+    align-self : center;
+    flex       : 1;
+    font-family: var(--font-sans);
+    font-size  : var(--type-size-6);
+    margin     : 0;
+
+    &:is(p) {
+      display  : block;
+      font-size: 1em;
+    }
+
+    * {
+      color: inherit;
+    }
+
+    &>* {
+      margin-block: 0;
+    }
+  }
+
+  &__footer {
+    align-items: center;
+    display    : flex;
+    align-self : center;
+  }
+
+  .feather {
+    display : inline;
+    height  : 1em;
+    position: relative;
+    width   : 1em;
+  }
+
+  a[href] .feather {
+    color       : hsl(var(--primary-500));
+    stroke-width: 3px;
+  }
+
+  &>.feather {
+    color   : var(--icon-color, currentColor);
+    position: relative;
+  }
+
+  &--info {
+    --icon-color    : hsl(var(--info-900));
+    background-color: hsl(var(--info-300) / 100%);
+  }
+
+  &--warning {
+    --icon-color    : hsl(var(--warning-700));
+    color           : hsl(var(--warning-900));
+    background-color: hsl(var(--warning-100) / 100%);
+  }
+
+  &--success {
+    --icon-color    : hsl(var(--success-700));
+    color           : hsl(var(--success-900));
+    background-color: hsl(var(--success-100) / 100%);
+  }
+}

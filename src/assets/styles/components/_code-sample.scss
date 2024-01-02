@@ -1,0 +1,109 @@
+@import "code";
+
+.code-sample {
+  grid-column  : 1/-1;
+  width        : 100vw;
+  margin-inline: calc(var(--space) * -1);
+  margin-block : var(--space-xxl);
+  position     : relative;
+
+  pre {
+    display           : block;
+    //background-color: hsl(var(--l-primary-700));
+    border            : var(--border);
+    color             : hsl(var(--primary-700));
+    padding-block     : 3ch;
+    padding-inline    : calc((100vw - var(--content-width)) / 2);
+    margin-block      : 0 !important;
+
+    &:has(+ .code-result),
+    &:has(+ pre) {
+      border-block-end-style: dashed;
+    }
+
+    &+pre {
+      border-block-start: none;
+    }
+  }
+
+  /* &:has([class^=language]) {
+    &::before {
+      background-color       : hsl(var(--primary-300));
+      color                  : hsl(var(--primary-700));
+      content                : var(--pre-language, "");
+      font-family            : var(--font-sans);
+      font-weight            : bold;
+      font-variation-settings: 'wght'600;
+      left                   : calc((100vw - var(--content-width)) / 2);
+      padding                : var(--space-xxs) var(--space-s);
+      position               : absolute;
+      text-transform         : uppercase;
+      top                    : 0;
+      transform              : translateY(calc(-100% + 1px));
+      z-index                : 2;
+      width                  : fit-content;
+      border                 : var(--border);
+      border-block-end       : none;
+    }
+
+    &:has(.language-css) {
+      --pre-language: "CSS"
+    }
+
+    &:has(.language-html) {
+      --pre-language: "HTML"
+    }
+
+    &:has(.language-js),
+    &:has(.language-javascript) {
+      --pre-language: "JavaScript"
+    }
+
+    &:has(.language-json) {
+      --pre-language: "JSON"
+    }
+
+    &:has(.language-sh),
+    &:has(.language-bash) {
+      --pre-language: "Shell"
+    }
+  } */
+}
+
+.code-result {
+  width         : 100%;
+  border        : var(--border);
+  padding-inline: calc((100vw - var(--content-width)) / 2);
+
+  @at-root .code-sample & {
+    border-block-start: none;
+  }
+
+  iframe {
+    width           : 100%;
+    min-height      : 50vh;
+    border          : none;
+    background-color: hsl(var(--l-contrast));
+  }
+
+  &__embed {
+    .callout {
+      width         : 100%;
+      margin        : 0;
+      padding-inline: var(--space-xxl);
+    }
+  }
+}
+
+.bordered-box p,
+.bordered.box p,
+.code-notes {
+  width         : min(var(--content-width), 100%);
+  margin        : auto;
+  padding-inline: var(--space);
+}
+
+.bordered-box,
+.bordered.box {
+  grid-column: 1/-1;
+}

@@ -17,7 +17,6 @@ tags:
 eleventyExcludeFromCollections: true
 disableToc: false
 permalink: /articles/gender-online-forms/
-layout: post.njk
 ---
 
 Sa maraming forms, madalas isama sa mga required fields ang gender. At depende sa team na nag-implement, iba-iba rin ang entries. May mga forms na male at female lang ang nakalagay. Meron ding man at woman. Meron ding mga naglalagay ng "Other", at masuwerte na tayo kung may makikita tayong "Transgender" sa mga choices. Sa article na ito, pag-usapan natin kung ano ang pinakamagandang way para itanong sa users ang gender nila.

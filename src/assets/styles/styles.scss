@@ -1,3 +1,5 @@
+@import "base/mixins";
+
 @layer reset,
 layouts,
 components,
@@ -79,6 +81,23 @@ print;
     &:focus-visible {
       outline: var(--focus-outline);
     }
+
+    @at-root sup & {
+      text-decoration: underline;
+    }
+  }
+
+  strong,
+  b {
+    font-weight            : bold;
+    font-variation-settings: 'wght'600, 'WONK'1, 'SOFT'1;
+  }
+
+  i,
+  em,
+  var,
+  cite {
+    font-style: italic;
   }
 }
 
@@ -86,6 +105,8 @@ print;
   @import "layouts/section";
   @import "layouts/collection";
   @import "layouts/footer";
+  @import "layouts/stack";
+  @import "layouts/article";
 }
 
 @layer components {
@@ -93,10 +114,22 @@ print;
   @import "components/navigation";
   @import "components/button";
   @import "components/article";
+  @import "components/callout";
+  @import "components/code-sample";
 }
 
 @layer utilities {
-  @import "utilities/visibility";
   @import "utilities/alignment";
+  @import "utilities/border";
+  @import "utilities/color";
+  @import "utilities/cursors";
   @import "utilities/display";
+  @import "utilities/gap";
+  @import "utilities/margin";
+  @import "utilities/overflow";
+  @import "utilities/padding";
+  @import "utilities/sizes";
+  @import "utilities/text";
+  @import "utilities/visibility";
+  @import "utilities/position";
 }

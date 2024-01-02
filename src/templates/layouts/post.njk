@@ -1,4 +1,21 @@
 {% extends "./main.njk" %}
+{% from "meta/utils.njk" import icon,
+logo %}
 {% block content %}
-  {{ content | safe }}
+  {% include "ui/navigation.njk" %}
+
+  <article class="post" aria-labelledby="post-title">
+    <section class="section section--wide margin-block--xl">
+      <h1 id="post-title" class="post__title">{{ title | safe }}</h1>
+      <div class="d-flex jc--space-between">
+        <time datetime="{{ page.date | machineReadableDate }}">{{ page.date | humanReadableDate }}</time>
+      </div>
+    </section>
+    <section class="section post__body">
+      {{ content | safe }}
+
+    </section>
+  </article>
+
+  {% include "ui/footer.njk" %}
 {% endblock %}
