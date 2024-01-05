@@ -31,9 +31,14 @@ class StylesheetSourcemap {
   async compile(filename) {
     const appPath = await require('../../../scripts/utilities').getAppPath()
     const filepath = path.join(appPath, 'cache', `${filename}.min.css.map`)
-    const content = fs.readFileSync(filepath, { encoding: 'utf-8' })
+    try {
+      const content = fs.readFileSync(filepath, { encoding: 'utf-8' })
 
-    return content
+      return content
+    } catch (e) {
+      console.error(e)
+      return ""
+    }
   }
 
   async render({ cssFile }) {

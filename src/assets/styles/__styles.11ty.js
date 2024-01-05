@@ -37,7 +37,13 @@ class Stylesheets {
   async renderSourcemap(filename, content) {
     const appPath = await require('../../../scripts/utilities').getAppPath()
     console.log('[APP PATH]', appPath)
-    const filepath = path.join(appPath, 'cache', `${filename}.min.css.map`)
+    const cacheFolder = path.join(appPath, 'cache')
+
+    if (!fs.existsSync(cacheFolder)) {
+      fs.mkdirSync(cacheFolder)
+    }
+
+    const filepath = path.join(cacheFolder, `${filename}.min.css.map`)
     fs.writeFileSync(filepath, JSON.stringify(content))
   }
 

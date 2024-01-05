@@ -34,7 +34,13 @@ class Script {
 
   async renderSourceMap(filename, content) {
     const appPath = await require('../../../scripts/utilities').getAppPath()
-    const filepath = path.join(appPath, 'cache/', `${filename}.js.map`)
+    const cacheFolder = path.join(appPath, 'cache')
+
+    if (!fs.existsSync(cacheFolder)) {
+      fs.mkdirSync(cacheFolder)
+    }
+
+    const filepath = path.join(cacheFolder, `${filename}.js.map`)
     fs.writeFileSync(filepath, JSON.stringify(content))
   }
   
