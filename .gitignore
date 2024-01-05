@@ -106,3 +106,4 @@ dist
 public
 __sourcemaps
 cache
+.vercel
