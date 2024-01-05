@@ -9,14 +9,14 @@
   {% set container = "videos" %}
   <div class="article__thumbnail">
     {% if videoType === 'short' %}
-    <a href="{{ video.url }}">{% include "ui/picture.njk" %}</a>
+    <a href="{{ video.data.link.url }}" target="_blank">{% include "ui/picture.njk" %}</a>
     {% else %}
       {% include "ui/picture.njk" %}
     {% endif %}
   </div>
   {% if videoType !== 'short' %}
     <h3 class="article__title">
-      <a href="{{ video.url }}">{{ video.data.title | safe }}</a>
+      <a href="{{ video.data.link.url }}" target="_blank">{{ video.data.title | safe }}</a>
     </h3>
   {% endif %}
   {% if videoType === 'short' %}
