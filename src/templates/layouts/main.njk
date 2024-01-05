@@ -1,6 +1,12 @@
 {% extends "./page.njk" %}
-{% from "meta/utils.njk" import icon, logo %}
+{% from "meta/utils.njk" import icon,
+logo %}
 {% block content %}
+  <div class="decoration">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
   {% include "ui/navigation.njk" %}
   {{ content | safe }}
   {% include "ui/footer.njk" %}
