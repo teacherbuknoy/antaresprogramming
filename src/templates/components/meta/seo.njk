@@ -1,0 +1,36 @@
+<!-- Primary Meta Tags -->
+<meta name="title" content="{{ title if title else site.title }}">
+<meta name="description" content="{{ description if description else site.description }}">
+
+{% set domain = site.domains | selectattr('isPreferred') | first %}
+<link rel="canonical" href="{{ domain.domain }}{{ page.url }}">
+
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+{% set twitter_image %}{{ domain.domain }}/assets/images/root/twitter.png{% endset %}
+{% set og_image %}{{ domain.domain }}/assets/images/root/og.png{% endset %}
+
+{% if cover %}
+  {% set twitter_image %}{{ site.api.images }}/tr:w-0.5,f-jpeg/{{ postType }}/{{ cover.folder }}/twitter.png{% endset %}
+  {% set og_image %}{{ site.api.images }}/tr:w-0.5,f-jpeg/{{ postType }}/{{ cover.folder }}/og.png{% endset %}
+{% endif %}
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ domain.domain }}{{ page.url if page.url }}">
+<meta property="og:title" content="{{ title if title else site.title }}">
+<meta property="og:description" content="{{ description if description else site.description }}">
+<meta property="og:image" content="{{ og_image }}">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{ domain.domain }}{{ page.url if page.url }}">
+<meta property="twitter:title" content="{{ title if title else site.title }}">
+<meta property="twitter:description" content="{{ description if description else site.description }}">
+<meta property="twitter:image" content="{{ twitter_image }}">
+
+<!-- Feeds -->
+<link rel="alternate" type="application/rss+xml" title="Articles by Francis Rubio" href="/rss-articles.xml">
