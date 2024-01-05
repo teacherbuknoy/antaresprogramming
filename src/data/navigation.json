@@ -1,6 +1,7 @@
 [
   { "text": "Frontpage", "url": "/" },
   { "text": "Videos", "url": "/videos/" },
+  { "text": "Short Videos", "url": "/shorts/" },
   { "text": "Infographics", "url": "/infographics/" },
   { "text": "Articles", "url": "/articles/" },
   { "icon_label": "RSS Feed", "url": "/feed.xml", "icon": "rss" }

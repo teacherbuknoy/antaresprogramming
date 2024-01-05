@@ -1,4 +1,4 @@
-<article class="article">
+<article class="article article--video">
   {% set cover = video.data.cover %}
   {% set folder = cover.folder %}
   {% set filename = cover.filename %}
@@ -7,6 +7,7 @@
   {% set width = cover.width %}
   {% set height = cover.height %}
   {% set container = "videos" %}
+  {% set videoType = video.data.type %}
   <div class="article__thumbnail">
     {% if videoType === 'short' %}
     <a href="{{ video.data.link.url }}" target="_blank">{% include "ui/picture.njk" %}</a>

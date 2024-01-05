@@ -1,6 +1,6 @@
-<ul class="collection collection--grid" data-empty="Wala pang videos">
+<ul class="collection {{ 'collection--grid' if gridType === 'grid' else 'collection--scroller' }}" data-empty="Wala pang videos">
   {% set videos = pagination.items if pagination.items else 
-    collections.videos | reverse %}
+    collections.shorts | reverse %}
   {% for video in videos | limit(limit) %}
     <li>
       {% include "ui/entry--video.njk" %}

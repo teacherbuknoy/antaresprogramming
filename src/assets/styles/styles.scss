@@ -99,6 +99,28 @@ print;
   cite {
     font-style: italic;
   }
+
+  * {
+    outline      : var(--focus-outline);
+    outline-color: transparent;
+  }
+
+  :target {
+    animation    : target 700ms;
+    animation-delay: 1000ms;
+  }
+
+  @keyframes target {
+    from {
+      outline-color : hsl(var(--secondary-500) / 100%);
+      outline-offset: 0;
+    }
+
+    to {
+      outline-color : hsl(var(--secondary-500) / 0%);
+      outline-offset: 1rem;
+    }
+  }
 }
 
 @layer layouts {

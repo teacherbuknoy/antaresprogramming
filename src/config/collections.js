@@ -20,6 +20,14 @@ module.exports = {
       "src/collections/videos/*.html",
       "src/collections/videos/*.njk",
       "src/collections/videos/*.md",
-    ])
-  }
+    ]).filter(video => video.data.type === 'full')
+  },
+
+  shorts: function (collections) {
+    return collections.getFilteredByGlob([
+      "src/collections/videos/*.html",
+      "src/collections/videos/*.njk",
+      "src/collections/videos/*.md",
+    ]).filter(video => video.data.type === 'short')
+  },
 }

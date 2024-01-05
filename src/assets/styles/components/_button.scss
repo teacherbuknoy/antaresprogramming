@@ -1,17 +1,17 @@
 .button {
-  font-family            : var(--font-ui);
-  text-transform         : uppercase;
-  font-weight            : bold;
-  font-variation-settings: 'wght'600;
+  align-items            : center;
   border                 : 1px solid hsl(var(--border-color));
   display                : flex;
-  align-items            : center;
-  justify-content        : center;
+  font-family            : var(--font-ui);
+  font-variation-settings: 'wght'600;
+  font-weight            : bold;
   gap                    : 1ch;
+  justify-content        : center;
+  outline                : 2px solid hsl(var(--border-color) / 0%);
   padding-block          : 1ch;
   padding-inline         : 1.5ch;
+  text-transform         : uppercase;
   transition             : outline-offset 200ms, outline 200ms, outline-color 100ms 100ms;
-  outline                : 2px solid hsl(var(--border-color) / 0%);
 
   &:hover {
     background-color: hsl(var(--border-color) / 15%);
@@ -24,10 +24,22 @@
     color           : hsl(var(--primary-100));
     outline-offset  : 0.5ch;
   }
+
+  &.primary {
+    background-color: hsl(var(--primary-500));
+    border-color    : hsl(var(--primary-500));
+    color           : hsl(var(--primary-900));
+
+    &:focus-visible,
+    &:hover {
+      color           : hsl(var(--primary-300));
+      background-color: hsl(var(--primary-700));
+    }
+  }
 }
 
 .button-list {
-  display: flex;
+  display  : flex;
   flex-wrap: wrap;
-  gap: 1ch;
+  gap      : 1ch;
 }

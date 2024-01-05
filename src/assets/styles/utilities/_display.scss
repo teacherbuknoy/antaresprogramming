@@ -10,12 +10,32 @@
   }
 }
 
-$display: block, inline, inline-block, flex, inline-flex, grid, inline-grid;
+$display: block,
+inline,
+inline-block,
+flex,
+inline-flex,
+grid,
+inline-grid;
 
 .d {
   @each $d in $display {
     &-#{$d} {
       display: $d;
     }
+  }
+}
+
+.jumbotron {
+  display        : flex;
+  flex-direction : column;
+  padding-block  : 10ch;
+  font-size      : var(--type-size-5);
+  align-items    : center;
+  justify-content: center;
+
+  &__title {
+    font-size  : var(--type-size-1);
+    font-family: var(--font-sans);
   }
 }
