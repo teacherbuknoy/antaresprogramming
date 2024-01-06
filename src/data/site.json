@@ -40,6 +40,11 @@
       "name": "Tiktok",
       "identifier": "@antaresphdev",
       "url": "https://tiktok.com/@antaresphdev"
+    },
+    "codepen": {
+      "name": "CodePen",
+      "identifier": "@antaresphdev",
+      "url": "https://codepen.io/antaresphdev"
     }
   },
   "domains": [
