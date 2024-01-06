@@ -1,0 +1,30 @@
+{% extends "./page.njk" %}
+{% from "meta/utils.njk" import icon,
+logo %}
+{% block content %}
+  <div class="decoration">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  {% include "ui/navigation.njk" %}
+  <aside class="thumbnail thumbnail--as-seen">
+    <h2 class="thumbnail__caption">As seen in</h2>
+    {% set meta = video | seo %}
+    {% set info = meta.data %}
+    <article class="thumbnail__card">
+      <img class="thumbnail__image" src="{{ info.image.url }}" alt="" width="{{ info.image.width }}" height="{{ info.image.width }}">
+      <h3 class="thumbnail__title">
+        <img src="{{ info.logo.url }}" alt="" class="thumbnail__icon" width="{{ info.logo.width }}" height="{{ info.logo.height }}">
+        <a href="{{ info.url }}" class="thumbnail__link">{{ info.title | safe }}</a>
+      </h3>
+      <p class="thumbnail__caption">{{ info.description | safe }}</p>
+    </article>
+  </aside>
+  <p class="codepen codepen--lab" data-editable="true" data-height="300" data-default-tab="html,result" data-slug-hash="{{ codepen }}" data-user="antaresphdev" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+    <span>See <a href="{{ site.contact.codepen.url }}/pen/{{ codepen }}">the Pen</a> by Antares Programming (<a href="site.contact.codepen.url">@antaresphdev</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+  </p>
+  <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+  {% include "ui/footer.njk" %}
+{% endblock %}

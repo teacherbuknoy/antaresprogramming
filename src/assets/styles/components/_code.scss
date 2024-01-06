@@ -28,6 +28,21 @@ code:not([class]) {
   font-family: var(--font-ui);
 }
 
+.cp_embed_wrapper,
+.codepen--lab {
+  min-height: 100vh;
+}
+
+.cp_embed_wrapper {
+  display       : flex;
+  flex-direction: column;
+  padding       : var(--space);
+
+  iframe {
+    flex: 1;
+  }
+}
+
 pre[class^=language] {
   border         : var(--border);
   display        : flex;

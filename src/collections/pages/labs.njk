@@ -1,0 +1,17 @@
+---
+title: 'Articles - Antares Programming'
+permalink: /labs/
+eleventyImport: 
+  collections: ['labs']
+---
+<section class="section section--wide">
+  <h1 class="section__heading">Labs</h1>
+  <p class="margin--none">Mga demo at live example mula sa mga video at infographics na ipinost namin online.</p>
+  <ul class="fs-3">
+    {% for lab in collections.labs %}
+      <li>
+        <a href="{{ lab.url }}">{{ lab.data.title | safe }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

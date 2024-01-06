@@ -1,0 +1,56 @@
+.thumbnail {
+  display       : flex;
+  flex-direction: column;
+  padding       : var(--space);
+  gap           : var(--space);
+  width         : min(var(--page-width), 100%);
+  margin-inline : auto;
+
+  &__caption {
+    font-family            : var(--font-sans);
+    font-size              : var(--type-size-5);
+    font-weight            : 500;
+    font-variation-settings: 'wght'500;
+    margin                 : 0;
+  }
+
+  &__card {
+    align-items          : center;
+    background-color     : hsl(var(--bg-primary));
+    border-radius        : calc(var(--radius-3) + var(--space-xs));
+    column-gap           : var(--space);
+    display              : grid;
+    grid-template-columns: auto 1fr;
+    justify-content      : center;
+    padding              : var(--space-xs);
+
+    .thumbnail__caption {
+      font-size              : var(--type-size-6);
+      font-variation-settings: 'wght'400;
+      font-weight            : normal;
+    }
+  }
+
+  &__image {
+    border-radius: var(--radius-3);
+    grid-row     : span 2;
+    width        : auto;
+    max-height   : 10ch;
+  }
+
+  &__icon {
+    height : 1em;
+    width  : auto;
+    display: inline-block;
+  }
+
+  &__title {
+    font-size  : var(--type-size-4);
+    font-family: var(--font-sans);
+    display    : flex;
+    align-items: center;
+    gap        : var(--space);
+    margin     : 0;
+    line-height: 1;
+  }
+}
