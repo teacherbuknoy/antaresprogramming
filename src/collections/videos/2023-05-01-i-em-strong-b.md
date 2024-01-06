@@ -6,8 +6,8 @@ banner:
 description: Saan at kailan pwedeng gamitin ang i, em, strong, at b tags?
 author: teacherbuknoy
 link: 
-  label: Panoorin sa YouTube
-  url: https://youtube.com/shorts/aq1ngdzTBGY
+  label: Panoorin sa Tiktok
+  url: https://www.tiktok.com/@antaresphdev/video/7228036804144942338
 cover:
   folder: i-em-strong-b
   filename: cover.jpg
