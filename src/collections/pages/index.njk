@@ -2,11 +2,14 @@
 title: 'Antares Programming'
 permalink: /
 ---
-{% from "meta/utils.njk" import logo %}
+{% from "meta/utils.njk" import logo, icon %}
 <section class="section" aria-labelledby="heading-latest-videos">
   <div class="section__header">
     <h2 id="heading-latest-videos" class="section__heading">Latest Videos</h2>
-    <a href="{{ site.contact.youtube.url }}" target="_blank" class="button">Tingnan Lahat</a>
+    <a href="{{ site.contact.youtube.url }}" target="_blank" class="button">
+      {{ icon('youtube') }}
+      <span>Tingnan Lahat</span>
+    </a>
   </div>
   {% set limit = 3 %}
   {% set videoType = 'full' %}
@@ -16,7 +19,10 @@ permalink: /
 <section class="section" aria-labelledby="heading-maikling-video">
   <div class="section__header">
     <h2 id="heading-maikling-video" class="section__heading">Mga Maikling Video</h2>
-    <a href="{{ site.contact.youtube.url }}" target="_blank" class="button">Tingnan Lahat</a>
+    <a href="{{ site.contact.youtube.url }}/shorts" target="_blank" class="button">
+      {{ icon('youtube') }}
+      <span>Tingnan Lahat</span>
+    </a>
   </div>
   {% set limit = 3 %}
   {% set videoType = 'short' %}
