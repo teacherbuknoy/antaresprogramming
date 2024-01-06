@@ -11,11 +11,6 @@
     }
   },
   "contact": {
-    "phone": {
-      "name": "Contact Number",
-      "identifier": "+63 912 345 6789",
-      "url":"tel:+639123456789"
-    },
     "email": {
       "name": "Email",
       "identifier": "hello@antaresph.dev",
