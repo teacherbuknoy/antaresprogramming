@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/articles/walang-disabled-na-gagamit-ng-website-ko/",
+      "destination": "/articles/hindi-lang-para-sa-mga-may-kapansanan-ang-accessibility/",
+      "statusCode": 301
+    },
+    {
+      "source": "/instagram/",
+      "destination": "/links/",
+      "statusCode": 301
+    }
+  ]
+}
