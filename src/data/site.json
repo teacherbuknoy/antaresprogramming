@@ -35,6 +35,11 @@
       "name": "YouTube",
       "identifier": "@antaresphdev",
       "url": "https://youtube.com/@antaresphdev"
+    },
+    "tiktok": {
+      "name": "Tiktok",
+      "identifier": "@antaresphdev",
+      "url": "https://tiktok.com/@antaresphdev"
     }
   },
   "domains": [
