@@ -1,0 +1,56 @@
+.window {
+  background-color: hsl(var(--bg-primary));
+  border          : 1px solid hsl(var(--bg-accent) / 50%);
+  border-radius   : var(--radius-5);
+  overflow        : hidden;
+
+  @include box-shadow(10, 2, rgb(0 0 0 / 3%));
+}
+
+.tab-strip {
+  background-color: hsl(var(--bg-secondary));
+  padding         : var(--space-xxs);
+  display         : flex;
+  gap             : var(--space-xs);
+  align-items     : center;
+  border-bottom   : 1px solid hsl(var(--bg-accent) / 50%);
+
+  .tab {
+    background-color: hsl(var(--bg-primary));
+    border          : 1px solid hsl(var(--bg-accent)/50%);
+    border-radius   : var(--radius-3);
+    font-size       : var(--type-size-7);
+    margin          : var(--space-xxs);
+    min-width       : 20ch;
+    padding-block   : var(--space-xs);
+    padding-inline  : var(--space);
+
+    @include box-shadow(5, 2, rgb(0 0 0 / 3%));
+  }
+}
+
+.actions {
+  display    : flex;
+  gap        : var(--space-xs);
+  align-items: center;
+  padding    : var(--space-xs);
+
+  span {
+    aspect-ratio    : 1/1;
+    width           : 1ch;
+    background-color: hsl(var(--error-300));
+    border-radius   : 100%;
+
+    &:nth-child(2) {
+      background-color: hsl(var(--warning-500));
+    }
+
+    &:nth-child(3) {
+      background-color: hsl(var(--success-500));
+    }
+  }
+}
+
+.viewport {
+  min-height: 20vh;
+}

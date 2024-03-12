@@ -1,0 +1,16 @@
+<ul class="collection collection--grid" data-empty="Wala pang infographics">
+  {% set infographics = pagination.items if pagination.items else collections.infographics | reverse %}
+  {% for article in infographics | limit(limit) %}
+    <li>
+      <article class="article">
+        <h3 class="article__title">
+          <a href="{{ article.url }}">{{ article.data.title | safe }}</a>
+        </h3>
+        <p class="article__summary">{{ article.data.description | safe }}</p>
+        <footer class="article__metadata">
+          <time datetime="{{ article.date | machineReadableDate }}">{{ article.date | humanReadableDate }}</time>
+        </footer>
+      </article>
+    </li>
+  {% endfor %}
+</ul>

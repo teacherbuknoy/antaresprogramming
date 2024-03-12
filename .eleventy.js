@@ -11,7 +11,6 @@ module.exports = function (eleventy) {
   Object.keys(collections).forEach(key => eleventy.addCollection(key, collections[key]))
   Object.keys(filters).forEach(key => eleventy.addFilter(key, filters[key]))
   Object.keys(watchtargets).forEach(key => eleventy.addWatchTarget(watchtargets[key]()))
-  Object.keys(transforms).forEach(key => eleventy.addTransform(key, transforms[key]))
 
   let envIsProduction = process.env.ELEVENTY_ENV === 'production'
   Object.keys(plugins).forEach(key => {
@@ -30,6 +29,15 @@ module.exports = function (eleventy) {
       } else {
         eleventy.addPlugin(plugin)
       }
+    }
+  })
+
+  Object.keys(transforms).forEach(key => {
+    const EXCLUDE_FROM_DEV_ENV = ['prettier']
+    let shouldTransform = EXCLUDE_FROM_DEV_ENV.includes(key) && envIsProduction
+
+    if (shouldTransform) {
+      eleventy.addTransform(key, transforms[key])
     }
   })
 

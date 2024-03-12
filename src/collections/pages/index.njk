@@ -34,7 +34,8 @@ permalink: /
     <h2 id="heading-infographics" class="section__heading">Mga Infographics</h2>
     <a href="/infographics/" class="button">Tingnan Lahat</a>
   </div>
-  <ul class="collection collection--grid" data-empty="Wala pang infographics"></ul>
+  {% set limit = 3 %}
+  {% include "ui/collections--infographics.njk" %}
 </section>
 
 <section class="section" aria-labelledby="heading-articles">

@@ -1,10 +1,19 @@
 const EleventyFetch = require('@11ty/eleventy-fetch')
+const { JSDOM } = require('jsdom')
 
 module.exports = {
   markdown: function (value) {
     let markdown = require('markdown-it')({ html: true })
 
-    return markdown.render(value)
+    let rendered = markdown.render(value)
+
+    if (value.includes('\n')) 
+      return rendered
+
+    const document = new JSDOM(rendered).window.document
+    const p = document.querySelector('p')
+    
+    return p.innerHTML
   },
 
   icon: function (value) {

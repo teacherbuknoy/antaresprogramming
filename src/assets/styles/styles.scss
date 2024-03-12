@@ -208,6 +208,7 @@ print;
   @import "layouts/footer";
   @import "layouts/stack";
   @import "layouts/article";
+  @import "layouts/infographic";
 }
 
 @layer components {
@@ -217,7 +218,10 @@ print;
   @import "components/article";
   @import "components/callout";
   @import "components/code-sample";
+  @import "components/breadcrumb";
   @import "components/thumbnail";
+  @import "components/byline";
+  @import "components/window";
 }
 
 @layer utilities {

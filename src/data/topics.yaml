@@ -1,0 +1,9 @@
+html:
+  title: HTML
+  reference: https://developer.mozilla.org/en-US/docs/Web/HTML
+pseudoelement:
+  title: CSS Pseudo-elements
+  reference: https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements
+events:
+  title: Events
+  reference: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events

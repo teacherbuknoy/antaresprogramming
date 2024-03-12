@@ -1,13 +1,29 @@
 {% macro icon(name, label, class) %}
   {% if label %}
     <svg class="feather {{ class }}" aria-label="{{ label }}" width="24" height="24">
-  {% else %}
-    <svg class="feather {{ class }}" aria-hidden="true" width="24" height="24">
-  {% endif %}
+    {% else %}
+      <svg class="feather {{ class }}" aria-hidden="true" width="24" height="24">
+      {% endif %}
       <use href="/assets/images/feather-sprite.svg#{{ name }}"/>
     </svg>
   {% endmacro %}
 
   {% macro logo(class) %}
     <img class="{{ class }}" src="/assets/images/logo.svg" alt="Antares Programming logo" width="64" height="64">
+  {% endmacro %}
+
+  {% macro demoWindow(title="Demo") %}
+    <figure class="window">
+      <div class="tab-strip">
+        <div class="actions">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <figcaption class="tab">{{ title }}</figcaption>
+      </div>
+      <div class="viewport">
+        {{ caller() }}
+      </div>
+    </figure>
   {% endmacro %}

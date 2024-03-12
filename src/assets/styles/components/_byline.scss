@@ -1,0 +1,15 @@
+.byline {
+  font-style : normal;
+  display    : flex;
+  gap        : 1ch;
+  align-items: center;
+  margin     : 0;
+  font-family: var(--font-sans);
+
+  img {
+    height       : 2.25rem;
+    width        : 2.25rem;
+    object-fit   : cover;
+    border-radius: 100%;
+  }
+}

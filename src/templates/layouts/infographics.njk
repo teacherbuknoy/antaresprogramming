@@ -1,0 +1,42 @@
+{% extends "./page.njk" %}
+{% from "meta/utils.njk" import icon, logo %}
+{% block content %}
+  <div class="decoration">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  {% include "ui/navigation.njk" %}
+  <main class="infographic">
+    <header class="header">
+      <nav class="breadcrumb" aria-label="Breadcrumbs">
+        <ol class="list">
+          <li>
+            <a class="link" href="/">Home</a>
+          </li>
+          <li>
+            <a class="link" href="/infographics/">Infographics</a>
+          </li>
+          <li>
+            <a class="link" href="./" aria-current="location">This demo</a>
+          </li>
+        </ol>
+      </nav>
+      <h1 class="title">{{ title | markdown | safe }}</h1>
+      <p class="description">{{ description | markdown | safe }}</p>
+      <div class="meta">
+        <address class="byline">
+          <img src="{{ authors[author].photo }}" alt="{{ authors[author].name }}">
+          <p>by <a href="{{ authors[author].profile }}">{{ authors[author].name }}</a>
+          </p>
+        </address>
+        <span class="separator" aria-hidden="true">/</span>
+        <time datetime="{{ page.date | machineReadableDate }}">{{ page.date | humanReadableDate }}</time>
+      </div>
+    </header>
+    <div class="content">
+      {{ content  | safe }}
+    </div>
+  </main>
+  {% include "ui/footer.njk" %}
+{% endblock %}
