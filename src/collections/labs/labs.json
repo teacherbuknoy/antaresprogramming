@@ -1,4 +1,4 @@
 {
-  "permalink": "/labs/{{ title | slugify }}/",
+  "permalink": "/labs/{{ slug }}/",
   "layout": "lab.njk"
 }
