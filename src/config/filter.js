@@ -1,5 +1,6 @@
 const EleventyFetch = require('@11ty/eleventy-fetch')
 const { JSDOM } = require('jsdom')
+const parse = require("node-html-parser").parse
 
 module.exports = {
   markdown: function (value) {
@@ -7,12 +8,12 @@ module.exports = {
 
     let rendered = markdown.render(value)
 
-    if (value.includes('\n')) 
+    if (value.includes('\n'))
       return rendered
 
     const document = new JSDOM(rendered).window.document
     const p = document.querySelector('p')
-    
+
     return p.innerHTML
   },
 
@@ -50,5 +51,51 @@ module.exports = {
     endpoint.searchParams.append('iframe', true)
 
     return await EleventyFetch(endpoint.toString(), { duration: '1d', type: 'json' })
+  },
+  metatags: {
+    isAsync: true,
+    function: async function (url) {
+      console.log('[METATAGS]', url)
+      try {
+        const html = await EleventyFetch(url, { duration: '0s', type: 'text' })
+        const document = parse(html)
+        const rawMeta = {}
+        rawMeta.title = document.querySelector('title')?.innerText;
+
+        const metaTags = [...document.querySelectorAll('meta')]
+        metaTags.forEach(meta => {
+          if (meta.hasAttribute('name')) {
+            rawMeta[meta.getAttribute('name')] = meta.getAttribute('content')
+          }
+
+          if (meta.hasAttribute('property')) {
+            rawMeta[meta.getAttribute('property')] = meta.getAttribute('content')
+          }
+        })
+
+        metadata = {
+          title: rawMeta.title ? rawMeta.title : null,
+          description: rawMeta.description
+            ? rawMeta.description
+            : rawMeta['og:description']
+              ? rawMeta['og:description']
+              : rawMeta['twitter:description']
+                ? rawMeta['twitter:description']
+                : null,
+          url,
+          image: rawMeta['og:image']
+            ? rawMeta['og:image']
+            : rawMeta['twitter:image']
+              ? rawMeta['twitter:image']
+              : null,
+          themeColor: rawMeta['theme-color']
+        }
+
+        return metadata
+      } catch (e) {
+        console.error('[ERROR]', e)
+        return { url, title: '', description: null }
+      }
+    }
   }
 }

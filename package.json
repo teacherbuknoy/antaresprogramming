@@ -40,6 +40,7 @@
     "markdown-it-attrs": "^4.1.6",
     "markdown-it-deflist": "^2.1.0",
     "markdown-it-footnote": "^3.0.3",
+    "node-html-parser": "^6.1.13",
     "path": "^0.12.7",
     "prettier": "^3.0.0",
     "sass": "^1.63.6",

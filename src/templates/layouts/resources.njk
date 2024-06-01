@@ -1,0 +1,28 @@
+{% extends "./main.njk" %}
+{% from "meta/utils.njk" import icon,
+logo %}
+
+{% block content %}
+  {% include "ui/navigation.njk" %}
+  <article class="post" aria-labelledby="post-title">
+    <section class="section section--wide margin-block--xl">
+      <h1 id="post-title" class="post__title">{{ title | safe }}</h1>
+      <div class="d-flex jc--space-between">
+        <time datetime="{{ page.date | machineReadableDate }}">{{ page.date | humanReadableDate }}</time>
+      </div>
+    </section>
+    <section class="section post__body">
+      <h2>Links</h2>
+      <div class="link-grid" style="width: 90%">
+        {% for url in urls %}
+          {% setAsync "meta" %}{{ url | metatags | dump | safe }}{% endsetAsync %}
+          {% set metadata = utils.jsonify(meta) %}
+          {% include 'ui/social-share-card.njk' %}
+        {% endfor %}
+      </div>
+    </section>
+    <section class="post__body">
+      {{ content | safe }}
+    </section>
+  </article>
+{% endblock %}

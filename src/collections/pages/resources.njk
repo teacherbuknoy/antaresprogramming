@@ -1,0 +1,17 @@
+---
+title: 'Resources - Antares Programming'
+permalink: /resources/
+---
+
+<section class="section section--wide">
+  <h1 class="section__heading">Mga Resources</h1>
+  <ul class="collection">
+    {% for link in collections.resources | reverse %}
+      <li>
+        <a href="{{ link.url }}" target="_blank" rel="noopener" class="no-arrow">
+          <span>{{ link.data.title }}</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

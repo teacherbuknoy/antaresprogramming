@@ -9,7 +9,19 @@ module.exports = function (eleventy) {
 
   Object.keys(passthrough).forEach(key => eleventy.addPassthroughCopy(passthrough[key]()))
   Object.keys(collections).forEach(key => eleventy.addCollection(key, collections[key]))
-  Object.keys(filters).forEach(key => eleventy.addFilter(key, filters[key]))
+  Object.keys(filters).forEach(key => {
+    const filter = filters[key]
+
+    console.log('[FILTERS]', `Adding ${key}`)
+    if (filter.isAsync) {
+      eleventy.addAsyncFilter(key, filters[key].function)
+    } else {
+      if (filters[key].function != null)
+        eleventy.addFilter(key, filters[key].function)
+      else
+        eleventy.addFilter(key, filters[key])
+    }
+  })
   Object.keys(watchtargets).forEach(key => eleventy.addWatchTarget(watchtargets[key]()))
 
   let envIsProduction = process.env.ELEVENTY_ENV === 'production'
@@ -52,7 +64,7 @@ module.exports = function (eleventy) {
   mdLib.use(require('markdown-it-attrs'))
   mdLib.disable('code')
   eleventy.setLibrary('md', mdLib)
-  
+
   return {
     dir: {
       input: 'src',
