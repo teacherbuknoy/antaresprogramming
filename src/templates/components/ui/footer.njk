@@ -18,7 +18,7 @@
         <ul class="button-list">
           {% for key in site.contact | keys %}
           {% set item = site.contact[key] %}
-            <li><a href="{{ item.url }}" class="button" target="_blank">{{ item.name if item.name.length > 0 else key }}</a></li>
+            <li><a rel="me" href="{{ item.url }}" class="button" target="_blank">{{ item.name if item.name.length > 0 else key }}</a></li>
           {% endfor %}
         </ul>
       </nav>
