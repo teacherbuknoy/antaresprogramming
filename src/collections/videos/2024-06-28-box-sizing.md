@@ -8,6 +8,8 @@ author: teacherbuknoy
 link: 
   label: Panoorin sa YouTube
   url: https://youtu.be/0orT3dMIUmc
+video:
+  filename: box-sizing.mp4
 cover:
   folder: box-sizing
   filename: box-sizing.jpg

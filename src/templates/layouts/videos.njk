@@ -3,6 +3,17 @@
 logo %}
 {% block content %}
   {% include "ui/navigation.njk" %}
-
+  <article class="post h-entry" aria-labelledby="post-title">
+    <section class="section section--wide margin-block--xl">
+      <h1 id="post-title p-name" class="post__title">{{ title | safe }}</h1>
+      <div class="d-flex jc--space-between">
+        <time class="dt-published" datetime="{{ page.date | machineReadableDate }}">{{ page.date | humanReadableDate }}</time>
+      </div>
+      <a href="{{ page.url }}" hidden="hidden" class="u-url">Canonical link</a>
+    </section>
+    <section class="section post__body e-content">
+      {{ content | safe }}
+    </section>
+  </article>
   {% include "ui/footer.njk" %}
 {% endblock %}
