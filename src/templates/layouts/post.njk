@@ -11,6 +11,10 @@ logo %}
         <time class="dt-published" datetime="{{ page.date | machineReadableDate }}">{{ page.date | humanReadableDate }}</time>
       </div>
       <a href="{{ page.url }}" hidden="hidden" class="u-url">Canonical link</a>
+      <a hidden="hidden" rel="author" class="p-author h-card" href="{{ authors[author].url }}">{{ authors[author].name }}</a>
+      {% for link in syndication %}
+        <a href="{{ link }}" rel="syndication" class="u-syndication"></a>
+      {% endfor %}
     </section>
     <section class="section post__body e-content">
       {{ content | safe }}
