@@ -9,16 +9,18 @@ logo %}
         cover.folder %}
       <video 
           crossorigin
-          lang="{{ video.lang if video.lang else 'fil' }}"
+          lang="{{ video.lang if video.lang else 'tl' }}"
           class="u-video" controls 
           width="{{ 1080 if type === 'short' else 1920 }}"
           height="{{ 1920 if type === 'short' else 1080 }}">
         {% if video.captions %}
         {% for caption in video.captions %}
-          <track kind="caption" 
+          <track 
+            {{ 'default' if caption.isDefault }}
+            kind="captions" 
             label="{{ caption.label }}" 
             src="{{ caption.src }}"
-            srclang="{{ caption.lang if caption.lang else 'fil' }}">
+            srclang="{{ caption.lang if caption.lang else 'tl' }}">
           {% endfor %}
         {% endif %}
         <source type="video/webm" src="{{ site.api.images }}/tr:f-webm/videos/{{ folder }}/{{ video.filename }}">

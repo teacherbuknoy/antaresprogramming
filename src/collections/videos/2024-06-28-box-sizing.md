@@ -13,6 +13,7 @@ video:
   captions: 
     - label: Filipino
       src: /assets/files/videos/box-sizing/box-sizing.vtt
+      isDefault: true
 cover:
   folder: box-sizing
   filename: box-sizing.jpg
