@@ -97,5 +97,6 @@ module.exports = {
         return { url, title: '', description: null }
       }
     }
-  }
+  },
+  toDate: str => new Date(Date.parse(str)),
 }

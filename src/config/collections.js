@@ -53,5 +53,16 @@ module.exports = {
       "src/collections/resources/*.njk",
       "src/collections/resources/*.md",
     ])
-  }
+  },
+  everything: (collections) => collections.getFilteredByGlob([
+    "src/collections/infographics/*.html",
+    "src/collections/infographics/*.njk",
+    "src/collections/infographics/*.md",
+    "src/collections/videos/*.html",
+    "src/collections/videos/*.njk",
+    "src/collections/videos/*.md",
+    "src/collections/articles/*.html",
+    "src/collections/articles/*.njk",
+    "src/collections/articles/*.md",
+  ])
 }

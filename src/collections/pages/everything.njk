@@ -1,0 +1,78 @@
+---
+eleventyExcludeFromCollections: true
+layout: null
+permalink: /rss.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+  xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+  xmlns:georss="http://www.georss.org/georss"
+  xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#">
+
+  {% set preferredDomain = site.domains | selectattr('isPreferred') | first %}
+  <channel>
+    <title>{{ site.title | safe }}</title>
+    <atom:link href="https://{{ preferredDomain.domain | safe }}/feed.xml" rel="self" type="application/rss+xml"/>
+    <link>https://{{ preferredDomain.domain | safe }}/</link>
+    <description>{{ site.description | safe }}</description>
+    <lastBuildDate>{{ generated | toDate | dateToRfc822 }}</lastBuildDate>
+    <language>tl</language>
+    <sy:updatePeriod>hourly</sy:updatePeriod>
+    <sy:updateFrequency>1</sy:updateFrequency>
+    <generator>Eleventy v2.0.0</generator>
+    <managingEditor>{{ site.contact.email.identifier }} ({{ site.title }})</managingEditor>
+
+    <image>
+      <url>https://ik.imagekit.io/antaresphdev/tr:w-128/icon.png</url>
+      <title>{{ site.title | safe }}</title>
+      <link>https://{{ preferredDomain.domain | safe }}/</link>
+      <width>64</width>
+      <height>64</height>
+    </image>
+
+    {% for post in collections.everything | reverse %}
+      {% set absolutePostUrl %}https://{{ preferredDomain.domain | safe }}{{ post.url }}{% endset %}
+      {% set person = authors[post.data.author] %}
+      <item>
+        <title>{{ post.data.title | safe }}</title>
+        <description>
+          <![CDATA[{{ post.data.description | safe }}]]>
+        </description>
+        <link>
+          {% if post.data.link %}
+            {{ post.data.link.url }}
+          {% else %}
+            {{ absolutePostUrl }}  
+          {% endif %}
+        </link>
+        <guid isPermalink="true">
+          {% if post.data.link != null and post.data.video == null %}
+            {{ post.data.link.url }}
+          {% else %}
+            {{ absolutePostUrl }}  
+          {% endif %}</guid>
+        <comments>{{ absolutePostUrl }}#webmention-replies</comments>
+        <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
+        {% for tag in post.data.tags %}
+          <category><![CDATA[{{ tag }}]]></category>
+        {% endfor %}
+        <content:encoded>
+          <![CDATA[{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | safe }}]]>
+        </content:encoded>
+        {% if post.data.video %}
+          {% set folder = video.folder if video.folder else cover.folder %}
+          
+          <enclosure 
+            url="{{ site.api.images }}/tr:f-mp4/videos/{{ folder }}/{{ post.video.filename }}"
+            type="video/mp4"
+           />
+        {% endif %}
+      </item>
+    {% endfor %}
+  </channel>
+</rss>
