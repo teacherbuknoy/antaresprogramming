@@ -10,6 +10,9 @@ link:
   url: https://youtu.be/0orT3dMIUmc
 video:
   filename: box-sizing.mp4
+  captions: 
+    - label: Filipino
+      src: /assets/files/videos/box-sizing/box-sizing.vtt
 cover:
   folder: box-sizing
   filename: box-sizing.jpg

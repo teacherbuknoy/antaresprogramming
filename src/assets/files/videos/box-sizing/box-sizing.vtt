@@ -1,0 +1,86 @@
+﻿WEBVTT
+
+00:00:00.000 --> 00:00:02.988
+Sine-set ng CSS property
+na box-sizing kung paano
+
+00:00:03.012 --> 00:00:06.012
+kina-calculate ang total na
+width at height ng isang element.
+
+00:00:06.036 --> 00:00:08.036
+May dalawa itong values:
+
+00:00:08.060 --> 00:00:10.060
+ang border-box at content-box.
+
+00:00:11.387 --> 00:00:14.387
+Bago natin tingnan ang effects
+ng dalawang values na ito,
+
+00:00:14.411 --> 00:00:16.411
+kailangan nating tandaan na lahat ng
+
+00:00:16.435 --> 00:00:18.435
+HTML elements ay mga box,
+
+00:00:18.459 --> 00:00:20.459
+kahit ano pa ang hitsura nito visually.
+
+00:00:20.783 --> 00:00:23.583
+Lahat ng HTML elements ay may margin,
+
+00:00:23.607 --> 00:00:26.007
+border, padding,
+
+00:00:26.031 --> 00:00:28.031
+at content.
+
+00:00:28.055 --> 00:00:31.055
+content-box ang default
+value ng box-sizing.
+
+00:00:31.079 --> 00:00:34.779
+Kapag content-box ang
+value ng box-sizing property,
+
+00:00:34.803 --> 00:00:38.603
+kina-calculate ang height at width
+nang hindi kasama ang padding at border.
+
+00:00:38.627 --> 00:00:43.327
+Halimbawa, kapag nag-set ka
+ng width: 100px sa isang element,
+
+00:00:43.351 --> 00:00:45.351
+hindi kasama sa 100 pixels na ito
+
+00:00:45.375 --> 00:00:47.375
+ang size ng padding at border.
+
+00:00:47.799 --> 00:00:50.199
+Kung may padding na 20 pixels ang element
+
+00:00:50.223 --> 00:00:52.023
+at border na 2 pixels,
+
+00:00:52.047 --> 00:00:56.047
+ang actual na magiging
+width ng element ay 122 pixels.
+
+00:00:57.171 --> 00:01:00.171
+Kadalasan, hindi ito ang
+behavior na gusto mong mangyari.
+
+00:01:00.195 --> 00:01:04.895
+Para ma-disable ito, i-set ang
+box-sizing property to border-box.
+
+00:01:04.919 --> 00:01:06.519
+Sa value na ito,
+
+00:01:06.643 --> 00:01:08.643
+kasama na sa 100 pixels na width ang size
+
+00:01:08.667 --> 00:01:10.667
+ng padding at border.

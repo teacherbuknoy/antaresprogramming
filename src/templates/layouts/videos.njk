@@ -1,19 +1,55 @@
 {% extends "./main.njk" %}
 {% from "meta/utils.njk" import icon,
 logo %}
+{% set layoutStylesheets = ['video-entry.css'] %}
 {% block content %}
-  {% include "ui/navigation.njk" %}
-  <article class="post h-entry" aria-labelledby="post-title">
-    <section class="section section--wide margin-block--xl">
-      <h1 id="post-title p-name" class="post__title">{{ title | safe }}</h1>
-      <div class="d-flex jc--space-between">
-        <time class="dt-published" datetime="{{ page.date | machineReadableDate }}">{{ page.date | humanReadableDate }}</time>
-      </div>
-      <a href="{{ page.url }}" hidden="hidden" class="u-url">Canonical link</a>
-    </section>
-    <section class="section post__body e-content">
-      {{ content | safe }}
-    </section>
-  </article>
-  {% include "ui/footer.njk" %}
-{% endblock %}
+  <div class="with-sidebar">
+    <article class="entry--video {{ 'short' if type === 'short' }} not-sidebar h-entry"aria-labelledby="post-title">
+      {% set folder = video.folder if video.folder else 
+        cover.folder %}
+      <video 
+          crossorigin
+          lang="{{ video.lang if video.lang else 'fil' }}"
+          class="u-video" controls 
+          width="{{ 1080 if type === 'short' else 1920 }}"
+          height="{{ 1920 if type === 'short' else 1080 }}"
+        >
+        {% if video.captions %}
+          {% for caption in video.captions %}
+            <track kind="caption" 
+              label="{{ caption.label }}" 
+              src="{{ caption.src }}"
+              srclang="{{ caption.lang if caption.lang else 'fil' }}">
+            {% endfor %}
+          {% endif %}
+          <source type="video/webm" src="{{ site.api.images }}/tr:f-webm/videos/{{ folder }}/{{ video.filename }}">
+          <source type="video/mp4" src="{{ site.api.images }}/tr:f-mp4/videos/{{ folder }}/{{ video.filename }}">
+        </video>
+        <div class="entry__meta">
+          {{ logo('logo__image') }}
+          <h1 class="entry__title p-name">{{ title | safe }}</h1>
+          <p class="entry__description p-summary">{{ description | safe }}</p>
+          <a class="p-author" href="{{ authors[author].url }}">{{ authors[author].name }}</a>
+        </div>
+      </article>
+      <aside class="sidebar">
+        <nav class="video-list">
+          <h2 class="font-sans uppercase fs-6 weight-700">Other videos</h2>
+          <ul>
+            {% for video in collections.shorts %}
+              <li>
+                {% include "ui/entry--video.njk" %}
+              </li>
+            {% endfor %}
+            {% for video in collections.videos %}
+              <li>
+                {% include "ui/entry--video.njk" %}
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </aside>
+    </div>
+    {% include "ui/navigation.njk" %}
+    {% include "ui/footer.njk" %}
+  {% endblock %}

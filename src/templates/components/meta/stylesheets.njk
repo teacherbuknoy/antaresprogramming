@@ -1,1 +1,7 @@
 <link rel="stylesheet" href="/assets/styles/styles.css">
+{% for style in stylesheets %}
+<link rel="stylesheet" href="/assets/styles/{{ style }}">
+{% endfor %}
+{% for style in layoutStylesheets %}
+<link rel="stylesheet" href="/assets/styles/{{ style }}">
+{% endfor %}
