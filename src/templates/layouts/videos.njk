@@ -3,7 +3,7 @@
 logo %}
 {% set layoutStylesheets = ['video-entry.css'] %}
 {% block content %}
-  <div class="with-sidebar">
+  <div class="with-sidebar" style="--sidebar-gap: 0;">
     <article class="entry--video {{ 'short' if type === 'short' }} not-sidebar h-entry"aria-labelledby="post-title">
       {% set folder = video.folder if video.folder else 
         cover.folder %}
@@ -12,19 +12,18 @@ logo %}
           lang="{{ video.lang if video.lang else 'fil' }}"
           class="u-video" controls 
           width="{{ 1080 if type === 'short' else 1920 }}"
-          height="{{ 1920 if type === 'short' else 1080 }}"
-        >
+          height="{{ 1920 if type === 'short' else 1080 }}">
         {% if video.captions %}
-          {% for caption in video.captions %}
-            <track kind="caption" 
-              label="{{ caption.label }}" 
-              src="{{ caption.src }}"
-              srclang="{{ caption.lang if caption.lang else 'fil' }}">
-            {% endfor %}
-          {% endif %}
-          <source type="video/webm" src="{{ site.api.images }}/tr:f-webm/videos/{{ folder }}/{{ video.filename }}">
-          <source type="video/mp4" src="{{ site.api.images }}/tr:f-mp4/videos/{{ folder }}/{{ video.filename }}">
-        </video>
+        {% for caption in video.captions %}
+          <track kind="caption" 
+            label="{{ caption.label }}" 
+            src="{{ caption.src }}"
+            srclang="{{ caption.lang if caption.lang else 'fil' }}">
+          {% endfor %}
+        {% endif %}
+        <source type="video/webm" src="{{ site.api.images }}/tr:f-webm/videos/{{ folder }}/{{ video.filename }}">
+        <source type="video/mp4" src="{{ site.api.images }}/tr:f-mp4/videos/{{ folder }}/{{ video.filename }}">
+      </video>
         <div class="entry__meta">
           {{ logo('logo__image') }}
           <h1 class="entry__title p-name">{{ title | safe }}</h1>
@@ -32,7 +31,7 @@ logo %}
           <a class="p-author" href="{{ authors[author].url }}">{{ authors[author].name }}</a>
         </div>
       </article>
-      <aside class="sidebar">
+      <aside class="sidebar padding">
         <nav class="video-list">
           <h2 class="font-sans uppercase fs-6 weight-700">Other videos</h2>
           <ul>
