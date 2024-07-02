@@ -27,13 +27,15 @@
       font-family            : var(--font-sans);
       color                  : hsl(var(--fg-default));
       align-content          : end;
-    }
 
-    .article__title {
       a {
         text-decoration: inherit;
         color          : inherit;
       }
+    }
+
+    .article__metadata {
+      font-size: var(--type-size-7);
     }
 
     img {
