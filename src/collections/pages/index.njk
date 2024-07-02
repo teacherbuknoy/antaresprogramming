@@ -47,18 +47,3 @@ icon %}
   {% set limit = 3 %}
   {% include "ui/collections--articles.njk" %}
 </section>
-
-<address class="h-card hidden">
-  <a href="https://antaresph.dev" class="p-name p-org u-url">Antares Programming</a>
-  <a href="{{ site.contact.email.url }}" class="u-email" rel="me">{{ site.contact.email.identifier }}</a>
-  <img src="/assets/images/logo.svg" alt="Antares Programming" class="u-logo u-photo">
-  <p class="p-note">For Filipino web developers. Posting infographics, articles, and videos in Filipino wherever it makes sense.</p>
-  <ul class="button-list">
-    {% for key in site.contact | keys %}
-      {% set item = site.contact[key] %}
-      <li>
-        <a rel="me" href="{{ item.url }}" class="hidden u-url u-uid" target="_blank">{{ item.name if item.name.length > 0 else key }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-</address>
