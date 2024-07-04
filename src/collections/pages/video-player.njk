@@ -52,6 +52,5 @@ permalink: /player/{{ pagination.items[0].data.title | slugify }}/index.html
     <a href="{{ authors[author].url }}" rel="author" class="p-author h-card">{{ authors[author].name }}</a>
     <time datetime="{{ page.date | machineReadableDate }}" class="dt-published">{{ page.date | humanReadableDate }}</time>
   </div>
-  {% include "ui/video-player.njk" %}
 </article>
 {% endfor %}

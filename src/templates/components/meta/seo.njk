@@ -27,10 +27,15 @@
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="{{ domain.domain }}{{ page.url if page.url }}">
+<meta property="twitter:url" content="https://{{ domain.domain }}{{ page.url if page.url }}">
 <meta property="twitter:title" content="{{ title if title else site.title }}">
 <meta property="twitter:description" content="{{ description if description else site.description }}">
 <meta property="twitter:image" content="{{ twitter_image }}">
+{% if video %}
+<meta name="twitter:player" content="https://{{ domain.domain }}/player/{{ title | slugify }}/" />
+<meta name="twitter:player:width" content="{{ 1080 if type === 'short' else 1920 }}" />
+<meta name="twitter:player:height" content="{{ 1920 if type === 'short' else 1080 }}" />
+{% endif %}
 
 <!-- Feeds -->
 <link rel="alternate" type="application/rss+xml" title="Articles by Francis Rubio" href="/rss-articles.xml">
