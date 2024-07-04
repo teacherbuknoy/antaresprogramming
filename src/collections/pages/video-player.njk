@@ -1,0 +1,57 @@
+---
+layout: page.njk
+pagination:
+  data: collections.shorts
+  size: 1
+  alias: shorts
+  reverse: true
+stylesheets:
+  - video-entry.css
+permalink: /player/{{ pagination.items[0].data.title | slugify }}/index.html
+---
+{% from "meta/utils.njk" import icon,logo %}
+{% for item in pagination.items %}
+{% set video = item.data.video %}
+{% set cover = item.data.cover %}
+{% set type = item.data.type %}
+{% set syndication = item.data.syndication %}
+{% set title = item.data.title %}
+{% set description = item.data.description %}
+{% set author = item.data.author %}
+{% set page = item %}
+<article class="entry--video h-entry {{ type }}" aria-labelledby="post-title">
+  {% set folder = video.folder if video.folder else cover.folder %}
+  <a href="{{ page.url }}" class="u-url"></a>
+  {% if video %}
+    <video
+      crossorigin
+      lang="{{ video.lang if video.lang else 'tl' }}"
+      class="video-player u-video e-content" controls
+      width="{{ 1080 if type === 'short' else 1920 }}"
+      height="{{ 1920 if type === 'short' else 1080 }}"
+    >
+      {% if video.captions %}
+      {% for caption in video.captions %}
+      <track
+        {{ 'default' if caption.isDefault }}
+        kind="captions"
+        label="{{ caption.label }}"
+        src="{{ caption.src }}"
+        srclang="{{ caption.lang if caption.lang else 'tl' }}"
+      >
+      {% endfor %}
+      {% endif %}
+      <source type="video/webm" src="{{ site.api.images }}/tr:f-webm/videos/{{ folder }}/{{ video.filename }}">
+      <source type="video/mp4" src="{{ site.api.images }}/tr:f-mp4/videos/{{ folder }}/{{ video.filename }}">
+    </video>
+  {% endif %}
+  <div class="entry__meta">
+    {{ logo('logo__image') }}
+    <h1 class="entry__title p-name">{{ title | safe }}</h1>
+    <p class="entry__description p-summary">{{ description | safe }}</p>
+    <a href="{{ authors[author].url }}" rel="author" class="p-author h-card">{{ authors[author].name }}</a>
+    <time datetime="{{ page.date | machineReadableDate }}" class="dt-published">{{ page.date | humanReadableDate }}</time>
+  </div>
+  {% include "ui/video-player.njk" %}
+</article>
+{% endfor %}
