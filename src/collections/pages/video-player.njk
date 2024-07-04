@@ -45,7 +45,7 @@ permalink: /player/{{ pagination.items[0].data.title | slugify }}/index.html
       <source type="video/mp4" src="{{ site.api.images }}/tr:f-mp4/videos/{{ folder }}/{{ video.filename }}">
     </video>
   {% endif %}
-  <div class="entry__meta">
+  <div class="entry__meta" style="opacity: 0; pointer-events: none;">
     {{ logo('logo__image') }}
     <h1 class="entry__title p-name">{{ title | safe }}</h1>
     <p class="entry__description p-summary">{{ description | safe }}</p>
