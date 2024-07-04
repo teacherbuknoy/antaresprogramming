@@ -24,6 +24,14 @@
 <meta property="og:title" content="{{ title if title else site.title }}">
 <meta property="og:description" content="{{ description if description else site.description }}">
 <meta property="og:image" content="{{ og_image }}">
+{% if video %}
+{% set folder = video.folder if video.folder else cover.folder %}
+<meta property="og:video" content="{{ site.api.images }}/tr:f-webm/videos/{{ folder }}/{{ video.filename }}">  
+<meta property="og:video:secure_url" content="https://{{ domain.domain }}/player/{{ title | slugify }}/">  
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="{{ 1080 if type === 'short' else 1920 }}">
+<meta property="og:video:height" content="{{ 1920 if type === 'short' else 1080 }}">
+{% endif %}
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
