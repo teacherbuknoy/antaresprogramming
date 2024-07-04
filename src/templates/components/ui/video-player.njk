@@ -1,0 +1,41 @@
+<article class="entry--video {{ 'short' if type === 'short' }} not-sidebar h-entry" aria-labelledby="post-title">
+  {% set folder = video.folder if video.folder else 
+    cover.folder %}
+  <a href="{{ page.url }}" class="u-url"></a>
+  {% for link in syndication %}
+    <a href="{{ link }}" rel="syndication" class="u-syndication"></a>
+  {% endfor %}
+  {% if video %}
+    <video 
+          crossorigin
+          lang="{{ video.lang if video.lang else 'tl' }}"
+          class="video-player u-video e-content" controls 
+          width="{{ 1080 if type === 'short' else 1920 }}"
+          height="{{ 1920 if type === 'short' else 1080 }}">
+      {% if video.captions %}
+        {% for caption in video.captions %}
+          <track 
+            {{ 'default' if caption.isDefault }}
+            kind="captions" 
+            label="{{ caption.label }}" 
+            src="{{ caption.src }}"
+            srclang="{{ caption.lang if caption.lang else 'tl' }}">
+          {% endfor %}
+        {% endif %}
+        <source type="video/webm" src="{{ site.api.images }}/tr:f-webm/videos/{{ folder }}/{{ video.filename }}">
+        <source type="video/mp4" src="{{ site.api.images }}/tr:f-mp4/videos/{{ folder }}/{{ video.filename }}">
+      </video>
+    {% else %}
+      {% set embed = utils.getEmbedCode(link.url) %}
+      <iframe class="video-player " width="916" height="515" 
+            src="https://www.youtube.com/embed/{{ link.embedCode if link.embedCode else embed }}" 
+            title="{{ title | safe }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    {% endif %}
+    <div class="entry__meta">
+      {{ logo('logo__image') }}
+      <h1 class="entry__title p-name">{{ title | safe }}</h1>
+      <p class="entry__description p-summary">{{ description | safe }}</p>
+      <a rel="author" class="p-author h-card" href="{{ authors[author].url }}">{{ authors[author].name }}</a>
+      <time class="dt-published" datetime="{{ page.date | machineReadableDate }}">{{ page.date | humanReadableDate }}</time>
+    </div>
+  </article>
