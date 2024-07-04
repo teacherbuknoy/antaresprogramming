@@ -1,0 +1,154 @@
+﻿WEBVTT
+
+00:00:00.500 --> 00:00:04.300
+Every year, may bagong features na
+nadadagdag sa HTML, CSS, at JavaScript.
+
+00:00:04.824 --> 00:00:08.224
+Pero siyempre, hindi ito agad puwedeng
+gamitin sa mga production websites
+
+00:00:08.248 --> 00:00:10.248
+dahil hindi agad ito
+supported ng mga browsers.
+
+00:00:11.072 --> 00:00:14.372
+Ang Baseline ay isang metric
+na makikita sa mga resources
+
+00:00:14.396 --> 00:00:16.396
+gaya ng MDN Web Docs at web.dev.
+
+00:00:17.420 --> 00:00:20.420
+Kapag Baseline Newly
+Available na ang isang feature,
+
+00:00:20.444 --> 00:00:23.444
+ibig sabihin, supported na
+ng latest browsers.
+
+00:00:23.468 --> 00:00:25.768
+Puwede mo na itong gamitin sa mga websites,
+
+00:00:25.792 --> 00:00:28.170
+basta may fallback ka para
+sa mga mas lumang browsers.
+
+00:00:29.352 --> 00:00:31.352
+Ang "fallback" ay isang
+alternative way para
+
+00:00:31.377 --> 00:00:33.143
+hindi masira ang experience ng user
+
+00:00:33.167 --> 00:00:35.167
+kahit na mas luma ang
+browser na gamit nila.
+
+00:00:36.071 --> 00:00:38.188
+Halimbawa, ngayong 2024,
+
+00:00:38.466 --> 00:00:41.011
+supported na ng lahat ng
+latest browsers ang subgrid.
+
+00:00:41.733 --> 00:00:43.508
+Ito ang level 2 ng CSS Grid,
+
+00:00:43.532 --> 00:00:44.373
+at gamit ito,
+
+00:00:44.397 --> 00:00:45.669
+puwede nang ma-inherit ng
+
+00:00:45.694 --> 00:00:47.018
+mga element ang grid na
+
+00:00:47.042 --> 00:00:48.470
+naka-set sa parent element nila.
+
+00:00:49.566 --> 00:00:51.715
+Gagana ang subgrid sa mga bagong browsers,
+
+00:00:52.041 --> 00:00:54.675
+pero puwedeng masira ang layout
+mo sa mga mas lumang version.
+
+00:00:55.647 --> 00:00:57.329
+Paano puwedeng mag-provide ng fallback?
+
+00:00:58.374 --> 00:01:01.104
+Sa CSS, puwedeng
+gamitin ang feature queries.
+
+00:01:01.713 --> 00:01:04.022
+Kagaya din ng media
+queries ang feature queries,
+
+00:01:04.490 --> 00:01:06.807
+pero sa halip na tingnan
+ang size ng browser viewport,
+
+00:01:07.218 --> 00:01:08.828
+tinitingnan nito kung supported ba
+
+00:01:08.852 --> 00:01:10.431
+ng browser ang isang bagong feature.
+
+00:01:11.527 --> 00:01:13.527
+Bago gamitin ang subgrid, gumawa muna
+
+00:01:13.551 --> 00:01:15.551
+tayo ng layout para sa lahat ng browsers na
+
+00:01:15.575 --> 00:01:16.944
+walang support para sa subgrid.
+
+00:01:17.648 --> 00:01:19.711
+Ito ang fallback,
+or in other words,
+
+00:01:19.735 --> 00:01:22.018
+default styling para
+sa lahat ng browsers.
+
+00:01:22.622 --> 00:01:24.923
+Pagkatapos, gamitin natin ang feature query
+
+00:01:24.947 --> 00:01:27.645
+para tanungin ang browser kung
+supported ba nito ang subgrid.
+
+00:01:28.453 --> 00:01:30.453
+Kapag hindi supported
+ng browser ang feature,
+
+00:01:30.477 --> 00:01:31.675
+ini-ignore lang ito.
+
+00:01:33.108 --> 00:01:34.631
+ Sa loob ng feature query,
+
+00:01:34.655 --> 00:01:36.833
+puwede nating ilagay ang
+lahat ng styles na related
+
+00:01:36.857 --> 00:01:39.031
+sa bagong layout na
+gumagamit ng subgrid.
+
+00:01:40.432 --> 00:01:42.980
+Mag-a-apply ang default
+styles sa lahat ng browsers.
+
+00:01:43.350 --> 00:01:44.777
+Pero para sa mga mas bagong browser
+
+00:01:44.801 --> 00:01:45.968
+na may support for subgrid,
+
+00:01:46.246 --> 00:01:48.174
+mao-override ang fallback styles ng styles
+
+00:01:48.198 --> 00:01:49.968
+na nasa loob ng feature query.
