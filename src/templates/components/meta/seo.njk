@@ -45,6 +45,10 @@
 <meta name="twitter:player:height" content="{{ 1920 if type === 'short' else 1080 }}" />
 {% endif %}
 
+{# Fediverse #}
+{% set authorUsername = author if author else "teacherbuknoy" %}
+<meta name="fediverse:creator" content="{{ authors[authorUsername].fediverse }}">
+
 <!-- Feeds -->
 <link rel="alternate" type="application/rss+xml" title="Articles by Francis Rubio" href="/rss-articles.xml">
 
