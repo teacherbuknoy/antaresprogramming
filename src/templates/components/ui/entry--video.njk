@@ -8,7 +8,7 @@
   {% set height = cover.height %}
   {% set container = "videos" %}
   {% set videoType = video.data.type %}
-  {% set videoLink = video.url if video.data.video.filename else video.data.link.url %}
+  {% set videoLink = video.url if video.data.video else video.data.link.url %}
   {% set isNewTab = video.data.video.filename == null %}
   <div class="article__thumbnail">
     <a href="{{ videoLink }}" {{ 'target="_blank"' if isNewTab }}>{% include "ui/picture.njk" %}</a>

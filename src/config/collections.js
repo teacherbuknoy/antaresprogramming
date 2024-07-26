@@ -31,6 +31,14 @@ module.exports = {
     ]).filter(video => video.data.type === 'short')
   },
 
+  media: function (collections) {
+    return collections.getFilteredByGlob([
+      "src/collections/videos/*.html",
+      "src/collections/videos/*.njk",
+      "src/collections/videos/*.md",
+    ])
+  },
+
   labs: function (collections) {
     return collections.getFilteredByGlob([
       "src/collections/labs/*.html",

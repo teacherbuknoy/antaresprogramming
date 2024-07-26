@@ -2,6 +2,7 @@
   display           : grid;
   grid-template-rows: 100vh;
   padding           : 0;
+  position          : relative;
 
   .video-player {
     background-color: black;

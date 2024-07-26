@@ -4,7 +4,11 @@ logo %}
 {% set layoutStylesheets = ['video-entry.css'] %}
 {% block content %}
   <div class="with-sidebar" style="--sidebar-gap: 0;">
-    {% include "ui/video-player.njk" %}
+    {% if video.provider == null or video.provider == 'html' %}
+      {% include "ui/video-player.njk" %}
+    {% else %}
+      {% include "ui/video-embed.njk" %}
+    {% endif %}
     <aside class="sidebar padding">
       <nav class="video-list">
         <h2 class="font-sans uppercase fs-6 weight-700">Other videos</h2>

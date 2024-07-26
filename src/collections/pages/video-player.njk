@@ -1,7 +1,7 @@
 ---
 layout: page.njk
 pagination:
-  data: collections.shorts
+  data: collections.media
   size: 1
   alias: shorts
   reverse: true
@@ -22,7 +22,7 @@ permalink: /player/{{ pagination.items[0].data.title | slugify }}/index.html
 <article class="entry--video h-entry {{ type }}" aria-labelledby="post-title">
   {% set folder = video.folder if video.folder else cover.folder %}
   <a href="{{ page.url }}" class="u-url"></a>
-  {% if video %}
+  {% if video.provider == null or video.provider == 'html' %}
     <video
       crossorigin
       lang="{{ video.lang if video.lang else 'tl' }}"
@@ -44,6 +44,8 @@ permalink: /player/{{ pagination.items[0].data.title | slugify }}/index.html
       <source type="video/webm" src="{{ site.api.images }}/tr:f-webm/videos/{{ folder }}/{{ video.filename }}">
       <source type="video/mp4" src="{{ site.api.images }}/tr:f-mp4/videos/{{ folder }}/{{ video.filename }}">
     </video>
+  {% elif video.provider === 'dailymotion' %}
+    <iframe style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden" frameborder="0" type="text/html" src="https://www.dailymotion.com/embed/video/{{ video.embedCode }}" width="100%" height="100%" allowfullscreen title="{{ video.title }}"></iframe>
   {% endif %}
   <div class="entry__meta" style="opacity: 0; pointer-events: none;">
     {{ logo('logo__image') }}

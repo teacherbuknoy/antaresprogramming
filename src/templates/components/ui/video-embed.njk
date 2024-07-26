@@ -1,0 +1,11 @@
+<article class="entry--video {{ 'short' if type === 'short' }} not-sidebar h-entry" aria-labelledby="post-title">
+  {% set folder = video.folder if video.folder else 
+    cover.folder %}
+  <a href="{{ page.url }}" class="u-url"></a>
+  {% for link in syndication %}
+    <a href="{{ link }}" rel="syndication" class="u-syndication"></a>
+  {% endfor %}
+  {% if video.provider === 'dailymotion' %}
+    <iframe style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden" frameborder="0" type="text/html" src="https://www.dailymotion.com/embed/video/{{ video.embedCode }}" width="100%" height="100%" allowfullscreen title="{{ video.title }}"></iframe>
+  {% endif %}
+</article>
