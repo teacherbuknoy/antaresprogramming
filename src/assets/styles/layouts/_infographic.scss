@@ -1,4 +1,4 @@
-.infographic {
+.infographic, .post {
   .header {
     padding-block-start  : calc(var(--space-xxxl) * 2);
     padding-block-end    : var(--space);
@@ -35,7 +35,7 @@
       align-items: center;
       gap        : var(--space-l);
       font-family: var(--font-sans);
-      color      : hsl(var(--primary-700) / 80%)
+      color      : hsl(var(--primary-900))
     }
   }
 

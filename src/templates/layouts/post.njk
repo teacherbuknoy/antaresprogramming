@@ -1,25 +1,46 @@
-{% extends "./main.njk" %}
-{% from "meta/utils.njk" import icon,
-logo %}
+{% extends "./page.njk" %}
+{% from "meta/utils.njk" import icon,logo %}
 {% block content %}
+  <div class="decoration">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
   {% include "ui/navigation.njk" %}
-
-  <article class="post h-entry" aria-labelledby="post-title">
-    <section class="section section--wide margin-block--xl">
-      <h1 id="post-title p-name" class="post__title">{{ title | safe }}</h1>
-      <div class="d-flex jc--space-between">
+  <main class="post h-entry" aria-labelledby="post-title">
+    <header class="header">
+      <nav class="breadcrumb" aria-label="Breadcrumbs">
+        <ol class="list">
+          <li>
+            <a class="link" href="/">Home</a>
+          </li>
+          <li>
+            <a class="link" href="/infographics/">Articles</a>
+          </li>
+          <li>
+            <a class="link" href="./" aria-current="location">This post</a>
+          </li>
+        </ol>
+      </nav>
+      <h1 id="post-title" class="title">{{ title | markdown | safe }}</h1>
+      <p class="description">{{ description | markdown | safe }}</p>
+      <div class="meta">
+        <a href="{{ page.url }}" hidden="hidden" class="u-url">Canonical URL</a>
+        {% for link in syndication %}
+          <a href="{{ link }}" rel="syndication" class="u-syndication" hidden>{{ link }}</a>
+        {% endfor %}
+        <address class="byline p-author h-card">
+          <img src="{{ authors[author].photo }}" alt="{{ authors[author].name }}">
+          <p>by <a rel="author" href="{{ authors[author].profile }}">{{ authors[author].name }}</a>
+          </p>
+        </address>
+        <span class="separator" aria-hidden="true">/</span>
         <time class="dt-published" datetime="{{ page.date | machineReadableDate }}">{{ page.date | humanReadableDate }}</time>
       </div>
-      <a href="{{ page.url }}" hidden="hidden" class="u-url">Canonical link</a>
-      <a hidden="hidden" rel="author" class="p-author h-card" href="{{ authors[author].url }}">{{ authors[author].name }}</a>
-      {% for link in syndication %}
-        <a href="{{ link }}" rel="syndication" class="u-syndication"></a>
-      {% endfor %}
-    </section>
-    <section class="section post__body e-content">
+    </header>
+    <div class="content e-content">
       {{ content | safe }}
-    </section>
-  </article>
-
+    </div>
+  </main>
   {% include "ui/footer.njk" %}
 {% endblock %}
