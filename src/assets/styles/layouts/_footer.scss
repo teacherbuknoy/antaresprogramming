@@ -21,8 +21,9 @@
     flex-wrap: wrap;
 
     &>section {
-      flex   : 1;
-      padding: var(--space);
+      flex      : 1;
+      padding   : var(--space);
+      flex-basis: calc(var(--content-width) / 2);
     }
   }
 }
