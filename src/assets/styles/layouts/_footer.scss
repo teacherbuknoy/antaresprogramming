@@ -25,4 +25,8 @@
       padding: var(--space);
     }
   }
+
+  a:not([class]) {
+    text-decoration: underline;
+  }
 }

@@ -11,15 +11,15 @@
   {% set videoLink = video.url if video.data.video else video.data.link.url %}
   {% set isNewTab = video.data.video.filename == null %}
   <div class="article__thumbnail">
-    <a href="{{ videoLink }}" {{ 'target="_blank"' if isNewTab }}>{% include "ui/picture.njk" %}</a>
+    <a href="{{ videoLink }}" {{ 'target="_blank"' if isNewTab }} aria-labelledby="header-{{ video.data.title | slugify }}">{% include "ui/picture.njk" %}</a>
   </div>
   {% if videoType !== 'short' %}
-    <h3 class="article__title">
+    <h3 class="article__title" id="header-{{ video.data.title | slugify }}">
       <a href="{{ videoLink }}" {{ 'target="_blank"' if isNewTab }}>{{ video.data.title | safe }}</a>
     </h3>
   {% endif %}
   {% if videoType === 'short' %}
-    <h3 class="article__summary">
+    <h3 class="article__summary" id="header-{{ video.data.title | slugify }}">
       <a href="{{ videoLink }}" {{ 'target="_blank"' if isNewTab }}>{{ video.data.title | safe }}</a>
     </h3>
   {% endif %}
