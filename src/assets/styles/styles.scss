@@ -240,3 +240,7 @@ print;
   @import "utilities/visibility";
   @import "utilities/position";
 }
+
+a:not([class]) {
+  text-decoration: underline;
+}

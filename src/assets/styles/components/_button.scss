@@ -26,8 +26,8 @@
   }
 
   &.primary {
-    background-color: hsl(var(--primary-500));
-    border-color    : hsl(var(--primary-500));
+    background-color: hsl(var(--primary-500) / 25%);
+    border-color    : hsl(var(--primary-500) / 25%);
     color           : hsl(var(--primary-900));
 
     &:focus-visible,
