@@ -382,3 +382,26 @@ mark.mark {
   color           : hsl(var(--fg-contrast));
   padding-inline  : 0.25ch;
 }
+
+dl {
+  display              : grid;
+  grid-template-columns: auto auto;
+  width                : fit-content;
+  column-gap           : var(--space);
+}
+
+dt {
+  grid-column            : 1;
+  font-weight            : bold;
+  font-variation-settings: 'wght'700;
+  text-align             : end;
+
+  dt::after {
+    content: ':';
+  }
+}
+
+dd {
+  grid-column: 2/3;
+  margin     : 0;
+}

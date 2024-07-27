@@ -57,7 +57,7 @@
 }
 
 .success.toast {
-  --theme-color: hsl(var(--l-success-700));
+  --theme-color: hsl(var(--l-success-300));
 }
 
 .warning.toast {
@@ -65,5 +65,5 @@
 }
 
 .error.toast {
-  --theme-color: hsl(var(--l-error-700));
+  --theme-color: hsl(var(--l-error-100));
 }

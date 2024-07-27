@@ -7,6 +7,7 @@ class Stylesheets {
     this.inputFiles = {
       styles: 'styles.scss',
       post: 'post.scss',
+      donations: 'donations.scss',
       'video-entry': 'video-entry.scss'
     }
   }

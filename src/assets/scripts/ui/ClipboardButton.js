@@ -5,7 +5,7 @@ import { copyLink, copyInnerText } from "../utils/clipboard.js"
  * @author Francis Rubio
  * @param {HTMLButtonElement|null} element
  */
-function initializeClipboardButton(element, { callback = () => { }, error = () => { } }) {
+function initializeClipboardButton(element, { callback = () => { }, error = () => { }, type = 'link' }) {
   let button = element
 
   if (element == null) {
@@ -13,9 +13,17 @@ function initializeClipboardButton(element, { callback = () => { }, error = () =
   }
 
   button.addEventListener('click', e => {
-    copyLink()
-      .then(() => callback())
-      .catch(e => error(e))
+    const action = type === 'innertext'
+      ? copyInnerText
+      : copyLink
+    
+    try {
+      action(element.dataset.clipboard)
+        .then(() => callback())
+        .catch(e => error({ error: e, type, nodeToCopy: element.dataset.clipboard }))
+    } catch (e) {
+      error({ error: e, type, nodeToCopy: element.dataset.clipboard })
+    }
   })
 }
 

@@ -1,4 +1,4 @@
-@use '../base/mixins' as mixins;
+@use '../base/mixins'as mixins;
 
 .downloadable {
   display: inline-grid;
@@ -11,15 +11,19 @@
   }
 
   &::before {
-    content       : url("/assets/images/download.svg");
-    height        : 3ch;
+    align-content : center;
     aspect-ratio  : 1/1;
-    width         : auto;
-    z-index       : 9;
+    border        : 2px solid white;
+    border-radius : 1000px;
+    content       : url("/assets/images/download.svg");
+    display       : flex;
+    height        : 3ch;
+    opacity       : 0;
     place-self    : center;
     pointer-events: none;
-    opacity       : 0;
     transition    : opacity 200ms;
+    width         : auto;
+    z-index       : 9;
   }
 
   &::after {

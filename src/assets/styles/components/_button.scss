@@ -17,6 +17,10 @@
   text-transform         : uppercase;
   transition             : outline-offset 200ms, outline 200ms, outline-color 100ms 100ms;
 
+  &.inline {
+    display: inline-flex
+  }
+
   &:hover {
     background-color: hsl(var(--border-color) / 15%);
   }

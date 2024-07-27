@@ -1,0 +1,127 @@
+---
+title: 'Mag-donate - Antares Programming'
+permalink: /donate/
+layout: page.njk
+stylesheets:
+  - donations.css
+---
+{% from "meta/utils.njk" import icon,
+logo %}
+<div class="decoration">
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+</div>
+{% include "ui/navigation.njk" %}
+<main class="post h-entry" aria-labelledby="post-title">
+  <header class="header">
+    <nav class="breadcrumb" aria-label="Breadcrumbs">
+      <ol class="list">
+        <li>
+          <a class="link" href="/">Home</a>
+        </li>
+        <li>
+          <a class="link" href="./" aria-current="location">This page</a>
+        </li>
+      </ol>
+    </nav>
+    <h1 id="post-title" class="title">Mag-donate</h1>
+    <p class="description">Salamat sa pagsuporta sa Antares Programming! Gagamitin ang donation mo para makagawa ng mas maraming content tungkol sa web development in Filipino.</p>
+  </header>
+  <div class="content e-content margin-block-start--xxl">
+    <details class="disclosure">
+      <summary class="disclosure__notice">Mag-donate via GCash</summary>
+      <div class="disclosure__body">
+        <a style="float: left; width: fit-content" href="/assets/images/gcash.png" download target="_blank" class="downloadable">
+          <img class="cover" src="/assets/images/gcash.png" width="648" height="864" alt="GCash QR Code" style="width: 25ch; height: auto">
+        </a>
+
+        <ol>
+          <li>
+            <b>Buksan ang GCash app.</b>
+          </li>
+          <li>
+            <b>Piliin ang <i>Pay QR</i>.</b> Mula sa dashboard ng GCash app, piliin ang Pay QR o Scan QR Code.</li>
+          <li>
+            <b>I-scan ang QR code.</b> Gamit ang QR scanner ng GCash app, itutok ang camera sa QR Code.</li>
+          <li>
+            <b>Kapag hindi ma-scan ang QR code,</b> i-download ang QR code sa phone mo. Sa GCash app, piliin ang <i>Pay QR/Scan QR Code</i> > <i>Upload QR</i>.</li>
+          <li>
+            <b>Ilagay ang amount na gusto mong i-donate.</b>
+          </li>
+          <li>
+            <b>I-confirm ang iyong donation.</b>
+          </li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="disclosure">
+      <summary class="disclosure__notice">Bank Transfer (via UnionBank)</summary>
+      <div class="disclosure__body">
+        <div class="d-flex gap--l ai--center">
+          <a style="float: left; width: fit-content" href="/assets/images/ub-1.png" download target="_blank" class="downloadable">
+            <img class="cover" src="/assets/images/ub-1.png" width="648" height="864" alt="UnionBank QR Code" style="width: 25ch; height: auto">
+          </a>
+          <dl class="margin-block-end--xxxl">
+            <dt>Account Number</dt>
+            <dd>
+              <span id="ub-an-1">1094 8605 3556</span>
+              <button class="inline button fs-7" data-clipboard="ub-an-1">
+                {{ "copy" | icon | safe }}
+                <span class="sr-only">Kopyahin</span>
+              </button>
+            </dd>
+
+            <dt>Account Name</dt>
+            <dd>
+              <span id="ub-name-1">Francis L Rubio</span>
+              <button class="inline button fs-7" data-clipboard="ub-name-1">
+                {{ "copy" | icon | safe }}
+                <span class="sr-only">Kopyahin</span>
+              </button>
+            </dd>
+          </dl>
+        </div>
+        <div class="d-flex gap--l ai--center">
+          <a style="float: left; width: fit-content" href="/assets/images/ub-2.png" download target="_blank" class="downloadable">
+            <img class="cover" src="/assets/images/ub-2.png" width="648" height="864" alt="UnionBank QR Code" style="width: 25ch; height: auto">
+          </a>
+          <dl class="margin-block-end--xxxl">
+            <dt>Account Number</dt>
+            <dd>
+              <span id="ub-an-2">1093 2833 6875</span>
+              <button class="inline button fs-7" data-clipboard="ub-an-2">
+                {{ "copy" | icon | safe }}
+                <span class="sr-only">Kopyahin</span>
+              </button>
+            </dd>
+
+            <dt>Account Name</dt>
+            <dd>
+              <span id="ub-name-2">Francis L Rubio</span>
+              <button class="inline button fs-7" data-clipboard="ub-name-2">
+                {{ "copy" | icon | safe }}
+                <span class="sr-only">Kopyahin</span>
+              </button>
+            </dd>
+          </dl>
+        </div>
+      </dl>
+    </details>
+  </div>
+  <footer class="content-wrapper margin--auto text-center margin-block--xxxl padding-block-end--xxxl">
+    <h2 class="fs-4 weight-700 font-sans m-block-end--none">Natuwa ka ba sa project na ito?</h2>
+    <p class="font-sans m-block-start--none m-block-end--xl">I-follow ang Antares Programming sa social media, o mag-donate para makagawa pa kami ng content na gaya nito</p>
+
+    <ul class="button-list">
+      <li>
+        <a href="#contact" class="button">
+          {{ "user-plus" | icon | safe }}
+          <span>I-follow kami online</span>
+        </a>
+      </li>
+    </ul>
+  </footer>
+</main>
+{% include "ui/footer.njk" %}
