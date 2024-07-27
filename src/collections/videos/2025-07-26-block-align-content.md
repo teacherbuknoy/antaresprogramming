@@ -12,8 +12,8 @@ syndication:
   - https://www.facebook.com/share/r/tyDQRjqVLVKsPDG5/
   - https://www.tiktok.com/@antaresphdev/video/7395934935049211152
 video:
-  provider: dailymotion
-  embedCode: x92xktg
+  provider: bunny
+  embedCode: 07bc2d4e-565a-462e-a9ef-0d05cfea5d93
 cover:
   folder: block-align-content
   filename: cover.png
