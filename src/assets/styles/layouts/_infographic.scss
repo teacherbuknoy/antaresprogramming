@@ -1,4 +1,5 @@
-.infographic, .post {
+.infographic,
+.post {
   .header {
     padding-block-start  : calc(var(--space-xxxl) * 2);
     padding-block-end    : var(--space);
@@ -44,6 +45,15 @@
     font-family          : var(--font-sans);
     display              : grid;
     grid-template-columns: 1fr min(var(--content-width), 90%) 1fr;
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight            : bold;
+      font-variation-settings: 'wght'700;
+    }
 
     &>* {
       margin-inline: var(--space);

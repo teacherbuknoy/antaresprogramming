@@ -3,27 +3,94 @@
     <svg class="feather {{ class }}" aria-label="{{ label }}" width="24" height="24">
     {% else %}
       <svg class="feather {{ class }}" aria-hidden="true" width="24" height="24">
-    {% endif %}
-    <use href="/assets/images/feather-sprite.svg#{{ name }}"/>
-  </svg>
-{% endmacro %}
+      {% endif %}
+      <use href="/assets/images/feather-sprite.svg#{{ name }}"/>
+    </svg>
+  {% endmacro %}
 
-{% macro logo(class) %}
-  <img class="{{ class }}" src="/assets/images/logo.svg" alt="Antares Programming logo" width="64" height="64">
-{% endmacro %}
+  {% macro logo(class) %}
+    <img class="{{ class }}" src="/assets/images/logo.svg" alt="Antares Programming logo" width="64" height="64">
+  {% endmacro %}
 
-{% macro demoWindow(title = "Demo") %}
-  <figure class="window">
-    <div class="tab-strip">
-      <div class="actions">
-        <span></span>
-        <span></span>
-        <span></span>
+  {% macro demoWindow(title = "Demo") %}
+    <figure class="window">
+      <div class="tab-strip">
+        <div class="actions">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <figcaption class="tab">{{ title }}</figcaption>
       </div>
-      <figcaption class="tab">{{ title }}</figcaption>
-    </div>
-    <div class="viewport">
-      {{ caller() }}
-    </div>
-  </figure>
-{% endmacro %}
+      <div class="viewport">
+        {{ caller() }}
+      </div>
+    </figure>
+  {% endmacro %}
+
+  {% macro baseline(level = 'limited', year = '2023', classes) %}
+    <article class="baseline {{ classes }}">
+      <header class="header">
+        {% if level === 'limited' %}
+          {% set label = "Limited Availability" %}
+          <svg class="logo {{ class }}" aria-label="{{ label }}" width="24" height="24">
+            <use href="/assets/images/baseline.svg#limited"/>
+          </svg>
+          <span class="label">{{ label }}</span>
+        {% elif level === 'new' %}
+          {% set label = "Newly Available" %}
+          <svg class="logo {{ class }}" aria-label="{{ label }}" width="24" height="24">
+            <use href="/assets/images/baseline.svg#new"/>
+          </svg>
+          <span class="label">
+            <span class="title">Baseline</span>
+            <span class="subtitle">{{ year }}</span>
+          </span>
+          <span class="badge">{{ label }}</span>
+        {% elif level === 'available' %}
+          {% set label = "Widely Available" %}
+          <svg class="logo {{ class }}" aria-label="{{ label }}" width="24" height="24">
+            <use href="/assets/images/baseline.svg#available"/>
+          </svg>
+          <span class="label">
+            <span class="title">Baseline</span>
+            <span class="subtitle">{{ label }}</span>
+          </span>
+        {% endif %}
+      </header>
+    </article>
+  {% endmacro %}
+
+  {% macro baselineWithSupport(level = 'limited', year = '2023', classes) %}
+    <article class="baseline {{ classes }}">
+      <header class="header">
+        {% if level === 'limited' %}
+          {% set label = "Limited Availability" %}
+          <svg class="logo {{ class }}" aria-label="{{ label }}" width="24" height="24">
+            <use href="/assets/images/baseline.svg#limited"/>
+          </svg>
+          <span class="label">{{ label }}</span>
+        {% elif level === 'new' %}
+          {% set label = "Newly Available" %}
+          <svg class="logo {{ class }}" aria-label="{{ label }}" width="24" height="24">
+            <use href="/assets/images/baseline.svg#new"/>
+          </svg>
+          <span class="label">
+            <span class="title">Baseline</span>
+            <span class="subtitle">{{ year }}</span>
+            <span class="badge">{{ label }}</span>
+          </span>
+        {% elif level === 'available' %}
+          {% set label = "Widely Available" %}
+          <svg class="logo {{ class }}" aria-label="{{ label }}" width="24" height="24">
+            <use href="/assets/images/baseline.svg#available"/>
+          </svg>
+          <span class="label">
+            <span class="title">Baseline</span>
+            <span class="subtitle">{{ label }}</span>
+          </span>
+        {% endif %}
+      </header>
+      <section class="browsers">{{ caller() }}</section>
+    </article>
+  {% endmacro %}

@@ -1,0 +1,73 @@
+.baseline {
+  --baseline-badge-bg      : 221 67% 52%;
+  --baseline-tint-opacity  : 15%;
+  --baseline-tint-limited  : 34 88% 52%;
+  --baseline-tint-new      : 219 100% 63%;
+  --baseline-tint-available: 136 64% 39%;
+  --baseline-tint          : var(--baseline-tint-limited);
+  padding                  : var(--space-xxs) var(--space-s);
+  border-radius            : var(--radius-2);
+
+  &.tinted {
+    background-color: hsl(var(--baseline-tint) / var(--baseline-tint-opacity));
+  }
+
+  &.limited,
+  &:not(:has(.title)) {
+    --baseline-tint: var(--baseline-tint-limited)
+  }
+
+  &.new,
+  &:has(.badge) {
+    --baseline-tint: var(--baseline-tint-new)
+  }
+
+  &.available,
+  &:has(.title):not(:has(.badge)) {
+    --baseline-tint: var(--baseline-tint-available)
+  }
+
+  p:not(:empty):not([class]) {
+    display: contents;
+  }
+
+  .header {
+    padding         : 0;
+    border-radius   : var(--ideal-radius);
+    background-color: transparent;
+    display         : flex;
+    align-items     : center;
+    gap             : var(--space);
+  }
+
+  .logo {
+    width : auto;
+    height: 2em;
+  }
+
+  .label {
+    font-family: var(--font-sans);
+    color      : hsl(var(--fg-default));
+
+    .title {
+      font-family: inherit;
+      font-size  : inherit;
+      color      : hsl(var(--fg-contrast));
+    }
+  }
+
+  .badge {
+    background-color       : hsl(var(--baseline-badge-bg));
+    border-radius          : var(--radius-1);
+    color                  : hsl(var(--l-contrast));
+    display                : inline-block;
+    font-family            : inherit;
+    font-size              : var(--type-size-7);
+    font-variation-settings: "wght"700;
+    font-weight            : bold;
+    line-height            : 1;
+    padding-block          : var(--space-xxs);
+    padding-inline         : var(--space-xxs);
+    text-transform         : uppercase;
+  }
+}

@@ -95,10 +95,13 @@ print;
   }
 
   i,
+  dfn,
   em,
   var,
   cite {
-    font-style: italic;
+    font-style      : italic;
+    font-family     : var(--font-sans-italic);
+    font-size-adjust: ex-height 0.5;
   }
 
   * {
@@ -224,6 +227,7 @@ print;
   @import "components/byline";
   @import "components/window";
   @import "components/social-share-card";
+  @import "components/baseline";
 }
 
 @layer utilities {
@@ -244,4 +248,8 @@ print;
 
 a:not([class]) {
   text-decoration: underline;
+}
+
+p:not([class]):empty {
+  display: none;
 }
