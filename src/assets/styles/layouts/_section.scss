@@ -9,7 +9,7 @@
 
     .section {
       &__heading {
-        font-size              : var(--type-size-1);
+        font-size              : clamp(var(--type-size-3), 10vw, var(--type-size-1));
         text-transform         : none;
         font-weight            : normal;
         font-variation-settings: 'wght'300;
@@ -28,12 +28,17 @@
     font-weight            : bold;
     font-variation-settings: "wght"600;
     font-size              : var(--type-size);
+    flex                   : 1;
+    flex-basis             : 15ch;
   }
 
   &__header {
-    display        : flex;
-    justify-content: space-between;
-    align-items    : center;
+    display         : flex;
+    justify-content : space-between;
+    align-items     : center;
+    flex-wrap       : wrap;
+    gap             : var(--space);
+    margin-block-end: var(--space);
   }
 
   .collection--scroller {
@@ -41,4 +46,9 @@
     padding-inline: calc((min(var(--page-width), 100%) / 2));
     margin-inline : calc(-1 * var(--space));
   }
+}
+
+.content-wrapper {
+  padding: var(--space);
+  width  : min(var(--page-width), 100%);
 }
