@@ -8,6 +8,10 @@ author: teacherbuknoy
 link: 
   label: Panoorin sa YouTube
   url: https://youtu.be/NC9SlnIdH-U
+video:
+  provider: youtube
+  embedCode: NC9SlnIdH-U
+  analyticsId: nyXAaTuE3gB2yp0N
 cover:
   folder: relative-time-format
   filename: cover.png
