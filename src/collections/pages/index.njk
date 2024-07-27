@@ -7,8 +7,8 @@ icon %}
 <section class="section" aria-labelledby="heading-latest-videos">
   <div class="section__header">
     <h2 id="heading-latest-videos" class="section__heading">Latest Videos</h2>
-    <a href="{{ site.contact.youtube.url }}" target="_blank" class="button">
-      {{ icon('youtube') }}
+    <a href="/videos/" target="_blank" class="button">
+      {{ icon('film') }}
       <span>Tingnan Lahat</span>
     </a>
   </div>
@@ -20,8 +20,8 @@ icon %}
 <section class="section" aria-labelledby="heading-maikling-video">
   <div class="section__header">
     <h2 id="heading-maikling-video" class="section__heading">Mga Maikling Video</h2>
-    <a href="{{ site.contact.tiktok.url }}" target="_blank" class="button">
-      {{ icon('tiktok') }}
+    <a href="/shorts/" target="_blank" class="button">
+      {{ icon('video') }}
       <span>Tingnan Lahat</span>
     </a>
   </div>
@@ -33,7 +33,10 @@ icon %}
 <section class="section" aria-labelledby="heading-infographics">
   <div class="section__header">
     <h2 id="heading-infographics" class="section__heading">Mga Infographics</h2>
-    <a href="/infographics/" class="button">Tingnan Lahat</a>
+    <a href="/infographics/" class="button">
+      {{ icon('image') }}
+      <span>Tingnan Lahat</span>
+    </a>
   </div>
   {% set limit = 3 %}
   {% include "ui/collections--infographics.njk" %}
@@ -42,7 +45,10 @@ icon %}
 <section class="section" aria-labelledby="heading-articles">
   <div class="section__header">
     <h2 id="heading-articles" class="section__heading">Mga Article</h2>
-    <a href="/articles/" class="button">Tingnan Lahat</a>
+    <a href="/articles/" class="button">
+      {{ icon('book-open') }}
+      <span>Tingnan Lahat</span>
+    </a>
   </div>
   {% set limit = 3 %}
   {% include "ui/collections--articles.njk" %}
