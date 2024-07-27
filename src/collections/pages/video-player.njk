@@ -53,7 +53,7 @@ permalink: /player/{{ pagination.items[0].data.title | slugify }}/index.html
       allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
       allowfullscreen="true"></iframe>
   {% elif video.provider === 'youtube' %}
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ video.embedCode }}?si={{ video.analyticsId }}" title="{{ video.title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe class="video-player" width="916" height="515" src="https://www.youtube.com/embed/{{ video.embedCode }}" title="{{ video.title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
   {% endif %}
   <div class="entry__meta" style="opacity: 0; pointer-events: none;">
     {{ logo('logo__image') }}
