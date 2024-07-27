@@ -26,6 +26,7 @@
     <source srcset="{{ srcset }}" type="image/{{ format }}" sizes="{{ sizesAttr }}" width="{{ width }}" height="{{ height }}">
   {% endfor %}
   <img 
+      class="{{ imgClass }}"
       src="{{ defaultImage | trim }}" 
       alt="{{ alt }}" width="{{ width }}" height="{{ height }}">
 </picture>

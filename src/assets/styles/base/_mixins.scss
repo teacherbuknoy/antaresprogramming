@@ -11,7 +11,9 @@
 
   @if $inset {
     outline-offset: $inset-value * -1;
-  } @else {
+  }
+
+  @else {
     outline-offset: $inset-value;
   }
 }
@@ -40,12 +42,14 @@
   width: fit-content;
 }
 
+/// @name BoxShadow
+/// Creates a soft shadow and puts it immediately into the `box-shadow` property
 @mixin box-shadow($factor: 3, $skipAmount: 1, $color: #0001) {
   $shadow: 0 1px 2px $color;
 
   @for $i from 2 through $factor {
-    @if $i % $skipAmount == 0 {
-      $s: 0 #{$i}px #{$i * 2}px $color;
+    @if $i % $skipAmount==0 {
+      $s     : 0 #{$i}px #{$i * 2}px $color;
       $shadow: $shadow, $s;
     }
   }
@@ -53,14 +57,29 @@
   box-shadow: $shadow;
 }
 
+/// @name Shadow
+/// Works like BoxShadow but returns the value instead of the entire declaration.
+@mixin shadow($property, $factor: 3, $skipAmount: 1, $color: #0001, $spread: 0) {
+  $shadow: 0 1px 2px $spread $color;
+
+  @for $i from 2 through $factor {
+    @if $i % $skipAmount==0 {
+      $s     : 0 #{$i}px #{$i * 2}px $color;
+      $shadow: $shadow, $s;
+    }
+  }
+
+  #{$property}: $shadow
+}
+
 @mixin visually-hidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: auto;
-  margin: 0;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
+  border     : 0;
+  clip       : rect(0 0 0 0);
+  height     : auto;
+  margin     : 0;
+  overflow   : hidden;
+  padding    : 0;
+  position   : absolute;
+  width      : 1px;
   white-space: nowrap;
 }

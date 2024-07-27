@@ -6,6 +6,7 @@ class Stylesheets {
   constructor() {
     this.inputFiles = {
       styles: 'styles.scss',
+      post: 'post.scss',
       'video-entry': 'video-entry.scss'
     }
   }

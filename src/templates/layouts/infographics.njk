@@ -1,5 +1,8 @@
 {% extends "./page.njk" %}
 {% from "meta/utils.njk" import icon, logo %}
+{% set layoutStylesheets = [
+  "post.css"
+] %}
 {% block content %}
   <div class="decoration">
     <div class="circle"></div>
@@ -38,6 +41,7 @@
       {{ content  | safe }}
     </div>
     <footer class="footer">
+      {% include "ui/downloads.njk" %}
       {% include "ui/share.njk" %}
     </footer>
   </main>

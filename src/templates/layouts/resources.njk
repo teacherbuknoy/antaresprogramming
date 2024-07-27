@@ -1,7 +1,9 @@
 {% extends "./page.njk" %}
 {% from "meta/utils.njk" import icon,
 logo %}
-
+{% set layoutStylesheets = [
+  "post.css"
+] %}
 {% block content %}
   {% include "ui/navigation.njk" %}
   <main class="post" aria-labelledby="post-title">

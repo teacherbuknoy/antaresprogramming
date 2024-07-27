@@ -1,0 +1,65 @@
+@use '../base/mixins' as mixins;
+
+.downloadable {
+  display: inline-grid;
+
+  .cover,
+  &::before,
+  &::after {
+    grid-row   : 1/2;
+    grid-column: 1/2;
+  }
+
+  &::before {
+    content       : url("/assets/images/download.svg");
+    height        : 3ch;
+    aspect-ratio  : 1/1;
+    width         : auto;
+    z-index       : 9;
+    place-self    : center;
+    pointer-events: none;
+    opacity       : 0;
+    transition    : opacity 200ms;
+  }
+
+  &::after {
+    content         : '';
+    z-index         : 2;
+    background-color: hsl(var(--d-contrast) / 25%);
+    opacity         : 0;
+    border-radius   : var(--ideal-radius);
+    transition      : opacity 200ms;
+  }
+
+  .cover {
+    @include shadow('--shadow', 5, 2, rgb(0 0 0 / 5%));
+    border-radius: var(--ideal-radius);
+    box-shadow   : var(--shadow);
+    height       : 20ch;
+    transition   : filter 200ms, box-shadow 200ms;
+    width        : auto;
+  }
+
+  &:focus-visible,
+  &:hover {
+    outline: none;
+
+    &::after,
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &:focus-visible {
+    .cover {
+      @include shadow('--shadow', 10, 2, rgb(0 0 0 / 5%), 5px);
+      box-shadow: 0 0 0 5px hsl(var(--secondary-500)), var(--shadow);
+    }
+  }
+
+  .label {
+    font-weight            : bold;
+    font-variation-settings: 'wght'700;
+    margin-block-start     : var(--space-xs);
+  }
+}
