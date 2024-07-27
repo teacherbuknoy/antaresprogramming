@@ -1,4 +1,5 @@
 {
   "permalink": "/{{ title | slugify }}/",
-  "layout": "main.njk"
+  "layout": "main.njk",
+  "postType": "page"
 }

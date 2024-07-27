@@ -46,4 +46,18 @@
       scroll-snap-align: center;
     }
   }
+
+  &--related {
+    display              : grid;
+    gap                  : var(--space);
+    grid-auto-rows       : min-content min-content auto auto;
+    grid-template-columns: repeat(auto-fit, minmax(25ch, 1fr));
+    margin-inline        : auto;
+    max-width            : var(--page-width);
+    padding-inline       : var(--space);
+
+    li {
+      display: contents;
+    }
+  }
 }

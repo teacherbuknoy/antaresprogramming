@@ -99,4 +99,10 @@ module.exports = {
     }
   },
   toDate: str => new Date(Date.parse(str)),
+  getPostBySlug: (posts, slug) => {
+    const post = posts.find(page => {
+      return page.url.indexOf(`/${slug}/`) !== -1
+    })
+    return post
+  }
 }

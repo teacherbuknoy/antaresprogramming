@@ -8,12 +8,14 @@
   {% set height = cover.height %}
   {% set container = "videos" %}
   {% set videoType = video.data.type %}
-  {% set videoLink = video.url if video.data.video else video.data.link.url %}
+  {% set videoLink = video.url if video.data.video else 
+    video.data.link.url %}
   {% set isNewTab = video.data.video.filename == null %}
   <div class="article__thumbnail">
-    <a href="{{ videoLink }}" {{ 'target="_blank"' if isNewTab }} aria-labelledby="header-{{ video.data.title | slugify }}">{% include "ui/picture.njk" %}</a>
+    <span class="article__type">{{ video.data.postType }}</span>
+    {% include "ui/picture.njk" %}
   </div>
-  {% if videoType !== 'short' %}
+  {# {% if videoType !== 'short' %}
     <h3 class="article__title" id="header-{{ video.data.title | slugify }}">
       <a href="{{ videoLink }}" {{ 'target="_blank"' if isNewTab }}>{{ video.data.title | safe }}</a>
     </h3>
@@ -22,7 +24,11 @@
     <h3 class="article__summary" id="header-{{ video.data.title | slugify }}">
       <a href="{{ videoLink }}" {{ 'target="_blank"' if isNewTab }}>{{ video.data.title | safe }}</a>
     </h3>
-  {% endif %}
+  {% endif %} #}
+  <h3 class="article__title" id="header-{{ video.data.title | slugify }}">
+    <a href="{{ videoLink }}" {{ 'target="_blank"' if isNewTab }}>{{ video.data.title | safe }}</a>
+  </h3>
+  <p class="article__summary">{{ video.data.description | safe }}</p>
   <footer class="article__metadata">
     <time datetime="{{ video.date | machineReadableDate }}">{{ video.date | humanReadableDate }}</time>
   </footer>

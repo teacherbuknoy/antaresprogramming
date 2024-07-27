@@ -1,0 +1,24 @@
+<div class="content-wrapper margin--auto">
+  <h2 class="fs-4 weight-700 font-sans m-block-end--none">Related posts</h2>
+  <ul class="collection collection--related margin-block--l">
+    {% for slug in related %}
+      {% set entry = collections.everything | getPostBySlug(slug) %}
+      {% if entry.data.postType == 'video' %}
+        {% set video = entry %}
+        <li>
+          {% include "ui/entry--video.njk" %}
+        </li>
+      {% elif entry.data.postType == 'infographic' %}
+        {% set article = entry %}
+        <li>
+          {% include "ui/entry--infographic.njk" %}
+        </li>
+      {% elif entry.data.postType == 'post' %}
+        {% set article = entry %}
+        <li>
+          {% include "ui/entry--article.njk" %}
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>

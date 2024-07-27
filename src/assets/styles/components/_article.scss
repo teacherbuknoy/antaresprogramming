@@ -4,38 +4,62 @@
   gap           : 0.65ch;
   outline       : var(--focus-outline-hidden);
   transition    : outline-offset 200ms, outline 200ms, outline-color 100ms 100ms;
+  position      : relative;
 
   >* {
     margin: 0;
   }
 
-  &:focus-within {
-    outline       : var(--focus-outline);
-    outline-offset: var(--space);
-    transition    : outline-offset 200ms, outline 200ms, outline-color 200ms;
-  }
+
 
   &__thumbnail {
     margin-block-end: var(--space);
+    position        : relative;
 
     img {
+      @include shadow('--shadow', 5, 2, rgb(0 0 0 / 5%));
       border-radius: var(--radius-5);
+      box-shadow   : var(--shadow);
+      transition   : box-shadow 200ms;
     }
   }
 
-  &__title {
-    font-family: var(--font-ui);
-    font-size  : var(--type-size-4);
-    line-height: 1;
-    margin     : 0;
+  &:focus-within .article__thumbnail img {
+    box-shadow: 0 0 0 5px hsl(var(--secondary-500)), var(--shadow);
+  }
 
-    @at-root .article--video & {
-      font-size: var(--type-size-5);
-      font-variation-settings: 'wght' 500;
-    }
+  &__type {
+    background-color       : hsl(var(--d-default) / 75%);
+    padding                : var(--space-xxs) var(--space-xs);
+    text-transform         : uppercase;
+    font-weight            : bold;
+    font-variation-settings: "wght"700;
+    color                  : hsl(var(--l-contrast));
+    border-radius          : var(--radius-3);
+    position               : absolute;
+    top                    : var(--space-xxs);
+    left                   : var(--space-xxs);
+    backdrop-filter        : blur(5px);
+  }
+
+  &__title {
+    font-family            : var(--font-ui);
+    font-size              : var(--type-size-4);
+    font-variation-settings: 'wght'300;
+    font-weight            : normal;
+    line-height            : 1;
+    margin                 : 0;
 
     a {
-      display: block;
+      display        : block;
+      text-decoration: none !important;
+
+      &::before {
+        content : '';
+        z-index : 9;
+        position: absolute;
+        inset   : 0;
+      }
 
       &:focus-visible {
         outline: none;
@@ -44,6 +68,19 @@
       &:hover {
         text-decoration: underline;
       }
+    }
+  }
+
+  @at-root .collection--related & {
+    display           : grid;
+    grid-row          : span 4;
+    grid-template-rows: subgrid;
+
+    .article__thumbnail img {
+      width       : auto;
+      height      : 20ch;
+      aspect-ratio: 16/9;
+      object-fit  : cover;
     }
   }
 }

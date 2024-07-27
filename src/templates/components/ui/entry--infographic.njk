@@ -1,0 +1,21 @@
+<article class="article">
+  {% set cover = article.data.cover %}
+  {% set folder = cover.folder %}
+  {% set filename = cover.filename %}
+  {% set sizes = cover.sizes %}
+  {% set formats = cover.formats %}
+  {% set width = cover.width %}
+  {% set height = cover.height %}
+  {% set container = "infographics" %}
+  <div class="article__thumbnail">
+    <span class="article__type">{{ article.data.postType }}</span>
+    {% include "ui/picture.njk" %}
+  </div>
+  <h3 class="article__title">
+    <a href="{{ article.url }}">{{ article.data.title | safe }}</a>
+  </h3>
+  <p class="article__summary">{{ article.data.description | safe }}</p>
+  <footer class="article__metadata">
+    <time datetime="{{ article.date | machineReadableDate }}">{{ article.date | humanReadableDate }}</time>
+  </footer>
+</article>

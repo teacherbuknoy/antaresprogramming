@@ -31,5 +31,6 @@ module.exports = {
       tags: ['h2']
     }
   }),
-  rss: () => ({ plugin: require('@11ty/eleventy-plugin-rss') })
+  rss: () => ({ plugin: require('@11ty/eleventy-plugin-rss') }),
+  linkTo: () => ({ plugin: require('eleventy-plugin-link_to'), options: { markdownTemplateEngine: 'njk' } })
 }
