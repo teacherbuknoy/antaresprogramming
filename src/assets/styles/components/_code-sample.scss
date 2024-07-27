@@ -3,7 +3,7 @@
 .code-sample {
   grid-column  : 1/-1;
   width        : 100vw;
-  margin-inline: calc(var(--space) * -1);
+  margin-inline: 0;
   margin-block : var(--space-xxl);
   position     : relative;
 

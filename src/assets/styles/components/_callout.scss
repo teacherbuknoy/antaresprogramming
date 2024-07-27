@@ -7,7 +7,7 @@
   gap             : 1ch;
   grid-column     : 1/-1;
   justify-content : end;
-  margin-inline   : calc(var(--space) * -1);
+  margin-inline   : 0;
   padding-block   : 3ch;
   padding-inline  : calc((100vw - var(--content-width)) / 2);
   width           : 100vw;
