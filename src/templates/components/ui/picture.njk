@@ -23,7 +23,7 @@
     {% endfor %}
     {% endset %}
 
-    <source srcset="{{ srcset }}" type="image/{{ format }}" sizes="{{ sizesAttr }}", width="{{ width }}" height="{{ height }}">
+    <source srcset="{{ srcset }}" type="image/{{ format }}" sizes="{{ sizesAttr }}" width="{{ width }}" height="{{ height }}">
   {% endfor %}
   <img 
       src="{{ defaultImage | trim }}" 
