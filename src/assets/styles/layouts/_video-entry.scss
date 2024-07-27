@@ -17,6 +17,10 @@
     }
   }
 
+  iframe {
+    background: black;
+  }
+
   .entry__meta {
     background-image     : linear-gradient(to bottom, black 25%, transparent);
     grid-column          : 1/2;

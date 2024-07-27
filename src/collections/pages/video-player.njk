@@ -19,7 +19,7 @@ permalink: /player/{{ pagination.items[0].data.title | slugify }}/index.html
 {% set description = item.data.description %}
 {% set author = item.data.author %}
 {% set page = item %}
-<article class="entry--video h-entry {{ type }}" aria-labelledby="post-title">
+<article class="entry--video h-entry {{ type }} standalone-video-player" aria-labelledby="post-title">
   {% set folder = video.folder if video.folder else cover.folder %}
   <a href="{{ page.url }}" class="u-url"></a>
   {% if video.provider == null or video.provider == 'html' %}
@@ -46,6 +46,12 @@ permalink: /player/{{ pagination.items[0].data.title | slugify }}/index.html
     </video>
   {% elif video.provider === 'dailymotion' %}
     <iframe style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden" frameborder="0" type="text/html" src="https://www.dailymotion.com/embed/video/{{ video.embedCode }}?autoplay=1" width="100%" height="100%" allowfullscreen title="{{ video.title }}" allow="autoplay; web-share"></iframe>
+  {% elif video.provider === 'bunny' %}
+    <iframe
+      src="https://iframe.mediadelivery.net/embed/{{ site.api.video.libraryId }}/{{ video.embedCode }}?autoplay=true&loop=true&muted=false&preload=true&responsive=false"
+      loading="lazy" style="border:0;position:absolute;top:0;height:100%;width:100%;"
+      allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
+      allowfullscreen="true"></iframe>
   {% endif %}
   <div class="entry__meta" style="opacity: 0; pointer-events: none;">
     {{ logo('logo__image') }}

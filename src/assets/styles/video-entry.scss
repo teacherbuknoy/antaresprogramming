@@ -6,3 +6,7 @@
 @layer components {
   @import "components/video-list";
 }
+
+body:has(.standalone-video-player) {
+  background: #000;
+}

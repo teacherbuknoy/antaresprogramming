@@ -7,5 +7,11 @@
   {% endfor %}
   {% if video.provider === 'dailymotion' %}
     <iframe style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden" frameborder="0" type="text/html" src="https://www.dailymotion.com/embed/video/{{ video.embedCode }}" width="100%" height="100%" allowfullscreen title="{{ video.title }}"></iframe>
+  {% elif video.provider === 'bunny' %}
+    <iframe
+      src="https://iframe.mediadelivery.net/embed/{{ site.api.video.libraryId }}/{{ video.embedCode }}?autoplay=false&loop=false&muted=false&preload=true&responsive=true"
+      loading="lazy" style="border:0;position:absolute;top:0;height:100%;width:100%;"
+      allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
+      allowfullscreen="true"></iframe>
   {% endif %}
 </article>
