@@ -104,5 +104,6 @@ module.exports = {
       return page.url.indexOf(`/${slug}/`) !== -1
     })
     return post
-  }
+  },
+  cleanNewLines: str => str.replaceAll(/(\n[\r]*[\s]*){2,}/gm, '\n')
 }
