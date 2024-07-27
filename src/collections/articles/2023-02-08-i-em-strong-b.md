@@ -22,7 +22,7 @@ updateDate: 2023-02-17
 Sa mga word document, kapag kailangang i-emphasize ang isang salita o pangungusap, gumagamit lang tayo ng italics at bold font weight. At ideally, ganito lang din kadali sa mga web pages. Pero dahil naka-focus ang HTML sa <i lang="en">semantics</i> ng mga web page, kailangan nating maging mas specific. Kung sa bagay, hindi lang naman kasi mga tao ang uma-access ng mga website natin. At hindi rin lahat ng users natin ay visual gaya ng mga gumagamit ng assistive technologies. <sup id="fn-2">[<a href="#footnote-2">Ano ito?</a>]</sup>
 
 <aside class="callout callout--info callout--right" id="footnote-2" aria-labelledby="footnote-2-headline">
-  {{ 'alert-triangle' | icon }}
+  {{ 'alert-triangle' | icon | safe }}
   <h4 class="sr-only" id="footnote-2-headline">Sidebar (article continues below)</h4>
   <p class="callout__body">Ang mga <dfn>assistive technology</dfn> ay mga hardware o software na ginagamit ng mga persons with disability (PWDs) para matulungan silang gumamit ng computers. Kasama rito ang mga screen readers na bumabasa ng laman ng screen para sa mga bulag at braille displays. <sup class="footnote--reference"><a href="#fn-2">Paragraph</a></sup></p>
 </aside>
@@ -58,7 +58,7 @@ By default, italicized ang salitang <q>cannot</q> sa paragraph na ito gamit ang 
 Kaya hindi dapat gamitin ang `<em>` para lang gawing italics ang formatting ng text. Kapag ito ang ginawa natin, baka biglang mabago ang kahulugan ng nakasulat nang hindi natin sinasadya.
 
 <aside class="callout callout--warning" id="callout-1" aria-labelledby="callout-1-headline">
-  {{ 'alert-triangle' | icon }}
+  {{ 'alert-triangle' | icon | safe }}
   <div class="callout__body">
     <p><strong id="callout-1-headline">Update:</strong> Sa maraming screen readers na kadalasang ginagamit gaya ng VoiceOver, JAWS, o NVDA, walang pagbabago sa pagbigkas ng mga salita sa loob ng <code>&lt;em></code> at <code>&lt;strong></code>. Ayon kay James Teh, isa sa developers ng NVDA, <a href="https://github.com/nvaccess/nvda/issues/4920#issuecomment-161162498" target="_blank" rel="noopenr">maraming users ang nagrereklamo</a> kapag ini-indicate ng screen readers ang <code>&lt;em></code> at <code>&lt;strong></code> dahil sa dami ng content na mali ang paggamit sa dalawang tags na ito.</p>
     <p>Hindi na ba dapat gamitin ang <code>&lt;em></code> at <code>&lt;strong></code> dahil wala naman palang saysay? Mali. Dapat pa ring gamitin ang tamang HTML tags dahil una, hindi natin alam ang lahat ng software na gagamit sa markup natin. At ikalawa, posibleng sa hinaharap, magkaroon ng iba pang devices o software na magko-consume ng HTML markup natin. Wala tayong way para ma-predict kung saan pa mapapadpad ang mga website natin, kaya ang tanging paraan para masigurong gumagana ito nang tama ay gamitin nang tama ang mga HTML tag. Kung sa bagay, kaya lang naman naka-disable ang <code>&lt;em></code> at <code>&lt;strong></code> sa mga screen reader by default ay dahil marami ang gumagamit dito nang mali.</p>
@@ -272,7 +272,7 @@ Bago ang HTML5, ginamit natin ang `<u>` para maglagay ng salungguhit o underline
 Sa HTML5, ginagamit na ang `<u>` element para sa mga non-textual annotation. Halimbawa nito ay ang mga pulang underline sa mga salitang mali ang ispeling. Kung gumagawa ka ng isang text editor web app, puwede mong balutin sa `<u>` element ang mga salitang mali ang ispeling. Puwede ring gamitin ang `<u>` element para sa [proper name mark](https://en.wikipedia.org/wiki/Proper_name_mark).<sup id="fn-1"><a href="#footnote-1">Footnote</a></sup>
 
 <aside class="callout callout--info callout--right" id="footnote-1" aria-labelledby="footnote-1-headline">
-  {{ 'alert-triangle' | icon }}
+  {{ 'alert-triangle' | icon | safe }}
   <h4 class="sr-only" id="footnote-1-headline">Sidebar (article continues below)</h4>
   <p class="callout__body">Ang <dfn>proper name mark</dfn> ay isang uri ng punctuation mark sa Chinese na ginagamit para i-indicate sa mambabasa na ang salita ay pangalan ng tao, bagay, hayop, lugar, o pangyayari. Sa atin sa Filipino at English, katumbas ito ng capitalization sa mga tiyak na pangngalan. <sup class="footnote--reference"><a href="#fn-1">Paragraph</a></sup></p>
 </aside>

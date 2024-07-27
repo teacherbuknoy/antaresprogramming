@@ -1,6 +1,6 @@
 {
   "author": "teacherbuknoy",
-  "permalink": "/infographics/{{ slug }}/",
+  "permalink": "/infographics/{{ title | slugify }}/",
   "layout": "infographics.njk",
   "templateEngineOverride": "md,njk"
 }

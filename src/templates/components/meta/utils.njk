@@ -78,8 +78,8 @@
           <span class="label">
             <span class="title">Baseline</span>
             <span class="subtitle">{{ year }}</span>
-            <span class="badge">{{ label }}</span>
           </span>
+          <span class="badge">{{ label }}</span>
         {% elif level === 'available' %}
           {% set label = "Widely Available" %}
           <svg class="logo {{ class }}" aria-label="{{ label }}" width="24" height="24">
@@ -93,4 +93,22 @@
       </header>
       <section class="browsers">{{ caller() }}</section>
     </article>
+  {% endmacro %}
+
+  {% macro browserSupport(brand = 'firefox', level = 'no-support', keys) %}
+    <span class="browser-support {{ brand }}">
+      <svg class="brand {{ class }}" aria-label="{{ keys.browsers[brand].brand }}" width="24" height="24">
+        <use href="/assets/images/browsers.svg#{{ brand }}"/>
+      </svg>
+      <svg class="support-level {{ class }}" aria-label="{{ keys.support[level].label }}" width="24" height="24">
+        <use href="/assets/images/browser-support-indicator.svg#{{ level }}"/>
+      </svg>
+      <span class="sr-only">{{ keys.browsers[brand].brand }}: {{ keys.support[level].label }}</span>
+    </span>
+  {% endmacro %}
+
+  {% macro browser(brand = "none", class = "") %}
+      <svg class="brand {{ class }}" aria-label="{{ keys.browsers[brand].brand }}" width="24" height="24">
+        <use href="/assets/images/browsers.svg#{{ brand }}"/>
+      </svg>
   {% endmacro %}

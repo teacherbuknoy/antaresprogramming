@@ -1,0 +1,32 @@
+figure {
+  border-block         : var(--border);
+  grid-column          : 1/-1;
+  margin-block         : var(--space-xxl);
+  margin-inline        : 0;
+  position             : relative;
+  width                : 100vw;
+  display              : grid;
+  padding-block        : var(--space);
+  gap                  : var(--space);
+  grid-template-columns: subgrid;
+
+  &>:not(figcaption) {
+    grid-row   : 1/2;
+    grid-column: 1/-1;
+  }
+
+  figcaption {
+    font-size    : var(--type-size-6);
+    grid-column  : 1/-1;
+    grid-row     : 2/3;
+    margin-inline: auto;
+    text-align   : center;
+    width        : min(var(--content-width), 90%);
+
+  }
+
+  .object {
+    padding-inline: var(--space);
+    grid-column   : 2/3;
+  }
+}

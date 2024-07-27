@@ -1,0 +1,19 @@
+browsers:
+  chromium:
+    - brand: "Google Chrome"
+    - brand: "Microsoft Edge"
+  chrome:
+    brand: Google Chrome
+  edge:
+    brand: Microsoft Edge
+  firefox:
+    brand: Firefox
+  safari:
+    brand: Safari
+support:
+  no-support:
+    label: Not supported
+  limited-support:
+    label: Limited support
+  wide-support:
+    label: Supported

@@ -1,0 +1,224 @@
+.disclosure {
+  --bg-content-warning-accent-opacity: 0.15;
+  --bg-content-warning-accent        : var(--secondary-500);
+  --bg-content-warning-opacity       : 0.05;
+  --bg-content-warning               : var(--secondary-500);
+  background-color                   : hsl(var(--bg-content-warning)/var(--bg-content-warning-opacity, 1));
+  border-radius                      : var(--ideal-radius);
+  border                             : 1px solid hsl(var(--bg-content-warning-accent) / 25%);
+
+  &:has(~ &),
+  &:has(~ &) &__notice {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius : 0;
+  }
+
+  &~&,
+  &~& &__notice {
+    border-top-right-radius: 0;
+    border-top-left-radius : 0;
+  }
+
+  &~& {
+    border-top: none;
+  }
+
+  &__notice {
+    border-radius          : var(--ideal-radius);
+    color                  : hsl(var(--fg-content-warning, var(--fg-contrast)));
+    container-name         : disclosure;
+    container-type         : inline-size;
+    cursor                 : pointer;
+    display                : flex;
+    font-family            : var(--font-sans);
+    font-variation-settings: 'wght'600;
+    font-weight            : bold;
+    gap                    : 1ch;
+    outline                : 3px solid hsl(var(--fg-content-warning, var(--fg-contrast)) / 0);
+    padding-block          : var(--space-xs);
+    padding-inline         : var(--space);
+    position               : relative;
+    transition             : outline-color 200ms, outline-offset 200ms;
+
+    @at-root [open] &,
+    &:hover,
+    &:focus-visible {
+      background-color: hsl(var(--bg-content-warning-accent) / var(--bg-content-warning-accent-opacity, 1));
+    }
+
+    @at-root [open] & {
+      border-bottom-left-radius : 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &:focus-visible {
+      outline-color : hsl(var(--fg-content-warning, var(--fg-contrast)) / 1);
+      outline-offset: 3px;
+    }
+
+    &::after {
+      content            : "Select to open";
+      margin-inline-start: auto;
+      text-transform     : uppercase;
+      font-weight        : normal;
+      font-size          : var(--type-size-6);
+      align-self         : center;
+
+      @at-root [open] & {
+        content: 'Select to close'
+      }
+
+      @container disclosure (width < 30em) {
+        border          : 0.5ch solid transparent;
+        border-top-color: currentColor;
+        content         : "" !important;
+        height          : 0;
+        width           : 0;
+
+        @at-root [open] & {
+          border-top-color   : transparent;
+          border-bottom-color: currentColor;
+        }
+      }
+    }
+
+    &.webmentions--summary {
+      :last-child {
+        margin-inline-end: auto;
+      }
+
+      .webmention__statistic-label {
+        display: none;
+      }
+    }
+  }
+
+  &__category {
+    font-size          : var(--type-size-6);
+    align-self         : center;
+    background-color   : hsl(var(--bg-content-warning-accent) / var(--bg-content-warning-accent-opacity, 1));
+    padding            : var(--space-xxs);
+    padding-inline     : var(--space-xs);
+    border-radius      : var(--ideal-radius);
+    margin-inline-start: calc(-1 * var(--space-xs));
+  }
+
+  &__body {
+    color         : hsl(var(--fg-disclosure-body, var(--fg-content-warning, var(--fg-default))));
+    display       : flex;
+    flex-direction: column;
+    gap           : var(--space);
+    padding       : var(--space-l);
+    padding-top   : var(--space);
+
+    &>* {
+      margin: 0;
+    }
+
+    :is(a:not([class])) {
+      color: inherit;
+    }
+  }
+
+  &--warning {
+    --bg-content-warning               : var(--warning-100);
+    --bg-content-warning-opacity       : 0.25;
+    --bg-content-warning-accent        : var(--warning-300);
+    --bg-content-warning-accent-opacity: 0.25;
+    --fg-content-warning               : var(--warning-900);
+  }
+
+  &--danger,
+  &--error {
+    --bg-content-warning               : var(--error-100);
+    --bg-content-warning-opacity       : 0.25;
+    --bg-content-warning-accent        : var(--error-300);
+    --bg-content-warning-accent-opacity: 0.25;
+    --fg-content-warning               : var(--error-900);
+  }
+
+  &--success {
+    --bg-content-warning               : var(--success-100);
+    --bg-content-warning-opacity       : 0.25;
+    --bg-content-warning-accent        : var(--success-300);
+    --bg-content-warning-accent-opacity: 0.25;
+    --fg-content-warning               : var(--success-900);
+  }
+
+  &--info {
+    --bg-content-warning               : var(--info-900);
+    --bg-content-warning-accent        : var(--info-300);
+    --bg-content-warning-accent-opacity: 0.25;
+    --bg-content-warning-opacity       : 1;
+    --fg-content-warning               : var(--info-100);
+    --fg-disclosure-body               : var(--info-100) / 75%;
+  }
+}
+
+.slur {
+  --space-block   : 0.15ch;
+  background-color: hsl(var(--warning-100)/0.5);
+  border          : 0;
+  border-radius   : var(--ideal-radius);
+  color           : inherit;
+  display         : inline-flex;
+  font-family     : inherit;
+  font-size       : inherit;
+  font-weight     : inherit;
+  gap             : 0.5ch;
+  margin-block    : calc(-1 * var(--space-block, 0.25ch));
+  overflow        : auto;
+  padding-block   : var(--space-block, 0.25ch);
+  padding-inline  : 0.5ch;
+  position        : relative;
+  transition      : filter 300ms;
+
+
+  &:not([aria-pressed=true]) .slur__content {
+    filter: blur(3px);
+  }
+
+  &::before,
+  &::after {
+    align-self      : center;
+    background-color: hsl(var(--warning-300) / .5);
+    border-radius   : calc(var(--ideal-radius) / 1.25);
+    display         : inline-block;
+    font-family     : var(--font-sans);
+    font-size       : var(--type-size-6);
+    padding-block   : 0;
+    padding-inline  : 0.5ch;
+  }
+
+  &::before {
+    content                : attr(data-slur);
+    margin-left            : -0.15ch;
+    font-weight            : bold;
+    font-variation-settings: 'wght'600;
+    text-transform         : uppercase;
+    font-size              : var(--type-size-7);
+    padding-block          : 0.2ch;
+  }
+
+  &[aria-pressed=true]::after {
+    content: attr(data-slur-details);
+  }
+
+  &::after {
+    background-color: hsl(var(--warning-100));
+    bottom          : calc(100% + var(--space-xs));
+    content         : '';
+    left            : 50%;
+    padding         : var(--space-xs);
+    position        : absolute;
+    text-align      : left;
+    transform       : translateX(-50%);
+    transition      : transform 200ms, opacity 150ms;
+    width           : min(max(15ch, 100%), 200%);
+  }
+
+  &:not([aria-pressed=true])::after {
+    transform: translateY(50%) translateX(-50%);
+    opacity  : 0;
+  }
+}
