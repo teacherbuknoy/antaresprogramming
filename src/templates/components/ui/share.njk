@@ -1,0 +1,27 @@
+<div class="content-wrapper margin--auto text-center">
+  <h2 class="fs-4 weight-700 font-sans m-block-end--none">Share</h2>
+  <p class="font-sans m-block-start--none m-block-end--xl">Nagustuhan mo ba ito? I-share sa mga kakilala mo.</p>
+  <ul class="button-list" style="list-style: none;">
+    {% set writer = authors[author].fediverse %}
+    {% set shareText %}{{ writer }} from {{ site.contact.mastodon.identifier }} wrote a post:%0A%0A{{ title }}%0A“{{ description }}”{% endset %}
+    <li>
+      <a 
+          href="https://mastodonshare.com/?text={{ shareText }}&url={{ site.url }}{{ page.url }}"
+          target="_blank"
+          rel="noopener"
+          class="button no-arrow">
+        <svg class="feather" aria-hidden="true" width="24" height="24">
+          <use href="/assets/images/technologies.svg#mastodon"></use>
+        </svg>
+        <span>Toot this post</span>
+      </a>
+    </li>
+    <li>
+      <button class="button" data-copy="page-link" style="height: 100%;">
+        {{ 'clipboard' | icon | safe }}
+        <span>Copy link</span>
+      </button>
+      <input type="hidden" id="page-link" value="{{ site.url }}{{ page.url }}" class="sr-only">
+    </li>
+  </ul>
+</div>

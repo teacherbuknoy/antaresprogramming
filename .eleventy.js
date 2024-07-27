@@ -1,6 +1,7 @@
 const markdown = require('markdown-it')
 const mdAnchor = require('markdown-it-anchor')
 const slug = require('slug')
+const esbuild = require('esbuild')
 
 const config = require('./src/config/index');
 const { passthrough, collections, filters, plugins, watchtargets, transforms } = config
@@ -64,6 +65,18 @@ module.exports = function (eleventy) {
   mdLib.use(require('markdown-it-attrs'))
   mdLib.disable('code')
   eleventy.setLibrary('md', mdLib)
+
+  // Script bundler
+  eleventy.on('eleventy.before', async () => {
+    await esbuild.build({
+      entryPoints: [
+        "src/assets/scripts/index.js",
+      ],
+      bundle: true,
+      outfile: "public/assets/scripts/index.js",
+      sourcemap: true,
+    })
+  })
 
   return {
     dir: {

@@ -37,6 +37,9 @@
     <div class="content">
       {{ content  | safe }}
     </div>
+    <footer class="footer">
+      {% include "ui/share.njk" %}
+    </footer>
   </main>
   {% include "ui/footer.njk" %}
 {% endblock %}
