@@ -1,4 +1,4 @@
-<ul class="collection collection--grid" data-empty="Wala pang infographics">
+<ul class="collection collection--related square" data-empty="Wala pang infographics">
   {% set infographics = pagination.items if pagination.items else collections.infographics | reverse %}
   {% for article in infographics | limit(limit) %}
     <li>

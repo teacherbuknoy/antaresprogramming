@@ -1,4 +1,4 @@
-<ul class="collection collection--grid" data-empty="Wala pang post">
+<ul class="collection collection--related" data-empty="Wala pang post">
   {% set articles = pagination.items if pagination.items else collections.articles | reverse %}
   {% for article in articles | limit(limit) %}
     <li>

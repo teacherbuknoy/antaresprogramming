@@ -44,6 +44,10 @@
     }
   }
 
+  :is(.article__type, .article__summary) {
+    display: none;
+  }
+
   [data-video-type="full"] {
     img {
       height: auto;

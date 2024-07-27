@@ -1,8 +1,10 @@
 .entry--video {
   display           : grid;
   grid-template-rows: 100vh;
+  height            : fit-content;
   padding           : 0;
-  position          : relative;
+  position          : sticky;
+  top               : 0;
 
   .video-player {
     background-color: black;

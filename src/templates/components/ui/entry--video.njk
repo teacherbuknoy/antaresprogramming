@@ -15,21 +15,13 @@
     <span class="article__type">{{ video.data.postType }}</span>
     {% include "ui/picture.njk" %}
   </div>
-  {# {% if videoType !== 'short' %}
+  <div class="article__body">
     <h3 class="article__title" id="header-{{ video.data.title | slugify }}">
       <a href="{{ videoLink }}" {{ 'target="_blank"' if isNewTab }}>{{ video.data.title | safe }}</a>
     </h3>
-  {% endif %}
-  {% if videoType === 'short' %}
-    <h3 class="article__summary" id="header-{{ video.data.title | slugify }}">
-      <a href="{{ videoLink }}" {{ 'target="_blank"' if isNewTab }}>{{ video.data.title | safe }}</a>
-    </h3>
-  {% endif %} #}
-  <h3 class="article__title" id="header-{{ video.data.title | slugify }}">
-    <a href="{{ videoLink }}" {{ 'target="_blank"' if isNewTab }}>{{ video.data.title | safe }}</a>
-  </h3>
-  <p class="article__summary">{{ video.data.description | safe }}</p>
-  <footer class="article__metadata">
-    <time datetime="{{ video.date | machineReadableDate }}">{{ video.date | humanReadableDate }}</time>
-  </footer>
+    <p class="article__summary">{{ video.data.description | safe }}</p>
+    <footer class="article__metadata">
+      <time datetime="{{ video.date | machineReadableDate }}">{{ video.date | humanReadableDate }}</time>
+    </footer>
+  </div>
 </article>

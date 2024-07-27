@@ -216,6 +216,7 @@ print;
 }
 
 @layer components {
+  @import "components/article";
   @import "components/logo";
   @import "components/navigation";
   @import "components/button";

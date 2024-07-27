@@ -40,11 +40,12 @@
     top                    : var(--space-xxs);
     left                   : var(--space-xxs);
     backdrop-filter        : blur(5px);
+    font-family            : var(--font-ui);
   }
 
   &__title {
     font-family            : var(--font-ui);
-    font-size              : var(--type-size-4);
+    font-size              : var(--type-size-5);
     font-variation-settings: 'wght'300;
     font-weight            : normal;
     line-height            : 1;
@@ -70,17 +71,27 @@
       }
     }
   }
+}
 
-  @at-root .collection--related & {
+.collection--related {
+  .article {
     display           : grid;
     grid-row          : span 4;
     grid-template-rows: subgrid;
 
     .article__thumbnail img {
-      width       : auto;
-      height      : 20ch;
+      height      : auto;
+      width       : 100%;
       aspect-ratio: 16/9;
       object-fit  : cover;
     }
+  }
+
+  &.vertical .article .article__thumbnail img {
+    aspect-ratio: 9/16;
+  }
+
+  &.square .article .article__thumbnail img {
+    aspect-ratio: 1/1;
   }
 }
