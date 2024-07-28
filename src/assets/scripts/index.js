@@ -43,7 +43,13 @@ document.querySelectorAll('button[data-clipboard]')
     }
   }))
 
-ColorScheme.addEventListener("change", e => { console.log("COLOR SCHEME CHANGE", e) })
-ColorScheme.addEventListener("dark", e => { console.log("DARK", e) })
-ColorScheme.addEventListener("light", e => { console.log("LIGHT", e) })
-ColorScheme.addEventListener("system", e => { console.log("SYSTEM", e) })
+
+ColorScheme.applyColorScheme()
+$$('button[data-colorscheme]')
+  .forEach(button => {
+    if (ColorScheme.isValid(button.dataset.colorscheme)) {
+      button.addEventListener('click', e => {
+        ColorScheme.applyColorScheme(button.dataset.colorscheme)
+      })
+    }
+  })

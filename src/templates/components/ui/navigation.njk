@@ -18,6 +18,36 @@
           {% endif %}
         </li>
       {% endfor %}
+      <li class="navigation__list-item">
+        <button class="navigation__link icon-only" popovertarget="popover-color-scheme">
+          {{ icon('sun', 'Switch to light mode') }}
+        </button>
+        <div class="navigation" id="popover-color-scheme" popover style="--inset-open: var(--space-xxxl) 100%; transform: translateX(calc(-100% - var(--space)))">
+          <ul class="navigation__list">
+            <li class="navigation__list-item">
+              <span class="navigation__label">Pumili ng color scheme</span>
+            </li>
+            <li class="navigation__list-item">
+              <button class="navigation__link" data-colorscheme="light">
+                {{ icon('sun') }}
+                <span class="label">Light</span>
+              </button>
+            </li>
+            <li class="navigation__list-item">
+              <button class="navigation__link" data-colorscheme="dark">
+                {{ icon('moon') }}
+                <span class="label">Dark</span>
+              </button>
+            </li>
+            <li class="navigation__list-item">
+              <button class="navigation__link" data-colorscheme="system">
+                {{ icon('cpu') }}
+                <span class="label">Follow system theme</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </li>
     </ul>
   </div>
 </nav>

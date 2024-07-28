@@ -9,13 +9,19 @@ class ColorScheme {
   static #watcher = window.matchMedia("(prefers-color-scheme: dark)")
 
   /**
-   * @description Applies a color scheme to the entire page
+   * @description Applies a color scheme to the entire page. 
+   * If `scheme` is not supplied, this will get the stored scheme and apply it instead.
    * @author Francis Rubio
    * @static
    * @param {'system'|'light'|'dark'} [scheme='system']
    * @memberof ColorScheme
    */
-  static applyColorScheme(scheme = 'system') {
+  static applyColorScheme(scheme) {
+    if (scheme == null) {
+      const colorscheme = localStorage.getItem(this.COLOR_SCHEME_KEY)
+      return this.applyColorScheme(colorscheme)
+    }    
+
     const modes = [this.LIGHT, this.DARK, this.SYSTEM]
     const providedScheme = scheme.toLowerCase()
     if (!modes.includes(providedScheme)) {
@@ -75,6 +81,18 @@ class ColorScheme {
         return handler(e)
       }
     })
+  }
+
+  /**
+   * @description Checks if the provided color scheme is valid
+   * @author Francis Rubio
+   * @static
+   * @param {String} scheme
+   * @returns {boolean}
+   * @memberof ColorScheme
+   */
+  static isValid(scheme) {
+    return this.#modes.includes(scheme)
   }
 }
 

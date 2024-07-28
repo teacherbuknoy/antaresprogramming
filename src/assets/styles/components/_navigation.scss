@@ -6,6 +6,30 @@
   padding         : var(--space);
   border-block-end: 1px solid hsl(var(--border-color));
 
+  &[popover] {
+    @include box-shadow(10, 2, rgb(0 0 0 / 3%));
+    background-color: hsl(var(--primary-300));
+    border          : none;
+    border          : var(--border);
+    margin          : 0;
+    padding         : 0;
+
+    &::backdrop {
+      background     : hsl(var(--primary-300) / 35%);
+      backdrop-filter: blur(2px);
+    }
+
+    &:popover-open {
+      position: absolute !important;
+      width   : max-content;
+      inset   : var(--inset-open, unset);
+    }
+
+    &:not(:popover-open) {
+      display: none;
+    }
+  }
+
   &__start,
   &__end {
     display  : flex;
@@ -21,17 +45,33 @@
     align-items: center;
     flex-wrap  : wrap;
     margin     : 0;
+
+    &-item,
+    li {
+      position: relative;
+    }
+  }
+
+  &__label {
+    padding-block : 1ch;
+    padding-inline: 1.5ch;
+    font-family   : var(--font-ui);
   }
 
   &__link {
-    display                : flex;
     align-items            : center;
+    background             : rgba(0, 0, 0, 0);
+    border                 : none;
+    cursor                 : pointer;
+    display                : flex;
     font-family            : var(--font-ui);
-    text-transform         : uppercase;
+    font-size              : 1em;
+    font-variation-settings: "wght"600;
     font-weight            : bold;
-    font-variation-settings: 'wght'600;
-    padding-inline         : 1.5ch;
+    gap                    : var(--space-xs);
     padding-block          : 1ch;
+    padding-inline         : 1.5ch;
+    text-transform         : uppercase;
 
     &:hover {
       background-color: hsl(var(--border-color) / 15%)
@@ -40,6 +80,21 @@
     &.icon-only {
       gap    : 0;
       padding: 1ch;
+    }
+
+    &[data-colorscheme] {
+      border-block      : var(--border);
+      border-block-color: transparent;
+      border-block-width: var(--radius-1);
+    }
+
+    @at-root body:not(.dark):not(.light) &[data-colorscheme='system'],
+    .system &[data-colorscheme='system'],
+    .light &[data-colorscheme='light'],
+    .dark &[data-colorscheme='dark'] {
+      border-bottom      : var(--border);
+      border-bottom-width: var(--radius-1);
+      background-color   : hsl(var(--border-color) / 10%);
     }
   }
 
