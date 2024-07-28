@@ -1,6 +1,7 @@
 import { initializeClipboardButton } from "./ui/ClipboardButton.js";
 import { $, $$ } from "./utils/dom.js";
 import { NotificationManager } from "./ui/NotificationManager.js";
+import ColorScheme from "./ui/ColorScheme.js";
 
 const container = $('[data-notification-container]')
 const notifications = new NotificationManager(container)
@@ -41,3 +42,8 @@ document.querySelectorAll('button[data-clipboard]')
       })
     }
   }))
+
+ColorScheme.addEventListener("change", e => { console.log("COLOR SCHEME CHANGE", e) })
+ColorScheme.addEventListener("dark", e => { console.log("DARK", e) })
+ColorScheme.addEventListener("light", e => { console.log("LIGHT", e) })
+ColorScheme.addEventListener("system", e => { console.log("SYSTEM", e) })
