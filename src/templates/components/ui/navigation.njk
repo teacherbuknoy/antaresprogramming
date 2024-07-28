@@ -14,7 +14,12 @@
               {{ icon(item.icon, item.icon_label) }}
             </a>
           {% else %}
-            <a href="{{ item.url }}" class="navigation__link">{{ item.text }}</a>
+            <a href="{{ item.url }}" class="navigation__link">
+              {% if item.icon != null %}
+                {{ icon(item.icon, item.text) }}
+              {% endif %}
+              <span class="label">{{ item.text }}</span>
+            </a>
           {% endif %}
         </li>
       {% endfor %}
@@ -22,7 +27,7 @@
         <button class="navigation__link icon-only" popovertarget="popover-color-scheme">
           {{ icon('sun', 'Switch to light mode') }}
         </button>
-        <div class="navigation" id="popover-color-scheme" popover style="--inset-open: var(--space-xxxl) 100%; transform: translateX(calc(-100% - var(--space)))">
+        <div class="navigation" id="popover-color-scheme" popover>
           <ul class="navigation__list">
             <li class="navigation__list-item">
               <span class="navigation__label">Pumili ng color scheme</span>

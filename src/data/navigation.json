@@ -1,8 +1,8 @@
 [
-  { "text": "Frontpage", "url": "/" },
-  { "text": "Videos", "url": "/videos/" },
-  { "text": "Short Videos", "url": "/shorts/" },
-  { "text": "Infographics", "url": "/infographics/" },
-  { "text": "Articles", "url": "/articles/" },
+  { "icon": "home", "text": "Frontpage", "url": "/" },
+  { "icon": "film", "text": "Videos", "url": "/videos/" },
+  { "icon": "video", "text": "Short Videos", "url": "/shorts/" },
+  { "icon": "image", "text": "Infographics", "url": "/infographics/" },
+  { "icon": "book-open", "text": "Articles", "url": "/articles/" },
   { "icon_label": "RSS Feed", "url": "/feed.xml", "icon": "rss" }
 ]

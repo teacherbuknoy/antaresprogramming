@@ -5,6 +5,8 @@
   align-items     : center;
   padding         : var(--space);
   border-block-end: 1px solid hsl(var(--border-color));
+  container-name  : navigation;
+  container-type  : inline-size;
 
   &[popover] {
     @include box-shadow(10, 2, rgb(0 0 0 / 3%));
@@ -20,9 +22,11 @@
     }
 
     &:popover-open {
-      position: absolute !important;
-      width   : max-content;
-      inset   : var(--inset-open, unset);
+      position       : absolute !important;
+      inset          : var(--inset-open, auto 0);
+      margin-inline  : auto;
+      width          : min(var(--content-width), 90%);
+      justify-content: center;
     }
 
     &:not(:popover-open) {
@@ -56,6 +60,10 @@
     padding-block : 1ch;
     padding-inline: 1.5ch;
     font-family   : var(--font-ui);
+
+    @container navigation (width < 40em) {
+      display: none;
+    }
   }
 
   &__link {
@@ -77,6 +85,11 @@
       background-color: hsl(var(--border-color) / 15%)
     }
 
+    .feather {
+      width       : 1.25em;
+      stroke-width: 1px;
+    }
+
     &.icon-only {
       gap    : 0;
       padding: 1ch;
@@ -95,6 +108,12 @@
       border-bottom      : var(--border);
       border-bottom-width: var(--radius-1);
       background-color   : hsl(var(--border-color) / 10%);
+    }
+
+    @container navigation (width < 30em) {
+      .label {
+        display: none;
+      }
     }
   }
 
