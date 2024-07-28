@@ -1,9 +1,9 @@
 ---
-title: 'Antares Programming'
-description: Mga posts, videos, at infographics sa Antares Programming
+title: 'Mga Infographics - Antares Programming'
+description: Mga downloadable infographics at cheat sheets sa Antares Programming
 layout: null
 eleventyExcludeFromCollections: true
-permalink: /feed.xml
+permalink: /infographics.xml
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet href="/assets/styles/rss.css" type="text/css"?>
@@ -11,7 +11,7 @@ permalink: /feed.xml
   <channel>
     <title>{{ title | safe }}</title>
     <description>{{ description | safe }}</description>
-    <link>{{ site.url }}</link>
+    <link>{{ site.url }}/infographics/</link>
     <category>Web Development</category>
     <category>HTML</category>
     <category>CSS</category>
@@ -20,7 +20,7 @@ permalink: /feed.xml
     <docs>https://www.rssboard.org/rss-specification</docs>
     <generator>{{ eleventy.generator }}</generator>
     <image>
-      <link>{{ site.url }}</link>
+      <link>{{ site.url }}/infographics/</link>
       <title>{{ title | safe }}</title>
       <url>{{ site.url }}{{ site.logo }}</url>
       <height>400</height>
@@ -34,7 +34,7 @@ permalink: /feed.xml
 
     <atom:link href="{{ site.url }}{{ page.url }}" rel="self" type="application/rss+xml" />
 
-    {% for item in collections.everything %}
+    {% for item in collections.infographics %}
       {% set absolutePostUrl %}{{ site.url }}{{ item.url }}{% endset %}
       <item>
         <title>{{ item.data.title | safe }}</title>
@@ -42,6 +42,11 @@ permalink: /feed.xml
           <p>{{ item.data.description | safe }}</p>
           {% if item.data.postType === 'video' %}            
           <p><a href="{{ absolutePostUrl }}">Panoorin ang video sa Antares Programming website.</a></p>
+          {% endif %}
+          {% if item.data.downloads %}
+            {% set downloads = item.data.downloads %}
+            {% set rss = true %}
+            {% include "ui/downloads.njk" %}
           {% endif %}
         ]]></description>
         <link>{{ absolutePostUrl }}</link>

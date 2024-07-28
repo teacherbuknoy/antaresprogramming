@@ -221,6 +221,20 @@ print;
     margin-block : var(--space-xxl);
     font-family  : var(--font-ui);
 
+    &::before {
+      background-image   : url('/assets/images/logo.svg');
+      background-size    : cover;
+      background-repeat  : no-repeat;
+      background-position: center;
+      content            : '';
+      display            : block;
+      height             : 15ch;
+      width              : 15ch;
+      background-color   : hsl(var(--l-contrast));
+      border-radius      : var(--ideal-radius);
+      margin-block-end   : var(--space);
+    }
+
     &>:is(title, description, link, copyright) {
       display: block;
     }

@@ -1,18 +1,26 @@
 <div class="content-wrapper margin--auto">
-  <h2 class="fs-4 weight-700 font-sans m-block-end--none">I-download ang page na ito</h2>
-  <ul class="button-list margin-block--l" style="list-style: none">
+  {% if rss %}
+    <p>I-download ang infographic na ito</p>
+  {% else %}
+    <h2 class="fs-4 weight-700 font-sans m-block-end--none">I-download ang page na ito</h2>
+  {% endif %}
+  <ul class="button-list margin-block--l" {% if not rss %}
+    style="list-style: none"
+  {% endif %}>
     {% for item in downloads %}
       <li>
         <a href="{{ item.link }}" class="downloadable" target="_blank">
           {% if item.cover != null %}
-            <img class="cover" width="{{ item.width }}" height="{{ item.height }}" src="{{ item.cover }}" alt="" loading="lazy">
+            <img class="cover" width="{{ item.width / 3 if rss else item.width }}" height="{{ item.height / 3 if rss else item.height }}" src="{{ item.cover }}" alt="" loading="lazy">
           {% else %}
             {% set folder = cover.folder %}
             {% set filename = cover.filename %}
             {% set sizes = cover.sizes %}
             {% set formats = cover.formats %}
-            {% set width = 1080 %}
-            {% set height = 1080 %}
+            {% set width = 100 if rss else 
+              1080 %}
+            {% set height = 100 if rss else 
+              1080 %}
             {% set container = "infographics" %}
             {% set imgClass = "cover" %}
             {% include "ui/picture.njk" %}

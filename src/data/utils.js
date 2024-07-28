@@ -3,5 +3,6 @@ module.exports = {
   getEmbedCode: str => {
     const substr = str.split('/')
     return substr[substr.length - 1]
-  }
+  },
+  currentYear: () => new Date().getFullYear()
 }
