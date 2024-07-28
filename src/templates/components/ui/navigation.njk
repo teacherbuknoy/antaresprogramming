@@ -34,7 +34,9 @@
             </li>
             {% for key,item in site.feeds %}
               <li class="navigation__list-item">
-                <a href="{{ item.link }}" class="navigation__link" data-colorscheme="light">
+                <a href="{{ item.link }}" class="navigation__link" data-colorscheme="light" {% if item.external %}
+                  target="_blank" rel="noopener"
+                {% endif %}>
                   {{ icon(item.icon, item.label) }}
                   <span class="label">{{ item.label }}</span>
                 </a>
