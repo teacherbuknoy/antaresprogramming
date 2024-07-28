@@ -57,5 +57,11 @@
     "video": {
       "libraryId": "276984"
     }
+  },
+  "feeds": {
+    "all": { "label": "All posts", "link": "/feeds.xml", "icon": "rss" },
+    "articles": { "label": "Articles", "link": "/articles.xml", "icon": "book-open" },
+    "videos": { "label": "Videos", "link": "/videos.xml", "icon": "video" },
+    "infographics": { "label": "Infographics", "link": "/infographics", "icon": "image" }
   }
 }

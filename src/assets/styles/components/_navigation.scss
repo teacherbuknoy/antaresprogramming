@@ -22,15 +22,19 @@
     }
 
     &:popover-open {
-      position       : absolute !important;
       inset          : var(--inset-open, auto 0);
-      margin-inline  : auto;
-      width          : min(var(--content-width), 90%);
       justify-content: center;
+      margin-inline  : auto;
+      position       : absolute !important;
+      width          : min(var(--page-width), 95%);
     }
 
     &:not(:popover-open) {
       display: none;
+    }
+
+    .navigation__list {
+      justify-content: center;
     }
   }
 
