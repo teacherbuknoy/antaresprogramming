@@ -18,7 +18,7 @@ class ColorScheme {
    */
   static applyColorScheme(scheme) {
     if (scheme == null) {
-      const colorscheme = localStorage.getItem(this.COLOR_SCHEME_KEY)
+      const colorscheme = localStorage.getItem(this.COLOR_SCHEME_KEY) ?? 'system'
       return this.applyColorScheme(colorscheme)
     }    
 
