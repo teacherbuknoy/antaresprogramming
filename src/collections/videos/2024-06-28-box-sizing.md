@@ -9,6 +9,7 @@ syndication:
   - https://youtu.be/0orT3dMIUmc
   - https://www.tiktok.com/@antaresphdev/video/7385251284309249298
   - https://mas.to/@antaresphdev/112689931173475684
+rssLink: https://www.tiktok.com/@antaresphdev/video/7385251284309249298
 link: 
   label: Panoorin sa YouTube
   url: https://youtu.be/0orT3dMIUmc

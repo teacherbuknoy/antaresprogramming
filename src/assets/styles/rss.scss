@@ -1,0 +1,317 @@
+@import "base/mixins";
+@import url('https: //rsms.me/inter/inter.css');
+
+@layer reset,
+layouts,
+components,
+utilities,
+print;
+
+@layer reset {
+  @import "base/reset";
+  @import "base/fonts";
+  @import "base/config";
+
+  :root {
+    --fg-contrast     : var(--d-contrast);
+    --fg-default      : var(--d-default);
+    --fg-subtle       : var(--d-subtle);
+    --fg-non-essential: var(--d-non-essential);
+
+    --bg-primary  : var(--l-contrast);
+    --bg-secondary: var(--l-default);
+    --bg-accent   : var(--l-subtle);
+    --bg-exception: var(--l-non-essential);
+
+    @media (prefers-color-scheme: dark) {
+      --fg-contrast     : var(--l-contrast);
+      --fg-default      : var(--l-default);
+      --fg-subtle       : var(--l-subtle);
+      --fg-non-essential: var(--l-non-essential);
+
+      --bg-primary  : var(--d-default);
+      --bg-secondary: var(--d-contrast);
+      --bg-accent   : var(--d-subtle);
+      --bg-exception: var(--d-non-essential);
+    }
+  }
+
+  .light {
+    --fg-contrast     : var(--d-contrast);
+    --fg-default      : var(--d-default);
+    --fg-subtle       : var(--d-subtle);
+    --fg-non-essential: var(--d-non-essential);
+
+    --bg-primary  : var(--l-contrast);
+    --bg-secondary: var(--l-default);
+    --bg-accent   : var(--l-subtle);
+    --bg-exception: var(--l-non-essential);
+  }
+
+  .dark {
+    --fg-contrast     : var(--l-contrast);
+    --fg-default      : var(--l-default);
+    --fg-subtle       : var(--l-subtle);
+    --fg-non-essential: var(--l-non-essential);
+
+    --bg-primary  : var(--d-default);
+    --bg-secondary: var(--d-contrast);
+    --bg-accent   : var(--d-subtle);
+    --bg-exception: var(--d-non-essential);
+  }
+
+  :root {
+    scroll-padding-top: 9rem;
+    scroll-behavior   : smooth;
+  }
+
+  body {
+    background-color       : hsl(var(--primary-300));
+    color                  : hsl(var(--fg-default));
+    font-family            : var(--font-body);
+    font-variation-settings: "SOFT"100, "WONK"0, 'wght'350;
+    font-weight            : 350;
+    min-height             : 100vh;
+    scroll-behavior        : smooth;
+  }
+
+  a {
+    text-decoration: none;
+    color          : hsl(var(--primary-900));
+
+    &:focus-visible {
+      outline: var(--focus-outline);
+    }
+
+    @at-root sup & {
+      text-decoration: underline;
+    }
+  }
+
+  strong,
+  b {
+    color                  : hsl(var(--fg-contrast));
+    font-variation-settings: 'wght'600, 'WONK'1, 'SOFT'1;
+    font-weight            : bold;
+  }
+
+  i,
+  dfn,
+  em,
+  var,
+  cite {
+    font-style      : italic;
+    font-family     : var(--font-sans-italic);
+    font-size-adjust: ex-height 0.5;
+  }
+
+  * {
+    outline      : var(--focus-outline);
+    outline-color: transparent;
+  }
+
+  :target {
+    animation      : target 700ms;
+    animation-delay: 1000ms;
+  }
+
+  @keyframes target {
+    from {
+      outline-color : hsl(var(--secondary-500) / 100%);
+      outline-offset: 0;
+    }
+
+    to {
+      outline-color : hsl(var(--secondary-500) / 0%);
+      outline-offset: 1rem;
+    }
+  }
+
+  body {
+    position: relative;
+  }
+
+  .decoration {
+    opacity : 30%;
+    z-index : -1;
+    position: absolute;
+    top     : 0;
+    left    : 0;
+    bottom  : 0;
+    right   : 0;
+  }
+
+  .circle {
+    align-items          : center;
+    aspect-ratio         : 1/1;
+    display              : grid;
+    grid-template-columns: 1fr;
+    grid-template-rows   : 1fr;
+    justify-items        : center;
+    position             : absolute;
+    width                : 75vw;
+    z-index              : -1;
+
+    &::before {
+      aspect-ratio    : 1/1;
+      background-color: hsl(var(--primary-500));
+      content         : '';
+      grid-column     : 1/2;
+      grid-row        : 1/2;
+      opacity         : 50%;
+      width           : 100%;
+    }
+
+    &::after {
+      aspect-ratio    : 1/1;
+      background-color: hsl(var(--secondary-500));
+      content         : '';
+      grid-column     : 1/2;
+      grid-row        : 1/2;
+      height          : 50%;
+      opacity         : 20%;
+      z-index         : 2;
+    }
+
+    &::before,
+    &::after {
+      border-radius: 100%;
+      filter       : blur(100px);
+    }
+
+    &:first-child {
+      top      : 0;
+      left     : 0;
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+    &:nth-child(2) {
+      display  : none;
+      width    : 60%;
+      top      : 50%;
+      left     : 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+    &:last-child {
+      bottom    : 0;
+      right     : 0;
+      //width   : 25vw;
+      overflow  : hidden;
+
+      &::before,
+      &::after {
+        transform: translateX(25vw) translateY(25vw);
+      }
+    }
+  }
+}
+
+@layer layouts {
+  :root {
+    background-color: hsl(var(--primary-100));
+    color           : hsl(var(--fg-default));
+    font-size       : var(--type-size-6);
+  }
+
+  channel {
+    display      : block;
+    width        : var(--page-width);
+    margin-inline: auto;
+    margin-block : var(--space-xxl);
+    font-family  : var(--font-ui);
+
+    &>:is(title, description, link, copyright) {
+      display: block;
+    }
+
+    &>title {
+      font-size: var(--type-size-3);
+    }
+
+    &>description {
+      font-size: var(--type-size-5);
+    }
+
+    category {
+      display         : inline-block;
+      padding-block   : 0.25ch;
+      padding-inline  : 0.5ch;
+      background-color: hsl(var(--primary-300) / 25%);
+      color           : hsl(var(--primary-700));
+      text-transform  : uppercase;
+      margin-block    : var(--space);
+      font-weight     : bold;
+    }
+
+    copyright {
+      font-style : italic;
+      font-family: var(--font-sans-italic);
+    }
+  }
+
+  generator,
+  webMaster,
+  managingEditor {
+    display: block;
+  }
+
+  generator::before {
+    content: 'Made with '
+  }
+
+  webMaster::before {
+    content: 'Having technical problems? Send an email to '
+  }
+
+  managingEditor::before {
+    content: 'Content here is produced by '
+  }
+
+  docs,
+  image,
+  language,
+  lastBuildDate,
+  pubDate {
+    display: none
+  }
+
+  item:first-of-type {
+    margin-block-start: var(--space-xxl);
+  }
+
+  item {
+    display           : block;
+    border-block-start: var(--border);
+    padding-block     : var(--space);
+
+    title,
+    description,
+    link,
+    pubDate {
+      display: block;
+    }
+
+    guid {
+      display: none
+    }
+
+    title {
+      font-size: var(--type-size-4);
+    }
+
+    description {
+      font-size       : var(--type-size-5);
+      margin-block-end: var(--space);
+      opacity         : 85%;
+    }
+
+    pubDate {
+      margin-inline-start: auto;
+    }
+
+    pubDate::before {
+      content: 'Published on '
+    }
+  }
+}

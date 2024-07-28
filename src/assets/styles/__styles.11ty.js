@@ -8,6 +8,7 @@ class Stylesheets {
       styles: 'styles.scss',
       post: 'post.scss',
       donations: 'donations.scss',
+      rss: 'rss.scss',
       'video-entry': 'video-entry.scss'
     }
   }

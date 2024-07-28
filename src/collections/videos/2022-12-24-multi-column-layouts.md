@@ -2,6 +2,7 @@
 title: Multi-column Layouts
 description: Sa video na ito, samahan si Francis na tingnan kung saan at paano ginagamit ang CSS Multi-column layout.
 author: teacherbuknoy
+rssLink: https://youtu.be/L7Zp1n6IoCk
 link: 
   label: Panoorin sa YouTube
   url: https://youtu.be/L7Zp1n6IoCk

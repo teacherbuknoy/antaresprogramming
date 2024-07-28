@@ -3,6 +3,7 @@
   "description": "For Filipino web developers. Posting infographics, articles, and videos wherever it makes sense.",
   "baseUrl": "http://localhost:8080",
   "url":"https://antaresph.dev",
+  "logo": "/assets/images/logo.png",
   "seo": {
     "og": {
       "src": ""
@@ -59,7 +60,7 @@
     }
   },
   "feeds": {
-    "all": { "label": "All posts", "link": "/feeds.xml", "icon": "rss" },
+    "all": { "label": "All posts", "link": "/feed.xml", "icon": "rss" },
     "articles": { "label": "Articles", "link": "/articles.xml", "icon": "book-open" },
     "videos": { "label": "Videos", "link": "/videos.xml", "icon": "video" },
     "infographics": { "label": "Infographics", "link": "/infographics", "icon": "image" }

@@ -1,0 +1,57 @@
+---
+title: 'Antares Programming'
+description: Mga posts, videos, at infographics sa Antares Programming
+layout: null
+eleventyExcludeFromCollections: true
+permalink: /feed.xml
+---
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="/assets/styles/rss.css" type="text/css"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ title | safe }}</title>
+    <description>{{ description | safe }}</description>
+    <link>{{ site.url }}</link>
+    <category>Web Development</category>
+    <category>HTML</category>
+    <category>CSS</category>
+    <category>JavaScript</category>
+    <copyright>Copyright 2007 Antares Programming, Francis Rubio</copyright>
+    <docs>https://www.rssboard.org/rss-specification</docs>
+    <generator>{{ eleventy.generator }}</generator>
+    <image>
+      <link>{{ site.url }}</link>
+      <title>{{ title | safe }}</title>
+      <url>{{ site.url }}{{ site.logo }}</url>
+      <height>400</height>
+      <width>400</width>
+    </image>
+    <language>tl</language>
+    <lastBuildDate>{{ generated }}</lastBuildDate>
+    <managingEditor>{{ authors["teacherbuknoy"].email }} ({{ authors['teacherbuknoy'].name }})</managingEditor>
+    <webMaster>{{ authors["teacherbuknoy"].email }}</webMaster>
+    <pubDate>{{ generated }}</pubDate>
+
+    <atom:link href="{{ site.url }}{{ page.url }}" rel="self" type="application/rss+xml" />
+
+    {% for item in collections.everything %}
+      {% set absolutePostUrl %}{{ site.url }}{{ item.url }}{% endset %}
+      <item>
+        <title>{{ item.data.title | safe }}</title>
+        <description><![CDATA[
+          <p>{{ item.data.description | safe }}</p>
+          {% if item.data.postType === 'video' %}            
+          <p><a href="{{ absolutePostUrl }}">Panoorin ang video sa Antares Programming website.</a></p>
+          {% endif %}
+        ]]></description>
+        <link>{{ absolutePostUrl }}</link>
+        <guid isPermalink="true">{{ absolutePostUrl }}</guid>
+        <category>{{ item.data.postType }}</category>
+        {% for category in item.data.tags %}
+          <category>{{ category }}</category>
+        {% endfor %}
+        <pubDate>{{ item.date | dateToRfc3339 }}</pubDate>
+      </item>
+    {% endfor %}
+  </channel>
+</rss>

@@ -6,6 +6,7 @@ banner:
   subtitle: CSS
 description: Nahihirapan ka pa rin bang mag-center ng mga elements sa CSS? May madali nang way para magawa iyan.
 author: teacherbuknoy
+rssLink: https://www.tiktok.com/@antaresphdev/video/7395934935049211152
 syndication:
   - https://www.dailymotion.com/video/x92xktg
   - https://youtube.com/shorts/wdDa8Iv7sEw

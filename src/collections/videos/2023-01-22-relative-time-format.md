@@ -5,6 +5,7 @@ banner:
   subtitle: JS Internationalization API
 description: Sa video na ito, pag-usapan natin ang Intl.RelativeTimeFormat at kung paano ito gagamitin sa pagdi-display ng user-friendly na dates.
 author: teacherbuknoy
+rssLink: https://youtu.be/NC9SlnIdH-U
 link: 
   label: Panoorin sa YouTube
   url: https://youtu.be/NC9SlnIdH-U

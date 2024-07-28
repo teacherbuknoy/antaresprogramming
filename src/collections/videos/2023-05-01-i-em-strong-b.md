@@ -5,6 +5,7 @@ banner:
   subtitle: HTML Semantics
 description: Saan at kailan pwedeng gamitin ang i, em, strong, at b tags?
 author: teacherbuknoy
+rssLink: https://www.tiktok.com/@antaresphdev/video/7228036804144942338
 link: 
   label: Panoorin sa Tiktok
   url: https://www.tiktok.com/@antaresphdev/video/7228036804144942338
