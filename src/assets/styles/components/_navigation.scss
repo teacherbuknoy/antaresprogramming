@@ -22,11 +22,12 @@
     }
 
     &:popover-open {
-      inset          : var(--inset-open, auto 0);
+      inset          : 0;
       justify-content: center;
+      margin-block   : 4rem;
       margin-inline  : auto;
       position       : absolute !important;
-      width          : min(var(--page-width), 95%);
+      width          : min(clamp(var(--content-width), 95vw, var(--page-width)), 95%);
     }
 
     &:not(:popover-open) {
