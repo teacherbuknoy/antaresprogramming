@@ -154,3 +154,7 @@
 
   @include box-shadow(10, 2, hsl(var(--border-color) / 3%));
 }
+
+.code-result__embed {
+  display: grid;
+}
