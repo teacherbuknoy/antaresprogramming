@@ -57,48 +57,6 @@ pre[class^=language] {
   scrollbar-width: thin;
   tab-size       : 2;
 
-  .token {
-
-    &.selector,
-    &.tag .tag,
-    &.keyword {
-      color                  : hsl(var(--primary-900) / 75%);
-      font-variation-settings: 'wght'500;
-    }
-
-    &.property,
-    &.attr-name {
-      color: hsl(var(--warning-900));
-    }
-
-    &.string,
-    &.attr-value,
-    &.attr-value .punctuation:not(.attr-equals) {
-      color: hsl(var(--success-700));
-    }
-
-    &.function {
-      color                  : hsl(var(--secondary-900) / 80%);
-      font-variation-settings: 'wght'500;
-    }
-
-    &.comment {
-      color: hsl(var(--fg-default) / 50%);
-    }
-
-    &.punctuation {
-      color: hsl(var(--fg-subtle));
-    }
-
-    &.important {
-      color: hsl(var(--error-700));
-    }
-
-    &.special-attr {
-      color: hsl(var(--warning-700));
-    }
-  }
-
   .highlight-line {
     display: inline-block;
 
@@ -110,5 +68,47 @@ pre[class^=language] {
       padding-inline-start: var(--space);
       width               : calc(100% + var(--space) * 2);
     }
+  }
+}
+
+.token {
+
+  &.selector,
+  &.tag .tag,
+  &.keyword {
+    color                  : hsl(var(--primary-900) / 75%);
+    font-variation-settings: 'wght'500;
+  }
+
+  &.property,
+  &.attr-name {
+    color: hsl(var(--warning-900));
+  }
+
+  &.string,
+  &.attr-value,
+  &.attr-value .punctuation:not(.attr-equals) {
+    color: hsl(var(--success-700));
+  }
+
+  &.function {
+    color                  : hsl(var(--secondary-900) / 80%);
+    font-variation-settings: 'wght'500;
+  }
+
+  &.comment {
+    color: hsl(var(--fg-default) / 50%);
+  }
+
+  &.punctuation {
+    color: hsl(var(--fg-subtle));
+  }
+
+  &.important {
+    color: hsl(var(--error-700));
+  }
+
+  &.special-attr {
+    color: hsl(var(--warning-700));
   }
 }

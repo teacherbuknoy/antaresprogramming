@@ -71,9 +71,10 @@
 }
 
 .code-result {
-  width         : 100%;
-  border        : var(--border);
-  padding-inline: calc((100vw - var(--content-width)) / 2);
+  background-color: hsl(var(--bg-primary));
+  border          : var(--border);
+  padding-inline  : calc((100vw - var(--content-width))/2);
+  width           : 100%;
 
   @at-root .code-sample & {
     border-block-start: none;
@@ -106,4 +107,50 @@
 .bordered-box,
 .bordered.box {
   grid-column: 1/-1;
+}
+
+.diagram-pointer {
+  position : relative;
+  --content: attr(data-label);
+
+  all            : unset;
+  position       : relative;
+  cursor         : pointer;
+  border-radius  : var(--ideal-radius);
+  transition     : box-shadow 200ms, background 200ms, text-decoration 200ms;
+  padding-inline : 0.5ch;
+  margin-inline  : -0.5ch;
+  text-decoration: 2px underline hsl(var(--secondary-500));
+  anchor-name    : --diagram-pointer;
+
+  &:focus-visible {
+    box-shadow           : 0 0 0 5px hsl(var(--secondary-500));
+    text-decoration-color: hsl(var(--secondary-500) / 0%);
+  }
+
+  &:hover {
+    background-color     : hsl(var(--secondary-500) / 25%);
+    text-decoration-color: hsl(var(--secondary-500) / 0%);
+  }
+
+  &::after {
+    content: none;
+  }
+}
+
+[data-label] {
+  @extend .diagram-pointer;
+}
+
+.diagram-description {
+  border-radius   : var(--ideal-radius);
+  border          : var(--border);
+  background-color: hsl(var(--bg-primary));
+  padding         : var(--space-xs) var(--space);
+  font-size       : var(--type-size-6);
+  white-space     : collapse;
+  position-anchor : --diagram-pointer;
+  top             : anchor(--diagram-pointer bottom);
+
+  @include box-shadow(10, 2, hsl(var(--border-color) / 3%));
 }

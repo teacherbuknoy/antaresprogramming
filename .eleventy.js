@@ -63,6 +63,7 @@ module.exports = function (eleventy) {
   mdLib.use(require('markdown-it-abbr'))
   mdLib.use(require('markdown-it-footnote'))
   mdLib.use(require('markdown-it-attrs'))
+  mdLib.use(require('markdown-it-bracketed-spans'))
   mdLib.disable('code')
   eleventy.setLibrary('md', mdLib)
 
