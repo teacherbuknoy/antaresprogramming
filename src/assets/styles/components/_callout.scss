@@ -65,6 +65,7 @@
 
   &--info {
     --icon-color    : hsl(var(--info-900));
+    color           : hsl(var(--info-900));
     background-color: hsl(var(--info-300) / 100%);
   }
 
