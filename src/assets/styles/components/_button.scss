@@ -59,3 +59,26 @@
   list-style-type: none;
   justify-content: center;
 }
+
+.skip-link {
+  @extend .button;
+  @extend .primary;
+
+  background-color: hsl(var(--primary-500));
+  left            : 50%;
+  margin-inline   : auto;
+  position        : absolute;
+  top             : var(--space);
+  translate       : -50% -150%;
+  z-index         : 9999;
+  transition      : outline-offset 200ms,outline 200ms,outline-color 100ms 100ms,color 200ms, translate 200ms !important;
+
+  &:focus-visible {
+    translate: -50%;
+  }
+
+  @supports (backdrop-filter: blur(5px)) {
+    backdrop-filter : blur(var(--space));
+    background-color: hsl(var(--primary-500) / 25%);
+  }
+}
