@@ -8,8 +8,8 @@
     </svg>
   {% endmacro %}
 
-  {% macro logo(class) %}
-    <img class="{{ class }}" src="/assets/images/logo.svg" alt="Antares Programming logo" width="64" height="64">
+  {% macro logo(class, hasAlt = true) %}
+    <img class="{{ class }}" src="/assets/images/logo.svg" alt="{{ 'Antares Programming logo' if hasAlt }}" width="64" height="64">
   {% endmacro %}
 
   {% macro demoWindow(title = "Demo") %}

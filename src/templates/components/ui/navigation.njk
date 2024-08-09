@@ -2,7 +2,7 @@
 <nav class="navigation">
   <div class="navigation__start">
     <a href="/" class="logo">
-      {{ logo('logo__image') }}
+      {{ logo('logo__image', false) }}
       <span class="logo__wordmark">Antares Programming</span>
     </a>
   </div>
@@ -17,7 +17,7 @@
           {% else %}
             <a href="{{ item.url }}" class="navigation__link">
               {% if item.icon != null %}
-                {{ icon(item.icon, item.text) }}
+                {{ icon(item.icon) }}
               {% endif %}
               <span class="label">{{ item.text }}</span>
             </a>
@@ -38,7 +38,7 @@
                 <a href="{{ item.link }}" class="navigation__link" {% if item.external %}
                   target="_blank" rel="noopener"
                 {% endif %}>
-                  {{ icon(item.icon, item.label) }}
+                  {{ icon(item.icon) }}
                   <span class="label">{{ item.label }}</span>
                 </a>
               </li>
@@ -48,7 +48,7 @@
       </li>
       <li class="navigation__list-item">
         <button class="navigation__link icon-only" onclick="document.getElementById('popover-color-scheme').showModal()">
-          {{ icon('sun', 'Switch to light mode') }}
+          {{ icon('sun', 'Select color scheme') }}
         </button>
         <dialog class="navigation" id="popover-color-scheme" aria-labelledby="dialog-label-colorscheme">
           <ul class="navigation__list">
@@ -57,19 +57,19 @@
             </li>
             <li class="navigation__list-item">
               <button class="navigation__link" data-colorscheme="light">
-                {{ icon('sun', "Light mode") }}
+                {{ icon('sun') }}
                 <span class="label">Light</span>
               </button>
             </li>
             <li class="navigation__list-item">
               <button class="navigation__link" data-colorscheme="dark">
-                {{ icon('moon', "Dark mode") }}
+                {{ icon('moon') }}
                 <span class="label">Dark</span>
               </button>
             </li>
             <li class="navigation__list-item">
               <button class="navigation__link" data-colorscheme="system">
-                {{ icon('cpu', "Follow system theme") }}
+                {{ icon('cpu') }}
                 <span class="label">Follow system theme</span>
               </button>
             </li>
