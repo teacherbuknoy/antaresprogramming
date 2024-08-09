@@ -2,7 +2,7 @@
   align-items            : center;
   background             : transparent;
   border                 : 1px solid hsl(var(--border-color));
-  color                  : hsl(var(--fg-default));
+  color                  : hsl(var(--primary-900));
   cursor                 : pointer;
   display                : flex;
   font-family            : var(--font-ui);
@@ -15,7 +15,7 @@
   padding-block          : 1ch;
   padding-inline         : 1.5ch;
   text-transform         : uppercase;
-  transition             : outline-offset 200ms, outline 200ms, outline-color 100ms 100ms;
+  transition             : outline-offset 200ms, outline 200ms, outline-color 100ms 100ms, color 200ms;
 
   &.inline {
     display: inline-flex
@@ -26,11 +26,12 @@
   }
 
   &:focus-visible {
-    transition      : outline-offset 200ms, outline 200ms, outline-color 200ms;
-    outline         : 2px solid hsl(var(--border-color));
-    background-color: hsl(var(--border-color));
-    color           : hsl(var(--primary-100));
-    outline-offset  : 0.5ch;
+    background-color: hsl(var(--secondary-500));
+    border-color    : hsl(var(--secondary-500));
+    color           : hsl(var(--l-secondary-100));
+    outline         : 2px solid hsl(var(--secondary-500));
+    outline-offset  : .5ch;
+    transition      : outline-offset 300ms, outline 200ms, outline-color 200ms, background-color 200ms;
   }
 
   &.primary {
@@ -38,7 +39,6 @@
     border-color    : hsl(var(--primary-500) / 25%);
     color           : hsl(var(--primary-900));
 
-    &:focus-visible,
     &:hover {
       color           : hsl(var(--primary-300));
       background-color: hsl(var(--primary-700));

@@ -27,14 +27,14 @@
         <button class="navigation__link icon-only" onclick="document.getElementById('popover-rss').showModal()">
           {{ icon('rss', 'RSS feeds') }}
         </button>
-        <dialog class="navigation" id="popover-rss">
+        <dialog class="navigation" id="popover-rss" aria-labelledby="dialog-label-rss">
           <ul class="navigation__list">
             <li class="navigation__list-item">
-              <span class="navigation__label">Mga RSS Feed</span>
+              <span class="navigation__label" id="dialog-label-rss">Mga RSS Feed</span>
             </li>
             {% for key,item in site.feeds %}
               <li class="navigation__list-item">
-                <a href="{{ item.link }}" class="navigation__link" data-colorscheme="light" {% if item.external %}
+                <a href="{{ item.link }}" class="navigation__link" {% if item.external %}
                   target="_blank" rel="noopener"
                 {% endif %}>
                   {{ icon(item.icon, item.label) }}
@@ -49,10 +49,10 @@
         <button class="navigation__link icon-only" onclick="document.getElementById('popover-color-scheme').showModal()">
           {{ icon('sun', 'Switch to light mode') }}
         </button>
-        <dialog class="navigation" id="popover-color-scheme">
+        <dialog class="navigation" id="popover-color-scheme" aria-labelledby="dialog-label-colorscheme">
           <ul class="navigation__list">
             <li class="navigation__list-item">
-              <span class="navigation__label">Pumili ng color scheme</span>
+              <span class="navigation__label" id="dialog-label-colorscheme">Pumili ng color scheme</span>
             </li>
             <li class="navigation__list-item">
               <button class="navigation__link" data-colorscheme="light">

@@ -79,7 +79,10 @@ print;
     color          : hsl(var(--primary-900));
 
     &:focus-visible {
-      outline: var(--focus-outline);
+      background-color: hsl(var(--secondary-300));
+      outline         : 2px dashed hsl(var(--secondary-500));
+      outline-offset  : 2px;
+      text-decoration : none !important;
     }
 
     @at-root sup & {

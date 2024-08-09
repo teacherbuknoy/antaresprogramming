@@ -90,16 +90,18 @@
     padding-inline         : 1.5ch;
     text-transform         : uppercase;
     outline                : 2px solid transparent;
-    transition             : box-shadow 200ms, outline 200ms, outline-offset 200ms;
+    transition             : box-shadow 200ms, outline 200ms, outline-offset 300ms, background-color 200ms, color 200ms;
 
     &:hover {
       background-color: hsl(var(--border-color) / 15%)
     }
 
     &:focus-visible {
-      outline-color : hsl(var(--secondary-500));
-      box-shadow    : 0 0 0 2px currentColor;
-      outline-offset: var(--space-xs);
+      background-color: hsl(var(--secondary-500));
+      border-color    : hsl(var(--secondary-500));
+      color           : hsl(var(--l-secondary-100));
+      outline         : 2px solid hsl(var(--secondary-500));
+      outline-offset  : .5ch;
     }
 
     .feather {
@@ -125,6 +127,12 @@
       border-bottom      : var(--border);
       border-bottom-width: var(--radius-1);
       background-color   : hsl(var(--border-color) / 10%);
+      transition         : box-shadow 200ms, outline 200ms, outline-offset 300ms, background-color 200ms, color 200ms, border-color 200ms;
+
+      &:focus-visible {
+        background-color      : hsl(var(--secondary-500));
+        border-block-end-color: hsl(var(--secondary-700));
+      }
     }
 
     @container navigation (width < 30em) {
