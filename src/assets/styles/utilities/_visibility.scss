@@ -58,6 +58,18 @@
   display: none
 }
 
+@media (prefers-color-scheme: dark) {
+  .system .hide-on-dark {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: light) or (prefers-color-scheme: no-preference) {
+  .system .hide-on-light {
+    display: none;
+  }
+}
+
 .not-by-ai {
   height         : 4ch;
   width          : auto;
