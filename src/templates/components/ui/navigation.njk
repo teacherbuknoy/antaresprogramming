@@ -24,10 +24,10 @@
         </li>
       {% endfor %}
       <li class="navigation__list-item">
-        <button class="navigation__link icon-only" popovertarget="popover-rss">
+        <button class="navigation__link icon-only" onclick="document.getElementById('popover-rss').showModal()">
           {{ icon('rss', 'RSS feeds') }}
         </button>
-        <div class="navigation" id="popover-rss" popover>
+        <dialog class="navigation" id="popover-rss">
           <ul class="navigation__list">
             <li class="navigation__list-item">
               <span class="navigation__label">Mga RSS Feed</span>
@@ -43,13 +43,13 @@
               </li>
             {% endfor %}
           </ul>
-        </div>
+        </dialog>
       </li>
       <li class="navigation__list-item">
-        <button class="navigation__link icon-only" popovertarget="popover-color-scheme">
+        <button class="navigation__link icon-only" onclick="document.getElementById('popover-color-scheme').showModal()">
           {{ icon('sun', 'Switch to light mode') }}
         </button>
-        <div class="navigation" id="popover-color-scheme" popover>
+        <dialog class="navigation" id="popover-color-scheme">
           <ul class="navigation__list">
             <li class="navigation__list-item">
               <span class="navigation__label">Pumili ng color scheme</span>
@@ -73,7 +73,7 @@
               </button>
             </li>
           </ul>
-        </div>
+        </dialog>
       </li>
     </ul>
   </div>

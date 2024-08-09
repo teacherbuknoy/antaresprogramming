@@ -1,13 +1,15 @@
 .navigation {
-  display         : flex;
-  flex-wrap       : wrap;
-  gap             : var(--space);
   align-items     : center;
-  padding         : var(--space);
   border-block-end: 1px solid hsl(var(--border-color));
   container-name  : navigation;
   container-type  : inline-size;
+  display         : flex;
+  flex-wrap       : wrap;
+  gap             : var(--space);
+  overflow        : visible;
+  padding         : var(--space);
 
+  &:is(dialog),
   &[popover] {
     @include box-shadow(10, 2, rgb(0 0 0 / 3%));
     background-color: hsl(var(--primary-300));
@@ -17,20 +19,22 @@
     padding         : 0;
 
     &::backdrop {
-      background     : hsl(var(--primary-300) / 35%);
+      background     : hsl(var(--d-primary-100)/70%);
       backdrop-filter: blur(2px);
     }
 
-    &:popover-open {
+    &:is(dialog)[open],
+    &:is([popover]):popover-open {
       inset          : 0;
       justify-content: center;
       margin-block   : 4rem;
       margin-inline  : auto;
-      position       : absolute !important;
+      position       : fixed !important;
       width          : min(clamp(var(--content-width), 95vw, var(--page-width)), 95%);
     }
 
-    &:not(:popover-open) {
+    &:is(dialog):not([open]),
+    &:is([popover]):not(:popover-open) {
       display: none;
     }
 
@@ -85,9 +89,17 @@
     padding-block          : 1ch;
     padding-inline         : 1.5ch;
     text-transform         : uppercase;
+    outline                : 2px solid transparent;
+    transition             : box-shadow 200ms, outline 200ms, outline-offset 200ms;
 
     &:hover {
       background-color: hsl(var(--border-color) / 15%)
+    }
+
+    &:focus-visible {
+      outline-color : hsl(var(--secondary-500));
+      box-shadow    : 0 0 0 2px currentColor;
+      outline-offset: var(--space-xs);
     }
 
     .feather {
@@ -124,5 +136,20 @@
 
   .logo__wordmark {
     color: hsl(var(--primary-700))
+  }
+}
+
+.navigation {
+  position: sticky;
+  top     : 0;
+  z-index : 999;
+
+  &::before {
+    content         : '';
+    backdrop-filter : blur(var(--space));
+    background-color: hsl(var(--primary-300) / 75%);
+    inset           : 0;
+    position        : absolute;
+    z-index         : -1;
   }
 }

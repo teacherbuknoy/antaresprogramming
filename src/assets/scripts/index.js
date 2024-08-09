@@ -53,3 +53,25 @@ $$('button[data-colorscheme]')
       })
     }
   })
+
+/* CLOSE DIALOG BY CLICKING ITS BACKDROP */
+document.body.addEventListener('click', e => {
+  if (!e.target.matches('dialog'))
+    return
+
+  const dialog = e.target
+  const rect = dialog.getBoundingClientRect()
+  const isInDialog = (
+    rect.top <= e.clientY
+    &&
+    e.clientY <= rect.top + rect.height
+    &&
+    rect.left <= e.clientX
+    &&
+    e.clientX <= rect.left + rect.width
+  )
+
+  if (!isInDialog) {
+    dialog.close()
+  }
+})
