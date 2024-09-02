@@ -1,16 +1,62 @@
 .logo {
-  display    : flex;
-  gap        : 1ch;
+  display: flex;
+  gap: 1ch;
   align-items: center;
+
+  &:has(.logo__motto) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    row-gap: 0;
+
+    .logo__image {
+      width: auto;
+      height: var(--type-size-1);
+    }
+
+    .logo__wordmark {
+      align-self: end;
+    }
+
+    .logo__motto {
+      align-self: start;
+    }
+  }
 
   &__image {
     width: var(--type-size-3);
     height: var(--type-size-3);
+    grid-column: 1/2;
+    grid-row: 1/3;
   }
 
   &__wordmark {
-    font-family   : var(--font-sans);
-    text-transform: uppercase;
-    color         : hsl(var(--fg-contrast));
+    color: hsl(var(--fg-contrast));
+    display: flex;
+    font-family: var(--font-sans);
+    font-feature-settings: var(--ffs-heading);
+    font-size: var(--type-size-5);
+    text-transform: lowercase;
+    grid-column: 2/3;
+    line-height: 1;
+    grid-row: 1/2;
+
+    &__part {
+      &:nth-child(1) {
+        font-weight: 800;
+        color: hsl(var(--primary-900));
+      }
+
+      &:last-child {
+        font-weight: 400;
+        font-size: 1.5em;
+        line-height: var(--type-size-6);
+        color: hsl(var(--primary-700));
+      }
+    }
+  }
+
+  &__motto {
+    grid-column: 2/3;
+    grid-row: 2/3;
   }
 }
