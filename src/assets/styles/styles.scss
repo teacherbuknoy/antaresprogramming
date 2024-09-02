@@ -68,10 +68,27 @@ print;
     background-color       : hsl(var(--primary-300));
     color                  : hsl(var(--fg-default));
     font-family            : var(--font-body);
-    font-variation-settings: "SOFT"100, "WONK"0, 'wght'350;
+    font-feature-settings  : var(--ffs-body);
     font-weight            : 350;
     min-height             : 100vh;
     scroll-behavior        : smooth;
+
+    --ffs-body:
+      "tnum" 1,
+      "ss01" 1,
+      "ss03" 1,
+      "cv08" 1,
+      "cv11" 1;
+
+    --ffs-heading: 
+      var(--ffs-body),
+      "cv12" 1,
+      "cv13" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-feature-settings: var(--ffs-body);
+    font-family: var(--font-sans);
   }
 
   a {
@@ -93,7 +110,6 @@ print;
   strong,
   b {
     color                  : hsl(var(--fg-contrast));
-    font-variation-settings: 'wght'600, 'WONK'1, 'SOFT'1;
     font-weight            : bold;
   }
 

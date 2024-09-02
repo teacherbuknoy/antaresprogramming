@@ -274,11 +274,11 @@
 
 /* FONTS */
 :root {
-  --font-sans         : "Figtree", "Noto Sans Tagalog", sans-serif;
+  --font-sans         : "InterVariable", "Noto Sans Tagalog", sans-serif;
   --font-sans-italic  : "InterVariable", "Inter", "Noto Sans Tagalog", sans-serif;
-  --font-serif        : "Fraunces", serif;
-  --font-display      : "Figtree", "Noto Sans Tagalog", sans-serif;
-  --font-display-serif: "Fraunces", serif;
+  --font-serif        : "Figtree", serif;
+  --font-display      : "InterVariable", "Noto Sans Tagalog", sans-serif;
+  --font-display-serif: "Figtree", serif;
   --font-body         : var(--font-serif);
   --font-ui           : var(--font-sans);
   --font-mono         : "Source Code Pro", monospace;

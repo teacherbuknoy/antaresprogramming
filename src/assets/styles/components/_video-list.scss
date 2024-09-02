@@ -23,7 +23,7 @@
     .article__title,
     .article__summary {
       font-size              : var(--type-size-6);
-      font-variation-settings: 'wght'400;
+      font-weight            : 400;
       font-family            : var(--font-sans);
       color                  : hsl(var(--fg-default));
       align-content          : end;

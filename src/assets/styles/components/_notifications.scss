@@ -43,8 +43,7 @@
 
 .toast__title {
   color                  : var(--theme-color, hsl(var(--l-contrast)));
-  font-weight            : bold;
-  font-variation-settings: 'wght'600;
+  font-weight            : 600;
 }
 
 .toast__message {

@@ -91,7 +91,7 @@ pre[class^=language] {
   &.tag .tag,
   &.keyword {
     color: hsl(var(--primary-900) / 75%);
-    font-variation-settings: 'wght' 500;
+    font-weight: 500;
   }
 
   &.property,
@@ -107,7 +107,7 @@ pre[class^=language] {
 
   &.function {
     color: hsl(var(--secondary-900) / 80%);
-    font-variation-settings: 'wght' 500;
+    font-weight: 500;
   }
 
   &.comment {

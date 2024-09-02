@@ -29,25 +29,25 @@
   }
 
   &__type {
-    background-color       : hsl(var(--d-default) / 75%);
-    padding                : var(--space-xxs) var(--space-xs);
-    text-transform         : uppercase;
-    font-weight            : bold;
-    font-variation-settings: "wght"700;
-    color                  : hsl(var(--l-contrast));
-    border-radius          : var(--radius-3);
-    position               : absolute;
-    top                    : var(--space-xxs);
-    left                   : var(--space-xxs);
-    backdrop-filter        : blur(5px);
-    font-family            : var(--font-ui);
+    backdrop-filter: blur(5px);
+    background-color: hsl(var(--d-default)/75%);
+    border-radius: var(--radius-3);
+    color: hsl(var(--l-contrast));
+    font-family: var(--font-sans);
+    font-feature-settings: 'opsz' 14;
+    font-weight: 300;
+    left: var(--space-xxs);
+    padding: var(--space-xxs) var(--space-xs);
+    position: absolute;
+    text-transform: uppercase;
+    top: var(--space-xxs);
   }
 
   &__title {
-    font-family            : var(--font-ui);
+    font-family            : var(--font-sans);
     font-size              : var(--type-size-5);
-    font-variation-settings: 'wght'300;
-    font-weight            : normal;
+    font-weight            : 700;
+    font-feature-settings  : var(--ffs-heading);
     line-height            : 1;
     margin                 : 0;
 

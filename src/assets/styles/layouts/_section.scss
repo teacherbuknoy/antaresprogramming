@@ -11,8 +11,7 @@
       &__heading {
         font-size              : clamp(var(--type-size-3), 10vw, var(--type-size-1));
         text-transform         : none;
-        font-weight            : normal;
-        font-variation-settings: 'wght'300;
+        font-weight            : 300;
       }
     }
   }
@@ -22,14 +21,17 @@
   }
 
   &__heading {
-    font-family            : var(--font-ui);
-    color                  : hsl(var(--primary-700));
-    text-transform         : uppercase;
-    font-weight            : bold;
-    font-variation-settings: "wght"600;
-    font-size              : var(--type-size);
-    flex                   : 1;
-    flex-basis             : 15ch;
+    font-family: var(--font-ui);
+    color: hsl(var(--primary-700));
+    text-transform: lowercase;
+    font-weight: 200;
+    font-size: var(--type-size-4);
+    flex: 1;
+    flex-basis: 15ch;
+
+    &::after {
+      content: '.';
+    }
   }
 
   &__header {

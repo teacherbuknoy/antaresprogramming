@@ -32,8 +32,7 @@
       color                  : hsl(var(--primary-700));
       content                : var(--pre-language, "");
       font-family            : var(--font-sans);
-      font-weight            : bold;
-      font-variation-settings: 'wght'600;
+      font-weight            : 600;
       left                   : calc((100vw - var(--content-width)) / 2);
       padding                : var(--space-xxs) var(--space-s);
       position               : absolute;

@@ -31,8 +31,7 @@
     cursor                 : pointer;
     display                : flex;
     font-family            : var(--font-sans);
-    font-variation-settings: 'wght'600;
-    font-weight            : bold;
+    font-weight            : 600;
     gap                    : 1ch;
     outline                : 3px solid hsl(var(--fg-content-warning, var(--fg-contrast)) / 0);
     padding-block          : var(--space-xs);
@@ -193,8 +192,7 @@
   &::before {
     content                : attr(data-slur);
     margin-left            : -0.15ch;
-    font-weight            : bold;
-    font-variation-settings: 'wght'600;
+    font-weight            : 600;
     text-transform         : uppercase;
     font-size              : var(--type-size-7);
     padding-block          : 0.2ch;
