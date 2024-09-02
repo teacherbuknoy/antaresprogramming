@@ -13,8 +13,23 @@ syndication:
   - https://www.facebook.com/share/r/tyDQRjqVLVKsPDG5/
   - https://www.tiktok.com/@antaresphdev/video/7395934935049211152
 video:
-  provider: bunny
-  embedCode: 07bc2d4e-565a-462e-a9ef-0d05cfea5d93
+  provider: cdn
+  lang: tl
+  formats:
+    - url: /videos/block-align-content/block-align-content.mp4
+      type: video/mp4
+      width: 1080
+      height: 1920
+  captions:
+    - url: /videos/block-align-content/block-align-content.vtt
+      lang: tl
+      kind: captions
+      label: Filipino
+      isDefault: true
+    - url: /videos/block-align-content/block-align-content.en-US.vtt
+      lang: en-US
+      kind: subtitles
+      label: English (US)
 cover:
   folder: block-align-content
   filename: cover.png

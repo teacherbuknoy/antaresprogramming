@@ -1,0 +1,21 @@
+---
+title: 'Brand Guidelines - Antares Programming'
+permalink: /brand/
+---
+{% set values = [100, 300, 500, 700, 900] %}
+{% set colors = ['primary', 'secondary', 'info', 'success', 'warning', 'error'] %}
+
+<dl>
+
+{% for color in colors %}
+  {% for value in values %}
+    <dt>{{ color }} {{ value }}</dt>
+    <dd>
+      <svg viewBox="0 0 50 50" width="50" height="50">
+        <circle cx="25" cy="25" r="25" style="fill: hsl(var(--l-{{ color }}-{{ value }}))" />
+      </svg>
+    </dd>
+  {% endfor %}
+{% endfor %}
+
+</dl>

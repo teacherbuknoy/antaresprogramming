@@ -1,0 +1,34 @@
+<article class="entry--video {{ 'short' if type === 'short' }} not-sidebar h-entry" aria-labelledby="post-title">
+  {% set folder = video.folder if video.folder else 
+    cover.folder %}
+  <a href="{{ page.url }}" class="u-url"></a>
+  {% for link in syndication %}
+    <a href="{{ link }}" rel="syndication" class="u-syndication"></a>
+  {% endfor %}
+  <video 
+        crossorigin
+        lang="{{ video.lang if video.lang else 'tl' }}"
+        class="video-player u-video e-content" controls>
+    {% for source in video.formats %}
+      <source src="{{ site.api.cdn }}{{ source.url }}" type="{{ source.type }}" 
+        {% if source.width %}width="{{ source.width }}"{% endif %}
+        {% if source.height %}height="{{ source.height }}"{% endif %}
+      >
+    {% endfor %}
+    {% for caption in captions %}
+      <track
+        {{ 'default' if caption.isDefault }}
+        kind="{{ caption.kind }}"
+        srclang="{{ caption.lang }}"
+        label="{{ caption.label }}"
+      ></track>
+    {% endfor %}
+  </video>
+  <div class="entry__meta">
+    {{ logo('logo__image') }}
+    <h1 class="entry__title p-name">{{ title | safe }}</h1>
+    <p class="entry__description p-summary">{{ description | safe }}</p>
+    <a rel="author" class="p-author h-card" href="{{ authors[author].url }}">{{ authors[author].name }}</a>
+    <time class="dt-published" datetime="{{ page.date | machineReadableDate }}">{{ page.date | humanReadableDate }}</time>
+  </div>
+</article>

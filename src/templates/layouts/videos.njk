@@ -6,6 +6,8 @@ logo %}
   <div class="with-sidebar" style="--sidebar-gap: 0;">
     {% if video.provider == null or video.provider == 'html' %}
       {% include "ui/video-player.njk" %}
+    {% elif video.provider == 'cdn' %}
+      {% include "ui/video-player-cdn.njk" %}
     {% else %}
       {% include "ui/video-embed.njk" %}
     {% endif %}

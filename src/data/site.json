@@ -57,7 +57,8 @@
     "images": "https://ik.imagekit.io/antaresphdev",
     "video": {
       "libraryId": "276984"
-    }
+    },
+    "cdn": "https://cdn.antaresph.dev"
   },
   "feeds": {
     "all": { "label": "All posts", "link": "/feed.xml", "icon": "rss" },
