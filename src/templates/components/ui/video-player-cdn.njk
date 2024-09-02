@@ -15,9 +15,10 @@
         {% if source.height %}height="{{ source.height }}"{% endif %}
       >
     {% endfor %}
-    {% for caption in captions %}
+    {% for caption in video.captions %}
       <track
         {{ 'default' if caption.isDefault }}
+        src="{{ site.api.cdn }}{{ caption.url }}"
         kind="{{ caption.kind }}"
         srclang="{{ caption.lang }}"
         label="{{ caption.label }}"
