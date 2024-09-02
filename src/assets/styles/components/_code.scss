@@ -1,8 +1,8 @@
 code:not([class]) {
   background-color: hsl(var(--bg-contrast) / 50%);
-  padding-inline  : 0.25ch;
-  border-radius   : var(--radius-1);
-  font-size       : 90%;
+  padding-inline: 0.25ch;
+  border-radius: var(--radius-1);
+  font-size: 90%;
 }
 
 .dark {
@@ -24,7 +24,7 @@ code:not([class]) {
 }
 
 .codepen {
-  border     : var(--border) !important;
+  border: var(--border) !important;
   font-family: var(--font-ui);
 }
 
@@ -34,9 +34,9 @@ code:not([class]) {
 }
 
 .cp_embed_wrapper {
-  display       : flex;
+  display: flex;
   flex-direction: column;
-  padding       : var(--space);
+  padding: var(--space);
 
   iframe {
     flex: 1;
@@ -44,29 +44,43 @@ code:not([class]) {
 }
 
 pre[class^=language] {
-  border         : var(--border);
-  display        : flex;
-  flex-direction : column;
-  font-family    : var(--font-mono);
-  font-size      : 90%;
-  font-size      : var(--type-size);
-  gap            : 1ch;
-  overflow       : auto;
-  padding        : var(--space);
-  position       : relative;
+  border: var(--border);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-mono);
+  font-size: 90%;
+  font-size: var(--type-size);
+  gap: 1ch;
+  overflow: auto;
+  padding: var(--space);
+  position: relative;
   scrollbar-width: thin;
-  tab-size       : 2;
+  tab-size: 2;
+
+  &:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: 5px;
+  }
 
   .highlight-line {
     display: inline-block;
 
     &-active {
-      background-color    : transparent;
-      background-image    : linear-gradient(to right, var(--color-highlight-1), var(--color-highlight-2));
-      color               : inherit;
-      margin-left         : calc(-1 * var(--space));
+      background-color: transparent;
+      background-image: linear-gradient(to right, var(--color-highlight-1), var(--color-highlight-2));
+      color: inherit;
+      margin-left: calc(-1 * var(--space));
       padding-inline-start: var(--space);
-      width               : calc(100% + var(--space) * 2);
+      width: calc(100% + var(--space) * 2);
+    }
+  }
+
+  mark {
+    &.outlined {
+      background-color: transparent;
+      outline: 2px dashed hsl(var(--error-700));
+      outline-offset: 3px;
+      border-radius: var(--radius-3);
     }
   }
 }
@@ -76,8 +90,8 @@ pre[class^=language] {
   &.selector,
   &.tag .tag,
   &.keyword {
-    color                  : hsl(var(--primary-900) / 75%);
-    font-variation-settings: 'wght'500;
+    color: hsl(var(--primary-900) / 75%);
+    font-variation-settings: 'wght' 500;
   }
 
   &.property,
@@ -92,8 +106,8 @@ pre[class^=language] {
   }
 
   &.function {
-    color                  : hsl(var(--secondary-900) / 80%);
-    font-variation-settings: 'wght'500;
+    color: hsl(var(--secondary-900) / 80%);
+    font-variation-settings: 'wght' 500;
   }
 
   &.comment {

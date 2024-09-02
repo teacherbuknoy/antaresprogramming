@@ -145,7 +145,7 @@
 
     @container navigation (width < 70em) {
       .label {
-        display: none;
+        @include visually-hidden();
       }
     }
   }
