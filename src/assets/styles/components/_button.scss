@@ -1,20 +1,21 @@
 .button {
-  align-items            : center;
-  background             : transparent;
-  border                 : 1px solid hsl(var(--border-color));
-  color                  : hsl(var(--primary-900));
-  cursor                 : pointer;
-  display                : flex;
-  font-family            : var(--font-ui);
-  font-size              : 1em;
-  font-weight            : 600;
-  gap                    : 1ch;
-  justify-content        : center;
-  outline                : 2px solid hsl(var(--border-color)/0%);
-  padding-block          : 1ch;
-  padding-inline         : 1.5ch;
-  text-transform         : uppercase;
-  transition             : outline-offset 200ms, outline 200ms, outline-color 100ms 100ms, color 200ms;
+	align-items: center;
+	background: rgba(0,0,0,0);
+	border: 1px solid hsl(var(--border-color));
+	color: hsl(var(--primary-900));
+	cursor: pointer;
+	display: flex;
+	font-family: var(--font-ui);
+	font-feature-settings: var(--ffs-heading);
+	font-size: var(--type-size-5);
+	font-weight: 400;
+	gap: 1ch;
+	justify-content: center;
+	outline: 2px solid hsl(var(--border-color)/0%);
+	padding-block: 1ch;
+	padding-inline: 1.5ch;
+	text-transform: lowercase;
+	transition: outline-offset 200ms,outline 200ms,outline-color 100ms 100ms,color 200ms;
 
   &.inline {
     display: inline-flex

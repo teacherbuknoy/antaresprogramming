@@ -84,20 +84,21 @@
   }
 
   &__link {
-    align-items            : center;
-    background             : rgba(0, 0, 0, 0);
-    border                 : none;
-    cursor                 : pointer;
-    display                : flex;
-    font-family            : var(--font-ui);
-    font-size              : 1em;
-    font-weight            : 600;
-    gap                    : var(--space-xs);
-    padding-block          : 1ch;
-    padding-inline         : 1.5ch;
-    text-transform         : uppercase;
-    outline                : 2px solid transparent;
-    transition             : box-shadow 200ms, outline 200ms, outline-offset 300ms, background-color 200ms, color 200ms;
+      align-items: center;
+      background: rgba(0, 0, 0, 0);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      font-family: var(--font-ui);
+      font-feature-settings: var(--ffs-body);
+      font-size: var(--type-size-6);
+      font-weight: 300;
+      gap: var(--space-xs);
+      outline: 2px solid rgba(0, 0, 0, 0);
+      padding-block: 1ch;
+      padding-inline: 1.5ch;
+      text-transform: lowercase;
+      transition: box-shadow 200ms, outline 200ms, outline-offset 300ms, background-color 200ms, color 200ms;
 
     &:hover {
       background-color: hsl(var(--border-color) / 15%)

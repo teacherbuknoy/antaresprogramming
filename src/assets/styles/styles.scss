@@ -87,7 +87,7 @@ print;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-feature-settings: var(--ffs-body);
+    font-feature-settings: var(--ffs-heading);
     font-family: var(--font-sans);
   }
 
@@ -105,6 +105,13 @@ print;
     @at-root sup & {
       text-decoration: underline;
     }
+  }
+
+  button:not([class]) {
+    font: inherit;
+    padding-inline: 2rem;
+    padding-block: 0.5rem;
+    /* border-radius: var(--ideal-radius); */
   }
 
   strong,
