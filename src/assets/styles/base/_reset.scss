@@ -49,6 +49,7 @@ category: global
 */
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 
 /* @docs
@@ -132,9 +133,9 @@ category: typography
 hr {
   border-style: solid;
   border-width: 1px 0 0;
-  color       : inherit;
-  height      : 0;
-  overflow    : visible;
+  color: inherit;
+  height: 0;
+  overflow: visible;
 }
 
 /* @docs
@@ -156,9 +157,9 @@ audio,
 iframe,
 embed,
 object {
-  display       : block;
+  display: block;
   vertical-align: middle;
-  max-width     : 100%;
+  max-width: 100%;
 }
 
 audio:not([controls]) {
@@ -279,7 +280,7 @@ category: legacy browsers
 [type="checkbox"],
 [type="radio"] {
   box-sizing: border-box;
-  padding   : 0;
+  padding: 0;
 }
 
 /* @docs
@@ -310,7 +311,7 @@ links:
 category: navigation
 */
 nav ul {
-  list-style  : none;
+  list-style: none;
   padding-left: 0;
 }
 
@@ -327,7 +328,7 @@ links:
 category: navigation
 */
 nav li:before {
-  content : "\200B";
+  content: "\200B";
   position: absolute;
 }
 
@@ -348,13 +349,13 @@ category: accessibility
   *,
   ::before,
   ::after {
-    animation-delay          : -1ms !important;
-    animation-duration       : 1ms !important;
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
     animation-iteration-count: 1 !important;
-    background-attachment    : initial !important;
-    scroll-behavior          : auto !important;
-    transition-delay         : 0s !important;
-    transition-duration      : 0s !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-delay: 0s !important;
+    transition-duration: 0s !important;
   }
 }
 
@@ -406,13 +407,13 @@ legend {
 .feather,
 .feather-icon,
 .feathericon {
-  fill           : none;
-  aspect-ratio   : 1/1;
-  min-width      : 1em;
-  stroke-linecap : round;
+  fill: none;
+  aspect-ratio: 1/1;
+  min-width: 1em;
+  stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width   : 2px;
-  stroke         : currentColor;
-  width          : 1.5em;
-  height         : auto;
+  stroke-width: 2px;
+  stroke: currentColor;
+  width: 1.5em;
+  height: auto;
 }

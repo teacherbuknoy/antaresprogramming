@@ -426,5 +426,6 @@ dd {
   &--success li::marker {
     content: '✓ ';
     color: hsl(var(--success-900));
+    font-size: 1.5rem;
   }
 }
