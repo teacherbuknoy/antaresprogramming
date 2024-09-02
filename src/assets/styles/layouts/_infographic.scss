@@ -79,5 +79,9 @@
         border-block-start: none !important;
       }
     }
+
+    & > :last-child {
+      border-block-end: none !important;
+    }
   }
 }

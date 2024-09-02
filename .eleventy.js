@@ -1,6 +1,7 @@
 const markdown = require('markdown-it')
 const mdAnchor = require('markdown-it-anchor')
 const slug = require('slug')
+const path = require('path')
 const esbuild = require('esbuild')
 
 const config = require('./src/config/index');
@@ -52,6 +53,15 @@ module.exports = function (eleventy) {
     if (shouldTransform) {
       eleventy.addTransform(key, transforms[key])
     }
+  })
+
+  eleventy.addTransform('focusableCodeSnippets', function (content, outputPath) {
+    const extname = path.extname(outputPath)
+    if (extname === '.html') {
+      return content.replaceAll(/<pre\s*class="language/gm, '<pre tabindex="0" class="language')
+    }
+
+    return content
   })
 
   eleventy.addGlobalData('generated', () => new Date().toISOString())

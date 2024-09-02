@@ -16,7 +16,7 @@ downloads:
     cover: https://ik.imagekit.io/antaresphdev/tr:w-600/infographics/browser-prefixes/vendor-prefixes.png
     width: 1920
     height: 1080
-    details: 469.4 KB, PNG file
+    details: 482 KB, PNG file
 related:
   - feature-queries
 ---

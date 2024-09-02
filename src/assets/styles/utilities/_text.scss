@@ -15,11 +15,11 @@
 
 /* #region ALIGNMENT */
 $alignments: left,
-right,
-center,
-justify,
-start,
-end;
+  right,
+  center,
+  justify,
+  start,
+  end;
 
 .text {
   @each $a in $alignments {
@@ -33,19 +33,19 @@ end;
 
 /* #region WEIGHTS */
 $weights: 100,
-200,
-300,
-400,
-500,
-600,
-700,
-800,
-900;
+  200,
+  300,
+  400,
+  500,
+  600,
+  700,
+  800,
+  900;
 
 .weight {
   @each $weight in $weights {
     &-#{$weight} {
-      font-weight            : $weight;
+      font-weight: $weight;
       font-variation-settings: 'wght'$weight;
     }
   }
@@ -62,7 +62,8 @@ $weights: 100,
 /* #endregion */
 
 /* #region LETTER SPACING */
-$letter-spacing: (xs : 0.5px,
+$letter-spacing: (
+  xs : 0.5px,
   s : 0.75px,
   m : 1px,
   l : 1.5px,
@@ -111,7 +112,8 @@ $letter-spacing: (xs : 0.5px,
 /* #endregion */
 
 /* #region LINE HEIGHTS */
-$line-heights: (xxxs: 0.5,
+$line-heights: (
+  xxxs: 0.5,
   xxs : 0.75,
   xs : 0.8,
   s : 1,
@@ -136,22 +138,22 @@ $line-heights: (xxxs: 0.5,
 
 .quotation {
   border-inline-end: var(--border);
-  padding          : var(--space);
-  margin           : 0;
-  text-align       : center;
+  padding: var(--space);
+  margin: 0;
+  text-align: center;
 
   blockquote,
   &:is(blockquote) {
-    -moz-hyphens   : auto;
-    -ms-hyphens    : auto;
-    -o-hyphens     : auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
     -webkit-hyphens: auto;
-    font-family    : var(--font-serif);
-    font-size      : clamp(1.75rem, 10vw, 2rem);
-    font-weight    : 350;
-    hyphens        : auto;
-    line-height    : 1.2;
-    margin         : var(--space);
+    font-family: var(--font-serif);
+    font-size: clamp(1.75rem, 10vw, 2rem);
+    font-weight: 350;
+    hyphens: auto;
+    line-height: 1.2;
+    margin: var(--space);
 
     p {
       text-align: inherit;
@@ -161,7 +163,7 @@ $line-heights: (xxxs: 0.5,
   cite,
   address {
     font-style: normal;
-    display   : inline-block;
+    display: inline-block;
   }
 
   figcaption {
@@ -176,16 +178,16 @@ $line-heights: (xxxs: 0.5,
     border: 0;
 
     margin-inline: auto;
-    text-align   : start;
-    width        : 80%;
+    text-align: start;
+    width: 80%;
 
     &:not(.quotation--unfloated) {
       grid-column: 2/3;
     }
 
     blockquote {
-      font-size              : 1em;
-      font-variation-settings: 'wght'350, 'SOFT'550, 'WONK'0;
+      font-size: 1em;
+      font-variation-settings: 'wght' 350, 'SOFT' 550, 'WONK' 0;
 
       i,
       em,
@@ -220,48 +222,48 @@ $line-heights: (xxxs: 0.5,
 
     p {
       font-size: 0.75em;
-      margin   : 0;
+      margin: 0;
     }
   }
 
   .right {
-    float       : right;
-    text-align  : end;
+    float: right;
+    text-align: end;
     margin-right: 0;
   }
 
   .left {
-    float      : left;
-    text-align : start;
+    float: left;
+    text-align: start;
     margin-left: 0;
   }
 }
 
 .footnotes {
-  margin-top         : var(--space-xxl);
-  font-size          : 0.9rem;
-  background-image   : linear-gradient(hsl(var(--fg-default)), hsl(var(--fg-default)));
-  background-repeat  : no-repeat;
-  background-size    : 35ch 1px;
+  margin-top: var(--space-xxl);
+  font-size: 0.9rem;
+  background-image: linear-gradient(hsl(var(--fg-default)), hsl(var(--fg-default)));
+  background-repeat: no-repeat;
+  background-size: 35ch 1px;
   background-position: top left;
-  padding-top        : var(--space);
-  font-family        : var(--font-sans);
+  padding-top: var(--space);
+  font-family: var(--font-sans);
 }
 
 .footnote {
 
   &--reference,
   &--source {
-    font-size  : var(--type-size-7);
+    font-size: var(--type-size-7);
     font-family: var(--font-sans);
   }
 }
 
 $fonts: sans,
-serif,
-display,
-display-serif,
-body;
+  serif,
+  display,
+  display-serif,
+  body;
 
 .font {
   @each $font in $fonts {
@@ -276,25 +278,25 @@ body;
 }
 
 .highlighted {
-  background-image   : linear-gradient(hsl(var(--secondary-500)), hsl(var(--secondary-500)));
-  background-size    : 100% 0.5ch;
-  background-repeat  : no-repeat;
+  background-image: linear-gradient(hsl(var(--secondary-500)), hsl(var(--secondary-500)));
+  background-size: 100% 0.5ch;
+  background-repeat: no-repeat;
   background-position: bottom center;
 }
 
 dl:is(.grid, .stacked) {
   dt {
-    font-weight            : bold;
-    font-variation-settings: 'wght'600;
+    font-weight: bold;
+    font-variation-settings: 'wght' 600;
   }
 }
 
 dl.grid {
   font-family: var(--font-sans);
-  column-gap : 0.5ch;
+  column-gap: 0.5ch;
 
   @media (min-width: 490px) {
-    display              : grid;
+    display: grid;
     grid-template-columns: 1fr 3fr;
   }
 
@@ -311,24 +313,24 @@ dl.grid {
   dd {
     grid-column: 2/-1;
 
-    &+dt,
-    &+dt+dd {
+    & + dt,
+    & + dt + dd {
       margin-top: 1ch;
     }
   }
 }
 
 dl.stacked {
-  font-family   : var(--font-sans);
-  display       : flex;
+  font-family: var(--font-sans);
+  display: flex;
   flex-direction: column;
 
-  dd+dt {
+  dd + dt {
     margin-top: 1ch;
   }
 
   dd {
-    margin : 0;
+    margin: 0;
     padding: 0;
   }
 }
@@ -351,15 +353,15 @@ q[lang] {
 }
 
 hr {
-  background-image   : url("data:image/svg+xml,%3Csvg width='408' height='23' viewBox='0 0 408 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M178.484 11.5L203.984 2L229.484 11.5L203.984 21L178.484 11.5Z' fill='black'/%3E%3Cpath d='M0.314453 12.122H150.044L156.264 5.9024L162.484 12.122L157.508 17.0976L154.398 13.9878M407.653 12.122H257.923L251.703 5.9024L245.484 12.122L250.459 17.0976L253.569 13.9878M178.484 11.5L203.984 2L229.484 11.5L203.984 21L178.484 11.5Z' stroke='black' stroke-width='2.48782'/%3E%3C/svg%3E%0A");
+  background-image: url("data:image/svg+xml,%3Csvg width='408' height='23' viewBox='0 0 408 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M178.484 11.5L203.984 2L229.484 11.5L203.984 21L178.484 11.5Z' fill='black'/%3E%3Cpath d='M0.314453 12.122H150.044L156.264 5.9024L162.484 12.122L157.508 17.0976L154.398 13.9878M407.653 12.122H257.923L251.703 5.9024L245.484 12.122L250.459 17.0976L253.569 13.9878M178.484 11.5L203.984 2L229.484 11.5L203.984 21L178.484 11.5Z' stroke='black' stroke-width='2.48782'/%3E%3C/svg%3E%0A");
   background-position: center;
-  background-repeat  : no-repeat;
-  background-size    : contain;
-  border             : 0;
-  display            : block;
-  height             : 1ch;
-  padding-block      : var(--space-xxl);
-  width              : 20ch;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 0;
+  display: block;
+  height: 1ch;
+  padding-block: var(--space-xxl);
+  width: 20ch;
 
   @at-root {
     .dark & {
@@ -378,22 +380,22 @@ hr {
 
 mark.mark {
   background-color: hsl(var(--success-100));
-  color           : hsl(var(--fg-contrast));
-  padding-inline  : 0.25ch;
+  color: hsl(var(--fg-contrast));
+  padding-inline: 0.25ch;
 }
 
 dl {
-  display              : grid;
+  display: grid;
   grid-template-columns: auto auto;
-  width                : fit-content;
-  column-gap           : var(--space);
+  width: fit-content;
+  column-gap: var(--space);
 }
 
 dt {
-  grid-column            : 1;
-  font-weight            : bold;
-  font-variation-settings: 'wght'700;
-  text-align             : end;
+  grid-column: 1;
+  font-weight: bold;
+  font-variation-settings: 'wght' 700;
+  text-align: end;
 
   dt::after {
     content: ':';
@@ -402,5 +404,27 @@ dt {
 
 dd {
   grid-column: 2/3;
-  margin     : 0;
+  margin: 0;
+}
+
+.list {
+
+  &--error,
+  &--success {
+    li::marker {
+      margin-inline-end: 1ch;
+      font-size: 2rem;
+      line-height: 1rem;
+    }
+  }
+
+  &--error li::marker {
+    content: '× ';
+    color: hsl(var(--error-900));
+  }
+
+  &--success li::marker {
+    content: '✓ ';
+    color: hsl(var(--success-900));
+  }
 }
