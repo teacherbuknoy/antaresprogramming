@@ -8,10 +8,14 @@ description: Nahihirapan ka pa rin bang mag-center ng mga elements sa CSS? May m
 author: teacherbuknoy
 rssLink: https://www.tiktok.com/@antaresphdev/video/7395934935049211152
 syndication:
-  - https://www.dailymotion.com/video/x92xktg
-  - https://youtube.com/shorts/wdDa8Iv7sEw
-  - https://www.facebook.com/share/r/tyDQRjqVLVKsPDG5/
-  - https://www.tiktok.com/@antaresphdev/video/7395934935049211152
+  - label: Dailymotion
+    url: https://www.dailymotion.com/video/x92xktg
+  - label: YouTube
+    url: https://youtube.com/shorts/wdDa8Iv7sEw
+  - label: Facebook
+    url: https://www.facebook.com/share/r/tyDQRjqVLVKsPDG5/
+  - label: Tiktok
+    url: https://www.tiktok.com/@antaresphdev/video/7395934935049211152
 video:
   provider: cdn
   lang: tl

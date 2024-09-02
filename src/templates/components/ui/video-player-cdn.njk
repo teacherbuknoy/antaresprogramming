@@ -1,14 +1,17 @@
 <article class="entry--video {{ 'short' if type === 'short' }} not-sidebar h-entry" aria-labelledby="post-title">
   {% set folder = video.folder if video.folder else 
     cover.folder %}
-  <a href="{{ page.url }}" class="u-url"></a>
-  {% for link in syndication %}
-    <a href="{{ link }}" rel="syndication" class="u-syndication"></a>
-  {% endfor %}
-  <video 
+  <div style="display: none;">
+    <a href="{{ page.url }}" class="u-url">{{ title | safe }}</a>
+    {% for link in syndication %}
+      <a href="{{ link.url }}" rel="syndication" class="u-syndication">{{ link.label }}</a>
+    {% endfor %}
+  </div>
+  <div class="video-player">
+    <video 
         crossorigin
         lang="{{ video.lang if video.lang else 'tl' }}"
-        class="video-player u-video e-content" controls>
+        class="u-video e-content" controls>
     {% for source in video.formats %}
       <source src="{{ site.api.cdn }}{{ source.path }}" type="{{ source.type }}" 
         {% if source.width %}width="{{ source.width }}"{% endif %}
@@ -24,6 +27,7 @@
         label="{{ caption.label }}"/>
     {% endfor %}
   </video>
+  </div>
   <div class="entry__meta">
     {{ logo('logo__image') }}
     <h1 class="entry__title p-name">{{ title | safe }}</h1>
