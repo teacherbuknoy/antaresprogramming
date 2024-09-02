@@ -9,15 +9,26 @@ syndication:
   - https://youtu.be/0orT3dMIUmc
   - https://www.tiktok.com/@antaresphdev/video/7385251284309249298
   - https://mas.to/@antaresphdev/112689931173475684
+  - label: YouTube
+    url: https://youtu.be/0orT3dMIUmc
+  - label: Mastodon
+    url: https://mas.to/@antaresphdev/112689931173475684
+  - label: Tiktok
+    url: https://www.tiktok.com/@antaresphdev/video/7385251284309249298
 rssLink: https://www.tiktok.com/@antaresphdev/video/7385251284309249298
-link: 
-  label: Panoorin sa YouTube
-  url: https://youtu.be/0orT3dMIUmc
 video:
-  filename: box-sizing.mp4
+  provider: cdn
+  lang: tl
+  formats:
+    - path: /videos/box-sizing.mp4
+      type: video/mp4
+      width: 1080
+      height: 1920
   captions: 
     - label: Filipino
-      src: /assets/files/videos/box-sizing/box-sizing.vtt
+      url: /assets/files/videos/box-sizing/box-sizing.vtt
+      lang: tl
+      kind: captions
       isDefault: true
 cover:
   folder: box-sizing
