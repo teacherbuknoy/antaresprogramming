@@ -12,23 +12,36 @@
         crossorigin
         lang="{{ video.lang if video.lang else 'tl' }}"
         class="u-video e-content" controls>
-    {% for source in video.formats %}
-      <source src="{{ site.api.cdn }}{{ source.path }}" type="{{ source.type }}" 
+      {% for source in video.formats %}
+        <source src="{{ site.api.cdn }}{{ source.path }}" type="{{ source.type }}" 
         {% if source.width %}width="{{ source.width }}"{% endif %}
         {% if source.height %}height="{{ source.height }}"{% endif %}
       >
-    {% endfor %}
-    {% for caption in video.captions %}
-      <track
+      {% endfor %}
+      {% for caption in video.captions %}
+        <track
         {{ 'default' if caption.isDefault }}
         src="{{ caption.url }}"
         kind="{{ caption.kind }}"
         srclang="{{ caption.lang }}"
         label="{{ caption.label }}"/>
-    {% endfor %}
-  </video>
+      {% endfor %}
+    </video>
   </div>
   <div class="entry__meta">
+    <nav class="breadcrumb">
+      <ol class="list">
+        <li>
+          <a class="link" href="/">Home</a>
+        </li>
+        <li>
+          <a class="link" href="/videos/">Videos</a>
+        </li>
+        <li>
+          <a class="link" href="{{ page.url }}" aria-current="page">This video</a>
+        </li>
+      </ol>
+    </nav>
     {{ logo('logo__image') }}
     <h1 class="entry__title p-name">{{ title | safe }}</h1>
     <p class="entry__description p-summary">{{ description | safe }}</p>
