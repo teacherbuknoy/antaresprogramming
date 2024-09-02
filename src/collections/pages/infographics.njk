@@ -12,13 +12,6 @@ pagination:
 <section class="section section--wide">
   <h1 class="section__heading">Mga Infographics</h1>
 
-  <aside class="callout callout--info" style="margin-inline-start: calc(-1 * var(--space));">
-    {{ 'info' | icon | safe }}
-    <div class="callout__body">
-      <p>Wala pa rito ang lahat ng infographics. Paunti-unti naming ia-upload dito ang mga luma naming infographics kasama ng mga updates sa kanila. Mada-download ang mga mas lumang infographic sa <a href="https://github.com/antaresphdev/infographics" target="_blank" rel="noopener">Github</a>.</p>
-    </div>
-  </aside>
-
   {% include "ui/collections--infographics.njk" %}
 
   <nav class="d-flex jc--center">
@@ -35,6 +28,13 @@ pagination:
       {% endif %}
     </ul>
   </nav>
+
+  <aside class="callout callout--warning" style="margin-inline-start: calc(-1 * var(--space));">
+    {{ 'info' | icon | safe }}
+    <div class="callout__body">
+      <p>Paunti-unti naming ia-upload dito ang mga luma naming infographics kasama ng mga updates sa kanila. Mada-download ang mga mas lumang infographic sa <a href="https://github.com/antaresphdev/infographics" target="_blank" rel="noopener">Github</a>.</p>
+    </div>
+  </aside>
 </section>
 
 <footer class="content-wrapper margin--auto text-center margin-block--xxxl padding-block-end--xxxl">
