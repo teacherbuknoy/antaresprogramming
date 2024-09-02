@@ -16,17 +16,17 @@ video:
   provider: cdn
   lang: tl
   formats:
-    - url: /videos/block-align-content/block-align-content.mp4
+    - path: /videos/block-align-content/block-align-content.mp4
       type: video/mp4
       width: 1080
       height: 1920
   captions:
-    - url: /videos/block-align-content/block-align-content.vtt
+    - url: /assets/files/videos/block-align-content/block-align-content.vtt
       lang: tl
       kind: captions
       label: Filipino
       isDefault: true
-    - url: /videos/block-align-content/block-align-content.en-US.vtt
+    - url: /assets/files/videos/block-align-content/block-align-content.en-US.vtt
       lang: en-US
       kind: subtitles
       label: English (US)

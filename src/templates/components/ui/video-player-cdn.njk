@@ -10,7 +10,7 @@
         lang="{{ video.lang if video.lang else 'tl' }}"
         class="video-player u-video e-content" controls>
     {% for source in video.formats %}
-      <source src="{{ site.api.cdn }}{{ source.url }}" type="{{ source.type }}" 
+      <source src="{{ site.api.cdn }}{{ source.path }}" type="{{ source.type }}" 
         {% if source.width %}width="{{ source.width }}"{% endif %}
         {% if source.height %}height="{{ source.height }}"{% endif %}
       >
@@ -18,7 +18,7 @@
     {% for caption in video.captions %}
       <track
         {{ 'default' if caption.isDefault }}
-        src="{{ site.api.cdn }}{{ caption.url }}"
+        src="{{ caption.url }}"
         kind="{{ caption.kind }}"
         srclang="{{ caption.lang }}"
         label="{{ caption.label }}"/>

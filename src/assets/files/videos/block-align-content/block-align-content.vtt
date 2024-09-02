@@ -1,0 +1,58 @@
+﻿WEBVTT
+
+00:00:00.380 --> 00:00:02.793
+Alam mo na siguro ang
+horizontal centering ng text
+
+00:00:02.818 --> 00:00:04.206
+gamit ang text-align: center.
+
+00:00:05.468 --> 00:00:07.468
+Pero alam mo ba na puwede
+mo na ring i-center ang
+
+00:00:07.492 --> 00:00:09.619
+buong paragraph vertically
+gamit ang align-content?
+
+00:00:10.865 --> 00:00:13.095
+Siguruhin na naka-display:
+block ang parent element.
+
+00:00:14.118 --> 00:00:16.507
+Kapag naka-set to center
+ang align-content property,
+
+00:00:16.809 --> 00:00:18.809
+gigitna ang buong paragraph vertically
+
+00:00:18.834 --> 00:00:20.834
+basta may extra space
+pa ang parent container.
+
+00:00:22.291 --> 00:00:24.076
+At hindi lang ito para sa mga text ha.
+
+00:00:24.764 --> 00:00:26.764
+Gumagana rin ito sa iba pang mga elements
+
+00:00:26.788 --> 00:00:28.788
+basta naka-display:
+block ang parent container.
+
+00:00:30.447 --> 00:00:31.915
+Dahil bago ang feature na ito,
+
+00:00:32.325 --> 00:00:34.325
+gagana lang ito sa mga bagong browsers.
+
+00:00:35.249 --> 00:00:37.523
+Pero puwede mo na itong
+gamitin dahil Baseline na ito.
+
+00:00:38.132 --> 00:00:39.957
+Siguruhin lang na usable pa rin ang
+
+00:00:39.981 --> 00:00:41.981
+layout mo kahit na hindi
+ito vertically centered.
