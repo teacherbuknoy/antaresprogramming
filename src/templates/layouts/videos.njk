@@ -38,6 +38,33 @@ logo %}
       </nav>
     </aside>
   </div>
+
+  <footer class="content-wrapper margin--auto text-center margin-block--xxxl padding-block-end--xxxl">
+    <h2 class="fs-4 weight-700 font-sans m-block-end--none">Natuwa ka ba sa video na ito?</h2>
+    <p class="font-sans m-block-start--none m-block-end--xl">Puwede kang mag-donate para makagawa pa kami ng mas maraming videos gaya nito.</p>
+
+    <ul class="button-list">
+      <li>
+        <a href="/donate/" class="primary button">
+          {{ "dollar-sign" | icon | safe }}
+          <span>Mag-donate</span>
+        </a>
+      </li>
+      <li>
+        <a href="#contact" class="button">
+          {{ "tiktok" | icon | safe }}
+          <span>I-follow kami sa Tiktok</span>
+        </a>
+      </li>
+      <li>
+        <a href="#contact" class="button">
+          {{ "youtube" | icon | safe }}
+          <span>Mag-subscribe sa YouTube</span>
+        </a>
+      </li>
+    </ul>
+  </footer>
+
   {% include "ui/navigation.njk" %}
   {% include "ui/footer.njk" %}
 {% endblock %}
