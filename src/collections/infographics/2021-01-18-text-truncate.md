@@ -76,14 +76,14 @@ Halimbawa, sa code samples na ito:
 <div class="baseline">
   <div class="browsers">
     <div class="support-indicator">
-      {{ browserSupport(brand = 'chrome', level = support, keys = browsers) | cleanNewLines | safe }}
-      {{ browserSupport(brand = 'edge', level = support, keys = browsers) | cleanNewLines | safe }}
+      {{ browserSupport(brand = 'chrome', level = support, keys = browsers) | cleanNewLines | safe -}}
+      {{ browserSupport(brand = 'edge', level = support, keys = browsers) | cleanNewLines | safe -}}
     </div>
     <div class="support-indicator">
-      {{ browserSupport(brand = 'firefox', level = support, keys = browsers) | cleanNewLines | safe }}
+      {{ browserSupport(brand = 'firefox', level = support, keys = browsers) | cleanNewLines | safe -}}
     </div>
     <div class="support-indicator">
-      {{ browserSupport(brand = 'safari', level = support, keys = browsers) | cleanNewLines | safe }}
+      {{ browserSupport(brand = 'safari', level = support, keys = browsers) | cleanNewLines | safe -}}
     </div>
   </div>
 </div>
@@ -123,14 +123,14 @@ Kapag naka-set ito to `nowrap`, hindi nito hahayaang mag-wrap ang text papunta s
 <div class="baseline">
   <div class="browsers">
     <div class="support-indicator">
-      {{ browserSupport(brand = 'chrome', level = support, keys = browsers) | cleanNewLines | safe }}
-      {{ browserSupport(brand = 'edge', level = support, keys = browsers) | cleanNewLines | safe }}
+      {{ browserSupport(brand = 'chrome', level = support, keys = browsers) | cleanNewLines | safe -}}
+      {{ browserSupport(brand = 'edge', level = support, keys = browsers) | cleanNewLines | safe -}}
     </div>
     <div class="support-indicator">
-      {{ browserSupport(brand = 'firefox', level = support, keys = browsers) | cleanNewLines | safe }}
+      {{ browserSupport(brand = 'firefox', level = support, keys = browsers) | cleanNewLines | safe -}}
     </div>
     <div class="support-indicator">
-      {{ browserSupport(brand = 'safari', level = support, keys = browsers) | cleanNewLines | safe }}
+      {{ browserSupport(brand = 'safari', level = support, keys = browsers) | cleanNewLines | safe -}}
     </div>
   </div>
 </div>
@@ -168,14 +168,14 @@ Ini-indicate ng `overflow` kung ano ang mangyayari kapag lumampas ang content sa
 <div class="baseline">
   <div class="browsers">
     <div class="support-indicator">
-      {{ browserSupport(brand = 'chrome', level = support, keys = browsers) | cleanNewLines | safe }}
-      {{ browserSupport(brand = 'edge', level = support, keys = browsers) | cleanNewLines | safe }}
+      {{ browserSupport(brand = 'chrome', level = support, keys = browsers) | cleanNewLines | safe -}}
+      {{ browserSupport(brand = 'edge', level = support, keys = browsers) | cleanNewLines | safe -}}
     </div>
     <div class="support-indicator">
-      {{ browserSupport(brand = 'firefox', level = support, keys = browsers) | cleanNewLines | safe }}
+      {{ browserSupport(brand = 'firefox', level = support, keys = browsers) | cleanNewLines | safe -}}
     </div>
     <div class="support-indicator">
-      {{ browserSupport(brand = 'safari', level = support, keys = browsers) | cleanNewLines | safe }}
+      {{ browserSupport(brand = 'safari', level = support, keys = browsers) | cleanNewLines | safe -}}
     </div>
   </div>
 </div>
