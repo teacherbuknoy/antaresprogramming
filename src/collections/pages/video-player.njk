@@ -54,6 +54,26 @@ permalink: /player/{{ pagination.items[0].data.title | slugify }}/index.html
       allowfullscreen="true"></iframe>
   {% elif video.provider === 'youtube' %}
     <iframe class="video-player" width="916" height="515" src="https://www.youtube.com/embed/{{ video.embedCode }}" title="{{ video.title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+  {% elif video.provider === 'cdn' %}
+    <video 
+        crossorigin
+        lang="{{ video.lang if video.lang else 'tl' }}"
+        class="u-video e-content" controls>
+      {% for source in video.formats %}
+        <source src="{{ site.api.cdn }}{{ source.path }}" type="{{ source.type }}" 
+        {% if source.width %}width="{{ source.width }}"{% endif %}
+        {% if source.height %}height="{{ source.height }}"{% endif %}
+      >
+      {% endfor %}
+      {% for caption in video.captions %}
+        <track
+        {{ 'default' if caption.isDefault }}
+        src="{{ caption.url }}"
+        kind="{{ caption.kind }}"
+        srclang="{{ caption.lang }}"
+        label="{{ caption.label }}"/>
+      {% endfor %}
+    </video>
   {% endif %}
   <div class="entry__meta" style="opacity: 0; pointer-events: none;">
     {{ logo('logo__image') }}

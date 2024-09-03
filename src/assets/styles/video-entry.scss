@@ -10,3 +10,10 @@
 body:has(.standalone-video-player) {
   background: #000;
 }
+
+.standalone-video-player video {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+}
