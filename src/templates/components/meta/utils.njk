@@ -97,10 +97,10 @@
 
   {% macro browserSupport(brand = 'firefox', level = 'no-support', keys) %}
     <span class="browser-support {{ brand }}">
-      <svg class="brand {{ class }}" aria-label="{{ keys.browsers[brand].brand }}" width="24" height="24">
+      <svg aria-hidden="true" class="brand {{ class }}" width="24" height="24">
         <use href="/assets/images/browsers.svg#{{ brand }}"/>
       </svg>
-      <svg class="support-level {{ class }}" aria-label="{{ keys.support[level].label }}" width="24" height="24">
+      <svg aria-hidden="true" class="support-level {{ class }}" width="24" height="24">
         <use href="/assets/images/browser-support-indicator.svg#{{ level }}"/>
       </svg>
       <span class="sr-only">{{ keys.browsers[brand].brand }}: {{ keys.support[level].label }}</span>

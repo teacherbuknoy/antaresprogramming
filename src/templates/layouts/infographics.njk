@@ -1,8 +1,7 @@
 {% extends "./page.njk" %}
-{% from "meta/utils.njk" import icon, logo %}
-{% set layoutStylesheets = [
-  "post.css"
-] %}
+{% from "meta/utils.njk" import icon,
+logo %}
+{% set layoutStylesheets = ["post.css"] %}
 {% block content %}
   <div class="decoration">
     <div class="circle"></div>
@@ -39,6 +38,18 @@
     </header>
     <div class="content">
       {{ content  | safe }}
+
+      {% if resources %}
+        <h2>Resources</h2>
+
+        <div class="link-grid">
+          {% for url in resources %}
+            {% setAsync "meta" %}{{ url | metatags | dump | safe }}{% endsetAsync %}
+            {% set metadata = utils.jsonify(meta) %}
+            {% include 'ui/social-share-card.njk' %}
+          {% endfor %}
+        {% endif %}
+      </div>
     </div>
     <footer class="footer">
       {% include "ui/downloads.njk" %}

@@ -68,7 +68,7 @@
       @supports (grid-template-columns: subgrid) {
         display              : grid !important;
         grid-template-columns: subgrid;
-        white-space          : pre;
+        white-space          : pre-wrap;
 
         &>code {
           grid-column: 2/3;
