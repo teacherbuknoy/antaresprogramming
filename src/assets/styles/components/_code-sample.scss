@@ -2,6 +2,7 @@
 
 .code-sample {
   grid-column  : 1/-1;
+  border: var(--border);
   width        : 100vw;
   margin-inline: 0;
   margin-block : var(--space-xxl);
@@ -10,14 +11,17 @@
   &>pre {
     display           : block;
     //background-color: hsl(var(--l-primary-700));
-    border            : var(--border);
+    border: none;
     color             : hsl(var(--primary-700));
     padding-block     : 3ch;
-    padding-inline    : calc((100vw - var(--content-width)) / 2);
+    padding-inline    : var(--space);
+    margin-inline     : auto;
     margin-block      : 0 !important;
+    width             : min(var(--content-width), 90%);
 
     &:has(+ .code-result),
     &:has(+ pre) {
+      border-block-end: var(--border);
       border-block-end-style: dashed;
     }
 
@@ -72,7 +76,7 @@
 .code-result {
   background-color: Canvas;
   color: CanvasText;
-  border          : var(--border);
+  border          : none;
   padding-inline  : calc((100vw - var(--content-width))/2);
   width           : 100%;
 

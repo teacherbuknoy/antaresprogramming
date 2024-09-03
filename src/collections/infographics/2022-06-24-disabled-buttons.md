@@ -111,6 +111,8 @@ Kapag dini-disable natin ang mga buttons…
 Sa JavaScript, puwedeng i-check ang value ng `aria-disabled` attribute para malaman kung tutuloy ba dapat ang action kapag nakipag-interact ang user sa button:
 
 
+<div class="code-sample">
+
 ```javascript
 const shouldContinue = button.getAttribute('aria-disabled') === 'true'
 if(shouldContinue) {
@@ -121,3 +123,5 @@ if(shouldContinue) {
   // ano ang puwedeng gawin para ma-enable ang button.
 }
 ```
+
+</div>
