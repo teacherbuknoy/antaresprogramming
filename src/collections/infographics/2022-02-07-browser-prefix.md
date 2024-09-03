@@ -23,10 +23,12 @@ related:
 
 Kapag may bagong features ang CSS, inilalagay na ito agad sa browsers para ma-test at maayos ang bugs. Pero dahil hindi pa ito ready, nilalagyan ng browsers ng prefix ang mga property para hindi ito gamitin sa mga production websites. Para dito ginawa ang `-webkit-` prefix para sa Safari, Chrome, at iba pang browsers na gumagamit ng Webkit at Blink browser engine. Gumamit din ng `-moz-` prefix ang Firefox dati, at `-o-` naman ang sa Opera browser noon.
 
+<div class="code-sample">
 <pre class="language-css" tabindex="0"><code class="language-css"><span class="token selector">.element</span> <span class="token punctuation">{</span>
   <span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span>
   <mark class="outlined"><span class="token property">-webkit-grid-template-columns</span></mark><span class="token punctuation">:</span> 1fr 2fr 50%<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
+</div>
 
 Sa ngayon, hindi na naglalagay ng prefix ang mga browser para sa mga bagong features. Ginagamit pa rin kasi ng maraming developers sa production sites ang mga feature na tine-test pa lang kaya nasisira ang mga website kapag ready na ang final version ng features. Sa halip, may hiwalay na flavor na sila ng browsers na puwede mong gamitin para i-test ang mga bagong feature.
 
