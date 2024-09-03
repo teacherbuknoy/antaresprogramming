@@ -65,16 +65,6 @@
       border-inline: none;
       grid-column  : 1/-1;
 
-      @supports (grid-template-columns: subgrid) {
-        display              : grid !important;
-        grid-template-columns: subgrid;
-        white-space          : pre-wrap;
-
-        &>code {
-          grid-column: 2/3;
-        }
-      }
-
       &+pre[class^=language] {
         border-block-start: none !important;
       }

@@ -36,6 +36,20 @@ resources:
     outline: 2px dashed red;
     outline-offset: 5px;
   }
+
+  .d-flex:has(.baseline) {
+    display: grid;
+    gap: 0;
+
+    h2, h3, h4, h5, h6 {
+      margin-block-end: 0;
+    }
+
+    .baseline {
+      padding-inline:0 ;
+      padding-block-start: 0;
+    }
+  }
 </style>
 
 Gamit ang ilang lines of code sa CSS, puwedeng putulin ang isang paragraph para maging isang line lang at lagyan ng ellipsis sa dulo nito.
@@ -59,7 +73,7 @@ Halimbawa, sa code samples na ito:
 ## white-space: nowrap
 
 {% set support = "wide-support" %}
-<div class="baseline jc--end">
+<div class="baseline">
   <div class="browsers">
     <div class="support-indicator">
       {{ browserSupport(brand = 'chrome', level = support, keys = browsers) | cleanNewLines | safe }}
@@ -106,7 +120,7 @@ Kapag naka-set ito to `nowrap`, hindi nito hahayaang mag-wrap ang text papunta s
 ## overflow: hidden
 
 {% set support = "wide-support" %}
-<div class="baseline jc--end">
+<div class="baseline">
   <div class="browsers">
     <div class="support-indicator">
       {{ browserSupport(brand = 'chrome', level = support, keys = browsers) | cleanNewLines | safe }}
@@ -151,7 +165,7 @@ Ini-indicate ng `overflow` kung ano ang mangyayari kapag lumampas ang content sa
 ## text-overflow: ellipsis
 
 {% set support = "wide-support" %}
-<div class="baseline jc--end">
+<div class="baseline">
   <div class="browsers">
     <div class="support-indicator">
       {{ browserSupport(brand = 'chrome', level = support, keys = browsers) | cleanNewLines | safe }}

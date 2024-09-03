@@ -38,18 +38,21 @@ logo %}
     </header>
     <div class="content">
       {{ content  | safe }}
+    </div>
 
+    <div class="container">
       {% if resources %}
-        <h2>Resources</h2>
+      <h2 class="h2">Resources</h2>
 
-        <div class="link-grid">
-          {% for url in resources %}
-            {% setAsync "meta" %}{{ url | metatags | dump | safe }}{% endsetAsync %}
-            {% set metadata = utils.jsonify(meta) %}
-            {% include 'ui/social-share-card.njk' %}
-          {% endfor %}
-        {% endif %}
-      </div>
+      <div class="link-grid">
+        {% set shareCardHeadingLevel = 3 %}
+        {% for url in resources %}
+          {% setAsync "meta" %}{{ url | metatags | dump | safe }}{% endsetAsync %}
+          {% set metadata = utils.jsonify(meta) %}
+          {% include 'ui/social-share-card.njk' %}
+        {% endfor %}
+      {% endif %}
+    </div>      
     </div>
     <footer class="footer">
       {% include "ui/downloads.njk" %}

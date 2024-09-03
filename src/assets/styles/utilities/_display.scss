@@ -11,12 +11,12 @@
 }
 
 $display: block,
-inline,
-inline-block,
-flex,
-inline-flex,
-grid,
-inline-grid;
+  inline,
+  inline-block,
+  flex,
+  inline-flex,
+  grid,
+  inline-grid;
 
 .d {
   @each $d in $display {
@@ -24,18 +24,31 @@ inline-grid;
       display: $d;
     }
   }
+
+  &-flex {
+    flex-wrap: wrap;
+  }
 }
 
 .jumbotron {
-  display        : flex;
-  flex-direction : column;
-  padding-block  : 10ch;
-  font-size      : var(--type-size-5);
-  align-items    : center;
+  display: flex;
+  flex-direction: column;
+  padding-block: 10ch;
+  font-size: var(--type-size-5);
+  align-items: center;
   justify-content: center;
 
   &__title {
-    font-size  : var(--type-size-1);
+    font-size: var(--type-size-1);
     font-family: var(--font-sans);
+  }
+}
+
+.container {
+  width: min(var(--content-width), 90%);
+  margin-inline: auto;
+
+  &.wide {
+    width: min(var(--page-width), 90%);
   }
 }
