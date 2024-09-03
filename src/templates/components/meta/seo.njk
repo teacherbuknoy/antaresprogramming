@@ -18,6 +18,11 @@
   {% set og_image %}{{ site.api.images }}/tr:w-0.5,f-jpeg/{{ postType }}/{{ cover.folder }}/{{ cover.filename }}{% endset %}
 {% endif %}
 
+{% if seo %}
+  {% set twitter_image = seo.twitter %}
+  {% set og_image = seo.og %}
+{% endif %}
+
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://{{ domain.domain }}{{ page.url if page.url }}">
