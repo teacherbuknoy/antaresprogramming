@@ -10,8 +10,8 @@
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-{% set twitter_image %}https://{{ domain.domain }}/assets/images/root/twitter.png{% endset %}
-{% set og_image %}https://{{ domain.domain }}/assets/images/root/og.png{% endset %}
+{% set twitter_image = site.seo.twitter.src %}
+{% set og_image = site.seo.og.src %}
 
 {% if cover %}
   {% set twitter_image %}{{ site.api.images }}/tr:w-0.5,f-jpeg/{{ postType }}/{{ cover.folder }}/{{ cover.filename }}{% endset %}

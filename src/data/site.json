@@ -6,10 +6,10 @@
   "logo": "/assets/images/logo.png",
   "seo": {
     "og": {
-      "src": ""
+      "src": "https://ik.imagekit.io/antaresphdev/seo/default-og.png"
     },
     "twitter": {
-      "src": ""
+      "src": "https://ik.imagekit.io/antaresphdev/seo/default-twitter.png"
     }
   },
   "contact": {
