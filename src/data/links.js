@@ -37,5 +37,19 @@ module.exports = [
       width: 1080,
       height: 1080
     }
+  },
+  {
+    title: 'Truncate text',
+    url: '/infographics/truncate-text/',
+    date: new Date(2024, 8, 4),
+    cover: {
+      container: 'infographics',
+      folder: 'text-truncate',
+      filename: 'cover.png',
+      sizes: [300, 600, 900, 1080],
+      formats: ['png', 'webp', 'avif'],
+      width: 1080,
+      height: 1080
+    }
   }
 ].sort((a, b) => b.date - a.date).reverse()

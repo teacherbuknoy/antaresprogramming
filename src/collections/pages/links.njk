@@ -9,7 +9,7 @@ permalink: /links/
       <a href="{{ link.url }}" target="_blank" rel="noopener" class="no-arrow">
         <span class="sr-only">{{ link.title }}</span>
         {% set article = link %}
-        {% set container = "videos" %}
+        {% set container = link.cover.container if link.cover.container else "videos" %}
         {% set sizes = article.cover.sizes %}
         {% set formats = article.cover.formats %}
         {% set folder = article.cover.folder %}
