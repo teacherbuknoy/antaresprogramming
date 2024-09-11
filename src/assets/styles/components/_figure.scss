@@ -33,4 +33,39 @@ figure {
   img {
     margin-inline: auto;
   }
+
+  &.quote {
+    border: none;
+
+    &::before,
+    &::after {
+      font-size: 6rem;
+      line-height: 1;
+      grid-row: 1/2;
+      grid-column: 2/3;
+    }
+
+    &::before {
+      content: '“';
+    }
+
+    &::after {
+      content: '”';
+      text-align: end;
+      align-content: end;
+    }
+
+    blockquote {
+      grid-row: 1/2;
+      grid-column: 2/3;
+      font-style: italic;
+
+      em,
+      i,
+      var,
+      samp {
+        font-style: normal;
+      }
+    }
+  }
 }

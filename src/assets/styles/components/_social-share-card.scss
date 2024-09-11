@@ -32,6 +32,14 @@
       margin     : 0;
       font-family: var(--font-sans);
     }
+
+    .card__link,
+    .card__description {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
   }
 }
 

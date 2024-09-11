@@ -406,12 +406,18 @@ dd {
 
 .list {
 
+  &,
   &--error,
   &--success {
     li::marker {
       margin-inline-end: 1ch;
       font-size: 2rem;
       line-height: 1rem;
+    }
+
+    li + li {
+      margin-block-start: 1rem;
+      margin-block-start: 1lh;
     }
   }
 
@@ -468,5 +474,24 @@ dd {
 
   & > :last-child {
     margin-block-end: 0;
+  }
+}
+
+mark {
+  background-color: hsl(var(--secondary-300));
+  color: hsl(var(--primary-700));
+  border-radius: var(--radius-2);
+}
+
+pre:has(> code) {
+  border: var(--border);
+  border-style: dashed;
+  padding: var(--space-xxs);
+  margin: 0;
+  margin-block-start: var(--space-xxs);
+
+  & + & {
+    margin-block-start: 0;
+    border-block-start: none;
   }
 }
