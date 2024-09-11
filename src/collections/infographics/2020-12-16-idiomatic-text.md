@@ -1,6 +1,6 @@
 ---
 title: Idiomatic text tag
-description: Para saan na ginagamit ang <i> tag ngayon?
+description: Para saan na ginagamit ang &lt;i> tag ngayon?
 slug: idiomatic-text
 tags:
   - html

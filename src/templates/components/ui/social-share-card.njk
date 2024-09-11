@@ -10,6 +10,6 @@
     <h{{ shareCardHeadingLevel }} class="card__title" id="heading-{{ metadata.title | slugify }}">
       <a class="card__link" href="{{ metadata.url }}" target="_blank" rel="noopener">{{ metadata.title | safe }}</a>
     </h{{ shareCardHeadingLevel }}>
-    <p class="card__description">{{ metadata.description | safe }}</p>
+    <p class="card__description">{{ metadata.description }}</p>
   </div>
 </article>
