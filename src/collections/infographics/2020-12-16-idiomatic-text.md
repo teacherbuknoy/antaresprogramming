@@ -14,7 +14,7 @@ cover:
   formats: ['png', 'webp', 'avif']
 downloads:
   - label: Cards
-    link: https://antaresphdev.b-cdn.net/downloads/idiomatic-text.zip
+    link: https://cdn.antaresph.dev/downloads/idiomatic-text.zip
     details: 1.31 MB, ZIP file
 related:
   - i-em-strong-b

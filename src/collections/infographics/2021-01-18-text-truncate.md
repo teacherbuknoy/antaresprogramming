@@ -14,7 +14,7 @@ cover:
   formats: ['png', 'webp', 'avif']
 downloads:
   - label: Cards
-    link: https://antaresphdev.b-cdn.net/downloads/text-truncate.zip
+    link: https://cdn.antaresph.dev/downloads/text-truncate.zip
     details: 1.51 MB, ZIP file
   - label: Cheatsheet
     link: https://ik.imagekit.io/antaresphdev/infographics/text-truncate/text-truncate.png
