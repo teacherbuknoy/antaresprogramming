@@ -1,19 +1,43 @@
 <article class="entry--video {{ 'short' if type === 'short' }} not-sidebar h-entry" aria-labelledby="post-title">
   {% set folder = video.folder if video.folder else 
     cover.folder %}
-  <a href="{{ page.url }}" class="u-url"></a>
-  {% for link in syndication %}
-    <a href="{{ link }}" rel="syndication" class="u-syndication"></a>
-  {% endfor %}
-  {% if video.provider === 'dailymotion' %}
-    <iframe style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden" frameborder="0" type="text/html" src="https://www.dailymotion.com/embed/video/{{ video.embedCode }}" width="100%" height="100%" allowfullscreen title="{{ video.title }}"></iframe>
-  {% elif video.provider === 'bunny' %}
-    <iframe
+  <div style="display: none;">
+    <a href="{{ page.url }}" class="u-url">{{ title | safe }}</a>
+    {% for link in syndication %}
+      <a href="{{ link.url }}" rel="syndication" class="u-syndication">{{ link.label }}</a>
+    {% endfor %}
+  </div>
+  <div class="video-player">
+    {% if video.provider === 'dailymotion' %}
+      <iframe class="u-video e-content" style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden" frameborder="0" type="text/html" src="https://www.dailymotion.com/embed/video/{{ video.embedCode }}" width="100%" height="100%" allowfullscreen title="{{ video.title }}"></iframe>
+    {% elif video.provider === 'bunny' %}
+      <iframe class="u-video e-content"
       src="https://iframe.mediadelivery.net/embed/{{ site.api.video.libraryId }}/{{ video.embedCode }}?autoplay=false&loop=false&muted=false&preload=true&responsive=true"
       loading="lazy" style="border:0;position:absolute;top:0;height:100%;width:100%;"
       allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
       allowfullscreen="true"></iframe>
-  {% elif video.provider === 'youtube' %}
-    <iframe class="video-player" width="916" height="515" src="https://www.youtube.com/embed/{{ video.embedCode }}" title="{{ video.title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
-  {% endif %}
+    {% elif video.provider === 'youtube' %}
+      <iframe class="u-video e-content" width="916" height="515" src="https://www.youtube.com/embed/{{ video.embedCode }}" title="{{ video.title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+    {% endif %}
+  </div>
+  <div class="entry__meta">
+    <nav class="breadcrumb">
+      <ol>
+        <li>
+          <a class="link" href="/">Home</a>
+        </li>
+        <li>
+          <a class="link" href="/videos/">Videos</a>
+        </li>
+        <li>
+          <a class="link" href="{{ page.url }}" aria-current="page">This video</a>
+        </li>
+      </ol>
+    </nav>
+    {{ logo('logo__image') }}
+    <h1 class="entry__title p-name">{{ title | safe }}</h1>
+    <p class="entry__description p-summary">{{ description | safe }}</p>
+    <a rel="author" class="p-author h-card" href="{{ authors[author].url }}">{{ authors[author].name }}</a>
+    <time class="dt-published" datetime="{{ page.date | machineReadableDate }}">{{ page.date | humanReadableDate }}</time>
+  </div>
 </article>

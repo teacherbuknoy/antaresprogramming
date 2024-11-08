@@ -1,28 +1,28 @@
 .breadcrumb {
-  .list {
-    --gap      : var(--space);
-    display    : flex;
-    flex-wrap  : wrap;
+  :is(ol, ul) {
+    --gap: var(--space);
+    display: flex;
+    flex-wrap: wrap;
     font-family: var(--font-sans);
-    gap        : var(--gap);
-    margin     : 0;
-    padding    : 0;
+    gap: var(--gap);
+    margin: 0;
+    padding: 0;
+  }
 
-    li {
-      display    : flex;
-      align-items: center;
-      gap        : var(--gap);
-      flex-wrap  : wrap;
+  li {
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    flex-wrap: wrap;
 
-      &::marker {
-        color: transparent;
-      }
+    &::marker {
+      color: transparent;
+    }
 
-      &:not(:last-child)::after {
-        content  : '/';
-        position : relative;
-        font-size: var(--type-size-7);
-      }
+    &:not(:last-child)::after {
+      content: '/';
+      position: relative;
+      font-size: var(--type-size-7);
     }
   }
 
