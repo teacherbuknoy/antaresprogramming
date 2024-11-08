@@ -11,7 +11,7 @@ video:
   lang: fil
   embedCode: 42fe08ea-a000-451d-9792-c35aa55842c6
 cover:
-  folder: block-align-content
+  folder: position
   filename: cover.png
   sizes: [300, 600, 900, 1200, 1440, 1920]
   formats: ['png', 'webp', 'avif']
