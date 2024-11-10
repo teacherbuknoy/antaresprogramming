@@ -19,7 +19,7 @@
     <h3 class="article__title" id="header-{{ video.data.title | slugify }}">
       <a href="{{ videoLink }}">{{ video.data.title | safe }}</a>
     </h3>
-    <p class="article__summary">{{ video.data.description | safe }}</p>
+    <p class="article__summary">{{ video.data.description | markdown | safe }}</p>
     <footer class="article__metadata">
       <time datetime="{{ video.date | machineReadableDate }}">{{ video.date | humanReadableDate }}</time>
     </footer>

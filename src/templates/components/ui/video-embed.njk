@@ -36,7 +36,7 @@
     </nav>
     {{ logo('logo__image') }}
     <h1 class="entry__title p-name">{{ title | safe }}</h1>
-    <p class="entry__description p-summary">{{ description | safe }}</p>
+    <p class="entry__description p-summary">{{ description | markdown | safe }}</p>
     <a rel="author" class="p-author h-card" href="{{ authors[author].url }}">{{ authors[author].name }}</a>
     <time class="dt-published" datetime="{{ page.date | machineReadableDate }}">{{ page.date | humanReadableDate }}</time>
   </div>

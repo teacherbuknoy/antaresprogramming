@@ -78,7 +78,7 @@ permalink: /player/{{ pagination.items[0].data.title | slugify }}/index.html
   <div class="entry__meta" style="opacity: 0; pointer-events: none;">
     {{ logo('logo__image') }}
     <h1 class="entry__title p-name">{{ title | safe }}</h1>
-    <p class="entry__description p-summary">{{ description | safe }}</p>
+    <p class="entry__description p-summary">{{ description | markdown | safe }}</p>
     <a href="{{ authors[author].url }}" rel="author" class="p-author h-card">{{ authors[author].name }}</a>
     <time datetime="{{ page.date | machineReadableDate }}" class="dt-published">{{ page.date | humanReadableDate }}</time>
   </div>
