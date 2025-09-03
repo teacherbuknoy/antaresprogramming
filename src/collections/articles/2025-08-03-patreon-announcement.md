@@ -27,7 +27,7 @@ Expect more content soon! And ingat!~
 
 — [Francis Rubio](https://francisrub.io){target=_blank}, Creator
 
-Official Patreon ng Antares Programming: <a class="primary inline button" href="#contact">Antares Programming on Patreon</a>
+Official Patreon ng Antares Programming: <a class="primary inline button" target="_blank" href="{{ site.contact.patreon.url }}">Antares Programming on Patreon</a>
 
 I-follow ang Antares Programming sa mga social media platforms
 
