@@ -18,6 +18,11 @@
       "identifier": "hello@antaresph.dev",
       "url": "mailto:hello@antaresph.dev"
     },
+    "patreon": {
+      "name": "Patreon",
+      "identifier": "@antaresphdev",
+      "url": "https://patreon.com/antaresphdev"
+    },
     "instagram": {
       "name": "Instagram",
       "identifier": "@antaresphdev",
