@@ -9,9 +9,9 @@ cover:
   sizes: [300, 600, 900, 1200]
   formats: ['png', 'webp', 'avif']
 useCoverForSeo: false
-seo_image:
+seo:
   og: https://ik.imagekit.io/antaresphdev/posts/patreon-announcement/og.png
-  twitter: https://ik.imagekit.io/antaresphdev/posts/patreon-announcement/header.png
+  twitter: https://ik.imagekit.io/antaresphdev/posts/patreon-announcement/twitter.png
 tags: 
   - support
   - meta
