@@ -8,8 +8,10 @@ module.exports = {
 
     const extname = path.extname(outputPath)
     switch (extname) {
-      case '.html':
       case '.json':
+        console.log("[PRETTIER] JSON:", content)
+        return JSON.stringify(JSON.parse(content), null, 2)
+      case '.html':
         const parser = extname.replace(/^./, "")
         return prettier.format(content, { parser, singleAttributePerLine: false, printWidth: 100 })
       default:
