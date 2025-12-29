@@ -70,6 +70,7 @@ print;
     font-family            : var(--font-body);
     font-feature-settings  : var(--ffs-body);
     font-weight            : 350;
+    letter-spacing         : calc(1em * -0.01);
     min-height             : 100vh;
     scroll-behavior        : smooth;
 
