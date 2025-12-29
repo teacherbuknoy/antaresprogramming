@@ -1,0 +1,20 @@
+---
+slug: content
+---
+
+{
+  "posts": [
+    {% for post in collections.articles %}
+    {% set article = post.data %}
+      {
+        "date": "{{ post.date | dateToRfc3339 }}",
+        "title": "{{ article.title }}",
+        "description": "{{ article.description }}",
+        "tags": [
+          {% for tag in article.tags %}"{{ tag }}"{{ ',' if not loop.last }}{% endfor %}
+        ]
+      }
+      {{ ',' if not loop.last }}
+    {% endfor %}
+  ]
+}
