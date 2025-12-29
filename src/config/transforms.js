@@ -9,7 +9,6 @@ module.exports = {
     const extname = path.extname(outputPath)
     switch (extname) {
       case '.json':
-        console.log("[PRETTIER] JSON:", content)
         return JSON.stringify(JSON.parse(content), null, 2)
       case '.html':
         const parser = extname.replace(/^./, "")
