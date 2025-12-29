@@ -74,11 +74,11 @@
 }
 
 .code-result {
-  background-color: Canvas;
-  color: CanvasText;
   border          : none;
   padding-inline  : calc((100vw - var(--content-width))/2);
   width           : 100%;
+  display: flow-root;
+  background-color: inherit;
 
   @at-root .code-sample & {
     border-block-start: none;
