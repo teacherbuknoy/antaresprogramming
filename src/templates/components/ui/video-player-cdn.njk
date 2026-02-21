@@ -35,7 +35,12 @@
           <a class="link" href="/">Home</a>
         </li>
         <li>
-          <a class="link" href="/videos/">Videos</a>
+          
+          {% if page.data.type === 'short' %}
+            <a class="link" href="/shorts/">Short Videos</a>
+          {% else %}
+            <a class="link" href="/videos/">Videos</a>
+          {% endif %}
         </li>
         <li>
           <a class="link" href="{{ page.url }}" aria-current="page">This video</a>
