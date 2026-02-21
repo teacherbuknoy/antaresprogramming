@@ -17,19 +17,9 @@ syndication:
     url: https://www.tiktok.com/@antaresphdev/video/7385251284309249298
 rssLink: https://www.tiktok.com/@antaresphdev/video/7385251284309249298
 video:
-  provider: cdn
-  lang: tl
-  formats:
-    - path: /videos/box-sizing.mp4
-      type: video/mp4
-      width: 1080
-      height: 1920
-  captions: 
-    - label: Filipino
-      url: /assets/files/videos/box-sizing/box-sizing.vtt
-      lang: tl
-      kind: captions
-      isDefault: true
+  provider: bunny
+  lang: fil
+  embedCode: 1b216ae6-c430-425c-806f-02189b80ac22
 cover:
   folder: box-sizing
   filename: box-sizing.jpg
