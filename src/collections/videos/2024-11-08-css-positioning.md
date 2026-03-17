@@ -7,9 +7,26 @@ banner:
 description: Isang short intro sa iba't ibang positioning types ng CSS.
 author: teacherbuknoy
 video:
-  provider: bunny
-  lang: fil
-  embedCode: 42fe08ea-a000-451d-9792-c35aa55842c6
+  provider: cdn
+  lang: tl
+  poster: https://videos.antaresph.dev/position/thumbnail.jpg
+  formats:
+   - origin: https://videos.antaresph.dev
+     path: /position/video.webm
+     type: video/webm
+     width: 1920
+     height: 1080
+   - origin: https://videos.antaresph.dev
+     path: /position/video.mp4
+     type: video/mp4
+     width: 1920
+     height: 1080
+  captions:
+   - isDefault: true
+     url: https://videos.antaresph.dev/position/fil.vtt
+     kind: captions
+     lang: fil
+     label: Filipino
 cover:
   folder: position
   filename: cover.png

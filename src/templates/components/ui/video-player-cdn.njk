@@ -9,6 +9,9 @@
   </div>
   <div class="video-player">
     <video 
+        {% if video.poster %}
+          poster="{{ video.poster }}"
+        {% endif %}
         crossorigin
         lang="{{ video.lang if video.lang else 'tl' }}"
         class="u-video e-content" controls>
