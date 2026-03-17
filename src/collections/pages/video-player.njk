@@ -60,10 +60,11 @@ permalink: /player/{{ pagination.items[0].data.title | slugify }}/index.html
         lang="{{ video.lang if video.lang else 'tl' }}"
         class="u-video e-content" controls>
       {% for source in video.formats %}
-        <source src="{{ site.api.cdn }}{{ source.path }}" type="{{ source.type }}" 
-        {% if source.width %}width="{{ source.width }}"{% endif %}
-        {% if source.height %}height="{{ source.height }}"{% endif %}
-      >
+        <source src="{{ source.origin if source.origin else site.api.cdn }}{{ source.path }}" 
+          type="{{ source.type }}" 
+          {% if source.width %}width="{{ source.width }}"{% endif %}
+          {% if source.height %}height="{{ source.height }}"{% endif %}
+        >
       {% endfor %}
       {% for caption in video.captions %}
         <track

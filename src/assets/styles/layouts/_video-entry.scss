@@ -42,7 +42,7 @@ body:has(.with-sidebar .entry--video) {
       &::cue {
         font: inherit;
         font-size: 1.5rem;
-        line-height: 0.5;
+        line-height: 1.25;
         font-family: var(--font-sans);
       }
     }
