@@ -33,6 +33,7 @@ body:has(.with-sidebar .entry--video) {
       height: 100dvh;
     }
 
+    iframe,
     video {
       position: absolute;
       inset: 0;
