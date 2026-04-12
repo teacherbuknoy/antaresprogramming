@@ -29,6 +29,10 @@ body:has(.with-sidebar .entry--video) {
     position: relative;
     overflow: hidden;
 
+    &:has(iframe[src*="youtube"]) {
+      aspect-ratio: 16/9;
+    }
+
     @media (width < 65ch) {
       height: 100dvh;
     }
